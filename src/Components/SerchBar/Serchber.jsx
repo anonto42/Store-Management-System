@@ -12,12 +12,12 @@ const Serchber = () => {
     l = serchText
   }
   return (
-    <div className='h-[60px] w-full flex justify-center mt-[5px] mb-2 shadow-md pb-[10px] bg-white'>
+    <div className='h-[60px] w-full flex lg:shadow-md shadow-black  justify-center mt-[5px] mb-5 pb-[10px] bg-white'>
       {l.length >= 3 && resuldBar ? <ImCross onClick={()=> {SetResuldBar(false)
       SetSerchText("")} } className='text-3xl absolute bg-white z-10 left-4 top-14 cursor-pointer'/>  : ""}
       
       {/* serchBar */}
-      <div className='w-[95%] flex justify-center items-center relative'>
+      <div className='w-[95%]  lg:hidden flex justify-center items-center relative'>
         <input type="text" value={serchText}
          onBlur={()=>{
           if (l.length >= 3) {

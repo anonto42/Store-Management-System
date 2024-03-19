@@ -1,22 +1,68 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { FaBars } from "react-icons/fa";
 import { FaOpencart } from "react-icons/fa6";
 import SideBar from '../SideBar/SideBar';
+import { GrCart } from "react-icons/gr";
+import myContext from '../../Context/myContext';
+import { CiSearch } from 'react-icons/ci';
 
 const Naveber = () => {
-  const [nav,setNav] = useState(false);
-  const [bar,SerBar]=useState(true);
+  const {bar,barOnOff} = useContext(myContext);
+  const [Products , setProducts] = useState(false);
+  const [Materials , setMaterials] = useState(false);
+  const [Packaging , setPackaging] = useState(false);
+  const [Labels , setLabels] = useState(false);
+  const [Banners , setBanners] = useState(false);
+  const [Promo , setPromo] = useState(false);
+  const [Collections , setCollections] = useState(false);
 
+  
+  
   return (
-    <div className='w-full h-[50px] bg-[#ffff] flex justify-between p-4 items-center text-3xl'>
+    <div className='w-full h-[50px] bg-[#ffff] flex justify-between p-4 xl:px-[8%] items-center text-3xl'>
       {bar && <SideBar/>}
       {/* main bar */}
-      <div className=' cursor-pointer'><FaBars /></div>
-      <div> <a href="/"><img className='w-[150px]' src="https://s1.uprinting.com/assets/img/uprinting-logo-new.webp" alt="" /></a></div>
-      <div>
-        <a href="/cart"><FaOpencart/></a>
-        <div className=' absolute text-xs w-4 h-4 flex justify-center items-center rounded-full bg-red-700 text-white top-[46px] cursor-help right-3'>{1}</div>
+      <div className='cursor-pointer lg:hidden'><FaBars onClick={()=> barOnOff()} /></div>
+        <div className='lg:w-full lg:h-full flex'>
+         <a href="/">
+            <img className='w-[150px]' src="https://s1.uprinting.com/assets/img/uprinting-logo-new.webp" alt="" />
+          </a>
+
+          <div className='absolute ml-[170px]'>
+            <a href="" className='hidden absolute -mt-1 text-[#225ab5] font-bold lg:block text-sm'>
+              <p>888.888.4211</p>
+            </a>
+            <a href="" className='hidden lg:block text-sm mt-4 font-semibold'>
+              Quality Customer Service
+            </a>
+          </div>
+          {/*  */}
+          <div className='w-[45%] left-[26%] hidden mt-3 lg:flex justify-center items-center relative'>
+            <input type="text"placeholder='Search (e.g. labels, boxes, etc)' className=' placeholder:text-black outline-none placeholder:text-sm text-sm border h-[40px] p-[20px] border-[#88B5DA] w-[100%]' />
+            <CiSearch className=' absolute right-[0px] cursor-pointer w-[40px] h-[40px] bg-[#126CB5] text-[#fff] outline-none ' />
+          </div>
+          <div className=' hidden lg:block absolute xl:right-[12%] right-[6%] text-sm border-r pr-[1%] -mt-2 h-11 w-22'>
+            <h3>Hi, Log In! <br /> <span className='text-[#126CB5] font-semibold '>Your Account</span></h3>
+            <div></div>
+          </div>
+        </div>
+      <div className='relative'>
+        <a href="/cart"><GrCart title="Cart's"/></a>
+        <div className=' absolute text-xs w-4 h-4 flex justify-center items-center rounded-full bg-red-700 text-white top-[46px] cursor-help -right-1 -mt-[54px]'>{1}</div>
       </div>
+
+      {/*  */}
+
+      <div className='lg:flex hidden w-full h-14 border-t border-[#3333] absolute left-0 right-0 top-[102px] text-[15px] justify-between items-center text-[#126CBA] font-semibold px-[3%] xl:px-[6%]'>
+        <div className='h-full cursor-pointer'>View All Products</div>
+        <div className='h-full cursor-pointer'>Marketing Materials</div>
+        <div className='h-full cursor-pointer'>Boxes & Packaging</div>
+        <div className='h-full cursor-pointer'>Stickets & Labels</div>
+        <div className='h-full cursor-pointer'>Signs & Banners</div>
+        <div className='h-full cursor-pointer'>Apparel & Promo</div>
+        <div className='h-full cursor-pointer'>Featured Collections</div>
+      </div>
+
     </div>
   )
 }

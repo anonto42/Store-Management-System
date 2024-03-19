@@ -5,7 +5,7 @@ import { TbBrandRedux } from "react-icons/tb";
 
 const SidebarLast = () => {
   return (
-    <div className='flex bottom-0 w-full border border-cyan-700 bg-white h-[80px] text-sm justify-between px-3 items-center'>
+    <div className='flex fixed w-[78.4%] bottom-0 bg-white h-[80px] text-sm justify-between px-3 items-center'>
         <div className='font-semibold'>
             <a href="/help">
                 <TfiHelpAlt className='text-4xl ml-3 cursor-pointer' />

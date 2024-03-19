@@ -4,7 +4,7 @@ const Herosection = () => {
   return (
     <div className='w-full relative h-[330px]'>
       <img src="https://staticecp.uprinting.com/11160/1024x336/halgas_wrath_banner_tablet.jpg" className= 'w-full -z-20 absolute h-full' />
-      <div className='w-full h-full'>
+      <div className='w-full h-full lg:px-[6.4%]'>
         <div className='h-[22%] w-full'></div>
         <div className='flex h-[45%] w-full'>
           <div className=' pl-7 w-[50%]'>
