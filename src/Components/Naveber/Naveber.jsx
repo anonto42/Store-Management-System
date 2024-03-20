@@ -49,7 +49,7 @@ const Naveber = () => {
 
       {/*  */}
 
-      <div className='lg:flex hidden w-full h-14 border-t border-[#3333] absolute left-0 right-0 top-[102px] text-[15px] justify-between items-center text-[#126CBA] font-semibold px-[3%] xl:px-[6%]'>
+      <div className='lg:flex hidden w-full h-14 border-t border-[#3333] absolute left-0 right-0 top-[102px] text-[15px] justify-between items-center text-[#126CBA] font-semibold px-[3%] xl:px-[10%] 2xl:px-[13%]'>
         <div className='h-[110%] mt-1 cursor-pointer pt-2 border border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' onMouseEnter={()=>console.log("it is porking")}>View All Products</div>
         <div className='h-[110%] mt-1 cursor-pointer pt-2 border border-transparent hover:bg-[#f8f7f5] hover:border-[#3333] b-5' 
         onMouseLeave={()=>{setMaterials(false)}}  
