@@ -4,7 +4,7 @@ import { FaOpencart } from "react-icons/fa6";
 import SideBar from '../SideBar/SideBar';
 import { GrCart } from "react-icons/gr";
 import myContext from '../../Context/myContext';
-import { CiSearch } from 'react-icons/ci';
+import { CiSearch, CiSettings } from 'react-icons/ci';
 
 const Naveber = () => {
   const {bar,barOnOff} = useContext(myContext);
@@ -15,8 +15,6 @@ const Naveber = () => {
   const [Banners , setBanners] = useState(false);
   const [Promo , setPromo] = useState(false);
   const [Collections , setCollections] = useState(false);
-
-  
   
   return (
     <div className='w-full h-[50px] bg-[#ffff] flex justify-between p-4 xl:px-[8%] items-center text-3xl'>
@@ -54,15 +52,25 @@ const Naveber = () => {
       {/*  */}
 
       <div className='lg:flex hidden w-full h-14 border-t border-[#3333] absolute left-0 right-0 top-[102px] text-[15px] justify-between items-center text-[#126CBA] font-semibold px-[3%] xl:px-[6%]'>
-        <div className='h-full cursor-pointer'>View All Products</div>
-        <div className='h-full cursor-pointer'>Marketing Materials</div>
-        <div className='h-full cursor-pointer'>Boxes & Packaging</div>
-        <div className='h-full cursor-pointer'>Stickets & Labels</div>
-        <div className='h-full cursor-pointer'>Signs & Banners</div>
-        <div className='h-full cursor-pointer'>Apparel & Promo</div>
-        <div className='h-full cursor-pointer'>Featured Collections</div>
+        <div className='h-full cursor-pointer pt-2 border border-transparent hover:border-[#D6D6D6] hover:bg-[#F8F7F5]' onMouseEnter={()=>console.log("it is porking")}>View All Products</div>
+        <div className='h-full cursor-pointer pt-2 border border-transparent hover:border-[#D6D6D6] hover:bg-[#F8F7F5]' 
+        onMouseLeave={()=>{setMaterials(false)}}  
+        onMouseEnter={()=> setMaterials(true) }>Marketing Materials</div>
+        <div className='h-full cursor-pointer pt-2 border border-transparent hover:border-[#D6D6D6] hover:bg-[#F8F7F5]' onMouseEnter={()=>console.log("it is porking")}>Boxes & Packaging</div>
+        <div className='h-full cursor-pointer pt-2 border border-transparent hover:border-[#D6D6D6] hover:bg-[#F8F7F5]' onMouseEnter={()=>console.log("it is porking")}>Stickets & Labels</div>
+        <div className='h-full cursor-pointer pt-2 border border-transparent hover:border-[#D6D6D6] hover:bg-[#F8F7F5]' onMouseEnter={()=>console.log("it is porking")}>Signs & Banners</div>
+        <div className='h-full cursor-pointer pt-2 border border-transparent hover:border-[#D6D6D6] hover:bg-[#F8F7F5]' onMouseEnter={()=>console.log("it is porking")}>Apparel & Promo</div>
+        <div className='h-full cursor-pointer pt-2 border border-transparent hover:border-[#D6D6D6] hover:bg-[#F8F7F5]' onMouseEnter={()=>console.log("it is porking")}>Featured Collections</div>
       </div>
+      {
+        Products && <div>
 
+        </div>
+      }
+      
+
+
+      
     </div>
   )
 }
