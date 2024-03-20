@@ -1,20 +1,18 @@
 import React, { useContext, useState } from 'react'
 import { FaBars } from "react-icons/fa";
-import { FaOpencart } from "react-icons/fa6";
 import SideBar from '../SideBar/SideBar';
 import { GrCart } from "react-icons/gr";
 import myContext from '../../Context/myContext';
 import { CiSearch, CiSettings } from 'react-icons/ci';
+import NarltemAfterLg from '../NevBerLetterxl/NarItemAfterLg';
+import PackagingCompo from '../NevBerLetterxl/PackagingCompo';
+import LabelsSSSSS from '../NevBerLetterxl/LabelsSSSSS';
+import BannerSSSS from '../NevBerLetterxl/BannerSSSS';
+import PromoSSSS from '../NevBerLetterxl/PromoSSSS';
+import CollectionSSSS from '../NevBerLetterxl/CollectionSSSS';
 
 const Naveber = () => {
-  const {bar,barOnOff} = useContext(myContext);
-  const [Products , setProducts] = useState(false);
-  const [Materials , setMaterials] = useState(false);
-  const [Packaging , setPackaging] = useState(false);
-  const [Labels , setLabels] = useState(false);
-  const [Banners , setBanners] = useState(false);
-  const [Promo , setPromo] = useState(false);
-  const [Collections , setCollections] = useState(false);
+  const {bar,barOnOff,Materials , setMaterials,Products , setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections} = useContext(myContext);
   
   return (
     <div className='w-full h-[50px] bg-[#ffff] flex justify-between p-4 xl:px-[8%] items-center text-3xl'>
@@ -52,25 +50,49 @@ const Naveber = () => {
       {/*  */}
 
       <div className='lg:flex hidden w-full h-14 border-t border-[#3333] absolute left-0 right-0 top-[102px] text-[15px] justify-between items-center text-[#126CBA] font-semibold px-[3%] xl:px-[6%]'>
-        <div className='h-full cursor-pointer pt-2 border border-transparent hover:border-[#D6D6D6] hover:bg-[#F8F7F5]' onMouseEnter={()=>console.log("it is porking")}>View All Products</div>
-        <div className='h-full cursor-pointer pt-2 border border-transparent hover:border-[#D6D6D6] hover:bg-[#F8F7F5]' 
+        <div className='h-[110%] mt-1 cursor-pointer pt-2 border border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' onMouseEnter={()=>console.log("it is porking")}>View All Products</div>
+        <div className='h-[110%] mt-1 cursor-pointer pt-2 border border-transparent hover:bg-[#f8f7f5] hover:border-[#3333] b-5' 
         onMouseLeave={()=>{setMaterials(false)}}  
         onMouseEnter={()=> setMaterials(true) }>Marketing Materials</div>
-        <div className='h-full cursor-pointer pt-2 border border-transparent hover:border-[#D6D6D6] hover:bg-[#F8F7F5]' onMouseEnter={()=>console.log("it is porking")}>Boxes & Packaging</div>
-        <div className='h-full cursor-pointer pt-2 border border-transparent hover:border-[#D6D6D6] hover:bg-[#F8F7F5]' onMouseEnter={()=>console.log("it is porking")}>Stickets & Labels</div>
-        <div className='h-full cursor-pointer pt-2 border border-transparent hover:border-[#D6D6D6] hover:bg-[#F8F7F5]' onMouseEnter={()=>console.log("it is porking")}>Signs & Banners</div>
-        <div className='h-full cursor-pointer pt-2 border border-transparent hover:border-[#D6D6D6] hover:bg-[#F8F7F5]' onMouseEnter={()=>console.log("it is porking")}>Apparel & Promo</div>
-        <div className='h-full cursor-pointer pt-2 border border-transparent hover:border-[#D6D6D6] hover:bg-[#F8F7F5]' onMouseEnter={()=>console.log("it is porking")}>Featured Collections</div>
+        <div className='h-[110%] mt-1 cursor-pointer pt-2 border border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' 
+        onMouseLeave={()=>{setPackaging(false)}}  
+        onMouseEnter={()=> setPackaging(true) }>Boxes & Packaging</div>
+        <div className='h-[110%] mt-1 cursor-pointer pt-2 border border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]'
+        onMouseEnter={()=>setLabels(true)}
+        onMouseLeave={()=>setLabels(false)}>Stickets & Labels</div>
+        <div className='h-[110%] mt-1 cursor-pointer pt-2 border border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' 
+        onMouseEnter={()=>setBanners(true)}
+        onMouseLeave={()=>setBanners(false)}>Signs & Banners</div>
+        <div className='h-[110%] mt-1 cursor-pointer pt-2 border border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' 
+        onMouseEnter={()=>setPromo(true)}
+        onMouseLeave={()=>setPromo(false)}>Apparel & Promo</div>
+        <div className='h-[110%] mt-1 cursor-pointer pt-2 border border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' 
+        onMouseEnter={()=>setCollections(true)}
+        onMouseLeave={()=>setCollections(false)}>Featured Collections</div>
       </div>
       {
         Products && <div>
 
         </div>
       }
-      
-
-
-      
+      {
+        Materials && <NarltemAfterLg/>
+      }
+      {
+        Packaging && <PackagingCompo />
+      }
+      {
+        Labels && <LabelsSSSSS/>
+      }
+      {
+        Banners && <BannerSSSS />
+      }
+      {
+        Promo && <PromoSSSS/>
+      }
+      {
+        Collections && <CollectionSSSS/>
+      }
     </div>
   )
 }

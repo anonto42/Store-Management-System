@@ -2,6 +2,15 @@ import React, { useState } from 'react'
 import myContext from './myContext';
 
 const MyState = (props) => {
+
+  const [Materials , setMaterials] = useState(false);
+  const [Products , setProducts] = useState(false);
+  const [Packaging , setPackaging] = useState(false);
+  const [Labels , setLabels] = useState(false);
+  const [Banners , setBanners] = useState(false);
+  const [Promo , setPromo] = useState(false);
+  const [Collections , setCollections] = useState(false);
+
   const [bar,setBar] = useState(false);
   const barOnOff =()=> {
     if (bar == false) {
@@ -29,7 +38,7 @@ const MyState = (props) => {
 ];
 
   return (
-    <myContext.Provider value={{bar,setBar,barOnOff,item}}>
+    <myContext.Provider value={{bar,setBar,barOnOff,item , Materials , setMaterials,Products , setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections}}>
         {props.children}
     </myContext.Provider>
   )
