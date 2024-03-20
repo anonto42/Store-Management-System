@@ -3,6 +3,7 @@ import Layout from '../../Components/Layout/Layout'
 import Serchber from './../../Components/SerchBar/Serchber';
 import Herosection from '../../Components/HerroSection/Herosection';
 import TorSellers from '../../Components/TopsellersCart/TorSellers';
+import HeroDown from '../../Components/Downer of the hero/HeroDown';
 
 const Home = () => {
 
@@ -10,7 +11,7 @@ const Home = () => {
     <Layout>
       <Serchber/>
       <Herosection/>
-      <TorSellers/>
+      <HeroDown/>
     </Layout>
   )
 }

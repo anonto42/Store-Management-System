@@ -3,7 +3,7 @@ import Cart from '../Cart/Cart'
 
 const TorSellers = () => {
   return (
-    <div className='w-full h-[65vh] bg-[#eafaa3]'>
+    <div className='w-[20%] h-[65vh] bg-[#eafaa3]'>
         <h1 className='text-2xl md:text-3xl font-semibold pl-10 pt-5'>Top Sellers</h1>
         <div className='mt-7 ml-5 flex overflow-auto topSellersBar '>
             <Cart />
