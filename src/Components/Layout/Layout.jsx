@@ -7,7 +7,7 @@ const Layout = ({children}) => {
   return (
     <div>
       <Top/>
-      <Naveber/>
+      <Naveber className="fixed"/>
       <div className='content'>
         {children}
       </div>

@@ -6,7 +6,12 @@ import { MdAddCircleOutline, MdInsertPageBreak, MdOutlineKeyboardArrowRight, MdO
 import { GiKnightBanner } from "react-icons/gi";
 import { FiBox } from "react-icons/fi";
 import { BsCardList } from 'react-icons/bs';
-import Cart from '../Cart/Cart';
+import TopSellerBox from './TopSellerBox';
+import PoliticalCampaing from './PoliticalCampaing';
+import UpdateProduct from './New&UpdatePro';
+import BestDeals from './BestDeals';
+import PrintChoice from './PrintChoice';
+import VideoReff from './VideoReff';
 
 const HeroDown = () => {
   var i = {
@@ -14,8 +19,8 @@ const HeroDown = () => {
     title:"Title"
   }
   return (
-    <div className='h-auto md:px-10 xl:px-28 w-full mt-8 flex justify-center'>
-        <div className='h-full hidden shadow-lg shadow-[#100f0f58] lg:block border border-[#E1E1E1] lg:w-[25%] mr-6 bg-[#ffff]'>
+    <div className='h-auto  w-full mt-8 flex justify-center'>
+        <div className='h-full hidden shadow-lg shadow-[#100f0f58] lg:block border border-[#E1E1E1] lg:w-[25%] xl:w-[270px]  mr-6 bg-[#ffff]'>
               <div className='bg-[#F8F7F5] w-full h-14 flex justify-start pl-5 items-center text-black text-xl font-semibold mb-5'>
                 Popular Products
               </div>
@@ -120,59 +125,55 @@ const HeroDown = () => {
                 </a>
               </div>
 
+              {/* kkkkkk */}
+
               <div>
                 <a className='text-[15px] hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4 mt-4 relative' href="">
-                  <p>Signs</p>
+                  <p>A-Frame Signs</p>
                   <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' />
                 </a>
               </div>
 
               <div>
                 <a className='text-[15px hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4 mt- relative' href="">
-                  <p>Signs</p>
+                  <p>Advertising Flags</p>
                   <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' />
                 </a>
               </div>
 
               <div>
                 <a className='text-[15px] hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4 mt-4 relative' href="">
-                  <p>Signs</p>
+                  <p>Aluminum Signs</p>
+                  {/* <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' /> */}
+                </a>
+              </div>
+
+              <div>
+                <a className='text-[15px] hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4 mt-4 relative' href="">
+                  <p>
+                    Apparel
+                  </p>
                   <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' />
                 </a>
               </div>
 
               <div>
                 <a className='text-[15px] hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4 mt-4 relative' href="">
-                  <p>Signs</p>
-                  <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' />
+                  <p>Appointment Cards</p>
+                  {/* <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' /> */}
                 </a>
               </div>
 
               <div>
                 <a className='text-[15px] hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4 mt-4 relative' href="">
-                  <p>Signs</p>
-                  <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' />
+                  <p>Asset Tags</p>
+                  {/* <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' /> */}
                 </a>
               </div>
 
               <div>
                 <a className='text-[15px] hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4 mt-4 relative' href="">
-                  <p>Signs</p>
-                  <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' />
-                </a>
-              </div>
-
-              <div>
-                <a className='text-[15px] hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4 mt-4 relative' href="">
-                  <p>Signs</p>
-                  <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' />
-                </a>
-              </div>
-
-
-              <div>
-                <a className='text-[15px] hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4 mt-4 relative' href="">
-                  <p>Signs</p>
+                  <p>Bags</p>
                   <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' />
                 </a>
               </div>
@@ -180,7 +181,15 @@ const HeroDown = () => {
 
               <div>
                 <a className='text-[15px] hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4 mt-4 relative' href="">
-                  <p>Signs</p>
+                  <p>Bag Toppers</p>
+                  {/* <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' /> */}
+                </a>
+              </div>
+
+
+              <div>
+                <a className='text-[15px] hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4 mt-4 relative' href="">
+                  <p>Banners</p>
                   <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' />
                 </a>
               </div>
@@ -188,7 +197,7 @@ const HeroDown = () => {
 
               <div>
                 <a className='text-[15px] hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4 mt-4 relative' href="">
-                  <p>Signs</p>
+                  <p>Booklets</p>
                   <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' />
                 </a>
               </div>
@@ -196,25 +205,14 @@ const HeroDown = () => {
 
               <div>
                 <a className='text-[15px] hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4 mt-4 relative' href="">
-                  <p>Signs</p>
+                  <p>Bookmarks</p>
                   <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' />
                 </a>
               </div>
 
-
-
               <div>
                 <a className='text-[15px] hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4 mt-4 relative' href="">
-                  <p>Signs</p>
-                  <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' />
-                </a>
-              </div>
-
-
-
-              <div>
-                <a className='text-[15px] hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4 mt-4 relative' href="">
-                  <p>Signs</p>
+                  <p>Boxes</p>
                   <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' />
                 </a>
               </div>
@@ -223,7 +221,16 @@ const HeroDown = () => {
 
               <div>
                 <a className='text-[15px] hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4 mt-4 relative' href="">
-                  <p>Signs</p>
+                  <p>Brochures</p>
+                  {/* <MdOutlineKeyboardArrowRightyboardArrowRight className='right-4 text-xl absolute' /> */}
+                </a>
+              </div>
+
+
+
+              <div>
+                <a className='text-[15px] hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4 mt-4 relative' href="">
+                  <p>Business Cards</p>
                   <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' />
                 </a>
               </div>
@@ -232,7 +239,7 @@ const HeroDown = () => {
 
               <div>
                 <a className='text-[15px] hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4 mt-4 relative' href="">
-                  <p>Signs</p>
+                  <p>Calendars</p>
                   <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' />
                 </a>
               </div>
@@ -241,7 +248,7 @@ const HeroDown = () => {
 
               <div>
                 <a className='text-[15px] hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4 mt-4 relative' href="">
-                  <p>Signs</p>
+                  <p>Canvas Prints</p>
                   <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' />
                 </a>
               </div>
@@ -250,7 +257,7 @@ const HeroDown = () => {
 
               <div>
                 <a className='text-[15px] hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4 mt-4 relative' href="">
-                  <p>Signs</p>
+                  <p>Car and Vehical Decals</p>
                   <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' />
                 </a>
               </div>
@@ -259,7 +266,7 @@ const HeroDown = () => {
 
               <div>
                 <a className='text-[15px] hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4 mt-4 relative' href="">
-                  <p>Signs</p>
+                  <p>Catalogs</p>
                   <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' />
                 </a>
               </div>
@@ -267,7 +274,25 @@ const HeroDown = () => {
 
               <div>
                 <a className='text-[15px] hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4 mt-4 relative' href="">
-                  <p>Signs</p>
+                  <p>Carbonless Forms</p>
+                  {/* <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' /> */}
+                </a>
+              </div>
+
+
+
+              <div>
+                <a className='text-[15px] hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4 mt-4 relative' href="">
+                  <p>Chalkboard Markers</p>
+                  {/* <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' /> */}
+                </a>
+              </div>
+
+
+
+              <div>
+                <a className='text-[15px] hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4 mt-4 relative' href="">
+                  <p>Decals</p>
                   <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' />
                 </a>
               </div>
@@ -276,26 +301,8 @@ const HeroDown = () => {
 
               <div>
                 <a className='text-[15px] hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4 mt-4 relative' href="">
-                  <p>Signs</p>
-                  <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' />
-                </a>
-              </div>
-
-
-
-              <div>
-                <a className='text-[15px] hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4 mt-4 relative' href="">
-                  <p>Signs</p>
-                  <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' />
-                </a>
-              </div>
-
-
-
-              <div>
-                <a className='text-[15px] hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4 mt-4 relative' href="">
-                  <p>Signs</p>
-                  <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' />
+                  <p>Counter Cards</p>
+                  {/* <MdOutlineKeyboardArrowRight className='right-4 text-xl absolute' /> */}
                 </a>
               </div>
 
@@ -370,15 +377,14 @@ const HeroDown = () => {
                 </a>
               </div>
 
-
         </div>
-        <div className='w-[100%] p-[4%] md:p-6 lg:w-[75%] h-[50vh]'>
-          <h1 className='text-xl sm:text-2xl md:text-3xl font-bold'>Top Collections</h1>
-          <div className='flex overflow-auto'>
-            <Cart />
-            <Cart />
-            <Cart />
-          </div>
+        <div className='lg:w-[68%] xl:w-[60%] w-full '>
+          <TopSellerBox />
+          <PoliticalCampaing/>
+          <UpdateProduct />
+          <BestDeals />
+          <PrintChoice/>
+          <VideoReff/>
         </div>
     </div>
   )

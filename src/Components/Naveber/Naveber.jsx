@@ -10,16 +10,17 @@ import LabelsSSSSS from '../NevBerLetterxl/LabelsSSSSS';
 import BannerSSSS from '../NevBerLetterxl/BannerSSSS';
 import PromoSSSS from '../NevBerLetterxl/PromoSSSS';
 import CollectionSSSS from '../NevBerLetterxl/CollectionSSSS';
+import AllProduct from '../NevBerLetterxl/AllProduct';
 
 const Naveber = () => {
   const {bar,barOnOff,Materials , setMaterials,Products , setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections} = useContext(myContext);
   
   return (
-    <div className='w-full h-[50px] bg-[#ffff] flex justify-between p-4 xl:px-[8%] items-center text-3xl'>
+    <div className='w-full h-[50px] bg-[#ffff]  flex justify-between p-4 xl:px-[8%] items-center text-3xl'>
       {bar && <SideBar/>}
       {/* main bar */}
       <div className='cursor-pointer lg:hidden'><FaBars onClick={()=> barOnOff()} /></div>
-        <div className='lg:w-full lg:h-full flex'>
+        <div className='lg:w-full lg:h-full flex '>
          <a href="/">
             <img className='w-[150px]' src="https://s1.uprinting.com/assets/img/uprinting-logo-new.webp" alt="" />
           </a>
@@ -47,10 +48,11 @@ const Naveber = () => {
         <div className=' absolute text-xs w-4 h-4 flex justify-center items-center rounded-full bg-red-700 text-white top-[46px] cursor-help -right-1 -mt-[54px]'>{1}</div>
       </div>
 
-      {/*  */}
+      {/* destop */}
 
       <div className='lg:flex hidden w-full h-14 border-t border-[#3333] absolute left-0 right-0 top-[102px] text-[15px] justify-between items-center text-[#126CBA] font-semibold px-[3%] xl:px-[10%] 2xl:px-[13%]'>
-        <div className='h-[110%] mt-1 cursor-pointer pt-2 border border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' onMouseEnter={()=>console.log("it is porking")}>View All Products</div>
+        <div className='h-[110%] mt-1 cursor-pointer pt-2 border border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' onMouseLeave={()=>{setProducts(false)}}  
+        onMouseEnter={()=> setProducts(true) }>View All Products</div>
         <div className='h-[110%] mt-1 cursor-pointer pt-2 border border-transparent hover:bg-[#f8f7f5] hover:border-[#3333] b-5' 
         onMouseLeave={()=>{setMaterials(false)}}  
         onMouseEnter={()=> setMaterials(true) }>Marketing Materials</div>
@@ -71,9 +73,7 @@ const Naveber = () => {
         onMouseLeave={()=>setCollections(false)}>Featured Collections</div>
       </div>
       {
-        Products && <div>
-
-        </div>
+        Products && <AllProduct/>
       }
       {
         Materials && <NarltemAfterLg/>
