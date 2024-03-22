@@ -46,10 +46,10 @@ const TopSellerBox = () => {
   ]
   const settings = {
     dots: false,                          
-    infinite: true,
+    infinite: false,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToShow: 4,
+    slidesToScroll: 4,
   };
   return (
     <div className='w-[100%] h-[350px] md:pl-6 sm:pl-4 pl-2 mb-7'>
@@ -59,8 +59,8 @@ const TopSellerBox = () => {
             {
               data.map((item,index)=>{
                 return(
-                  <a href='' key={index} className=' w-auto h-[300px] relative'>
-                    <div className='w-[140px] h-[140px] sm:w-[170px] sm:h-[170px] md:w-[220px] lg:w-[170px] lg:h-[170px] md:h-[220px] mb-4 mr-2 md:mr-5 mt-5 hover:shadow-md hover:scale-105 duration-150 hover:drop-shadow-md'>
+                  <a href='' key={index} className='w-auto h-[300px] relative'>
+                    <div className='w-[140px] h-[140px] sm:w-[170px] sm:h-[170px] md:w-[220px] lg:w-[170px] lg:h-[170px] md:h-[220px] mb-4 md:mr-5 mt-5 hover:shadow-md hover:scale-105 duration-150 hover:drop-shadow-md'>
                       <img src={item.img} className='w-full h-full' />
                     </div>
                     <h2 className='p-1 font-semibold absolute m-[3px] text-sm md:text-xl'>
