@@ -11,6 +11,8 @@ const MyState = (props) => {
   const [Promo , setPromo] = useState(false);
   const [Collections , setCollections] = useState(false);
 
+  const [ragiser,setRagister] = useState(true)
+
   const [bar,setBar] = useState(false);
   const barOnOff =()=> {
     if (bar == false) {
@@ -37,8 +39,10 @@ const MyState = (props) => {
     ""
 ];
 
+
+
   return (
-    <myContext.Provider value={{bar,setBar,barOnOff,item , Materials , setMaterials,Products , setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections}}>
+    <myContext.Provider value={{bar,setBar,barOnOff,item , Materials , setMaterials,Products , setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections,ragiser,setRagister}}>
         {props.children}
     </myContext.Provider>
   )

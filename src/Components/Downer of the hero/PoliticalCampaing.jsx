@@ -46,7 +46,7 @@ const PoliticalCampaing = () => {
     }
   ]
   const [i,setI] = useState(1) ;
-  console.log(i)
+  
   function carcoual(){
     if ((i+3) == data.length) {
       setI(1)

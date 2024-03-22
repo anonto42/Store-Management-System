@@ -12,7 +12,7 @@ const Serchber = () => {
     l = serchText
   }
   return (
-    <div className='h-[60px] w-full flex lg:shadow-md shadow-black  justify-center mt-[5px] mb-5 pb-[10px] bg-white'>
+    <div className='h-[60px] w-full flex lg:shadow-md shadow-black  justify-center mt-[650px] mb-5 pb-[10px] bg-white absolute'>
       {l.length >= 3 && resuldBar ? <ImCross onClick={()=> {SetResuldBar(false)
       SetSerchText("")} } className='text-3xl absolute bg-white z-10 left-4 top-14 cursor-pointer'/>  : ""}
       

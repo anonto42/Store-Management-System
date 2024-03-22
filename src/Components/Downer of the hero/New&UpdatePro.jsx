@@ -26,7 +26,7 @@ const UpdateProduct = () => {
         }
     ]
       const [i,setI] = useState(0) ;
-      console.log(i)
+      
       function carcoual(){
         if ((i+2) == data.length) {
           setI(1)

@@ -11,12 +11,13 @@ import BannerSSSS from '../NevBerLetterxl/BannerSSSS';
 import PromoSSSS from '../NevBerLetterxl/PromoSSSS';
 import CollectionSSSS from '../NevBerLetterxl/CollectionSSSS';
 import AllProduct from '../NevBerLetterxl/AllProduct';
+import Serchber from '../SerchBar/Serchber';
 
 const Naveber = () => {
   const {bar,barOnOff,Materials , setMaterials,Products , setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections} = useContext(myContext);
   
   return (
-    <div className='w-full h-[50px] bg-[#ffff]  flex justify-between p-4 xl:px-[8%] items-center text-3xl'>
+    <div className='w-full mt-3 lg:mt-0 pb-[90px] lg:pb-[100px] h-[50px] bg-[#ffff]  flex justify-between p-4 xl:px-[8%] items-center text-3xl'>
       {bar && <SideBar/>}
       {/* main bar */}
       <div className='cursor-pointer lg:hidden'><FaBars onClick={()=> barOnOff()} /></div>
@@ -39,15 +40,19 @@ const Naveber = () => {
             <CiSearch className=' absolute right-[0px] cursor-pointer w-[40px] h-[40px] bg-[#126CB5] text-[#fff] outline-none ' />
           </div>
           <div className=' hidden lg:block absolute xl:right-[12%] right-[6%] text-sm border-r pr-[1%] -mt-2 h-11 w-22'>
-            <h3>Hi, Log In! <br /> <span className='text-[#126CB5] font-semibold '>Your Account</span></h3>
+            <a href='/ragister'>Hi, Log In! <br /> <span className='text-[#126CB5] font-semibold '>Your Account</span></a>
             <div></div>
           </div>
         </div>
-      <div className='relative'>
+      <div className='relative lg:mt-7'>
         <a href="/cart"><GrCart title="Cart's"/></a>
         <div className=' absolute text-xs w-4 h-4 flex justify-center items-center rounded-full bg-red-700 text-white top-[46px] cursor-help -right-1 -mt-[54px]'>{1}</div>
       </div>
 
+      <div className='w-[95%] mt-28 absolute lg:hidden flex justify-center items-center'>
+        <input type="text" placeholder='Search (e.g. labels, boxes, etc)' className=' placeholder:text-black outline-none text-sm border h-[40px] p-[20px] border-[#88B5DA] w-[100%]' />
+        <CiSearch className=' absolute right-[-2px] cursor-pointer w-[40px] h-[40px] bg-[#126CB5] text-[#fff] outline-none ' />
+      </div>
       {/* destop */}
 
       <div className='lg:flex hidden w-full h-14 border-t border-[#3333] absolute left-0 right-0 top-[102px] text-[15px] justify-between items-center text-[#126CBA] font-semibold px-[3%] xl:px-[10%] 2xl:px-[13%]'>
