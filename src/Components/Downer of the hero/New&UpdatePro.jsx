@@ -46,14 +46,12 @@ const UpdateProduct = () => {
         <h1 className='text-xl sm:text-2xl font-bold mb-7'>New & Updated Products</h1>
         
         
-        <div className='flex items-center justify-between'>
-            {
-                i == 0 ? "" : <CiCircleChevLeft  onClick={()=>carcoual2()} className='mr-4 hidden md:block text-5xl text-gray-500 cursor-pointer'/>
-            }
+        <div className='flex items-center justify-between topSellersBar md:overflow-auto'>
+           <CiCircleChevLeft  onClick={()=>carcoual2()} className='mr-4 hidden md:block text-5xl text-gray-500 cursor-pointer'/>
             
             <a href='' className='w-[98%] h-[270px] border-2 md:w-[350px] mr-4 md:h-[135px] flex hover:shadow-md hover:scale-[1.020] duration-[120ms]'>
                 <div className='md:w-[270px] md:h-[50%] h-full'>
-                        <img  className='w-full h-full md:h-[132px]' src={data[i].url} />
+                        <img  className='w-full duration-200 h-full md:h-[132px]' src={data[i].url} />
                         
                 </div>
                 <div className='p-3'>
@@ -72,6 +70,7 @@ const UpdateProduct = () => {
                     <p>{data[i+1].description}</p>
                 </div>
             </a>
+
              <CiCircleChevRight onClick={()=>carcoual()} className='ml-4 hidden md:block text-5xl text-gray-500 cursor-pointer' />
         </div>
     </div>

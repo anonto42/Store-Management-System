@@ -13,6 +13,7 @@ import BestDeals from './BestDeals';
 import PrintChoice from './PrintChoice';
 import VideoReff from './VideoReff';
 import Services from './Services';
+import PAbout from './PAbout';
 
 const HeroDown = () => {
   var i = {
@@ -387,6 +388,7 @@ const HeroDown = () => {
           <PrintChoice/>
           <VideoReff/>
           <Services />
+          <PAbout />
         </div>
     </div>
   )
