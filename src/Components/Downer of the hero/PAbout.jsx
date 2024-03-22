@@ -2,13 +2,13 @@ import React from 'react'
 
 const PAbout = () => {
   return (
-    <div className='mt-10 w-full h-[400px] bg-[#F8F7F5]'>
-        <div className='w-full -5 text-center h-[110px]'>
+    <div className='mt-10 w-full h-[auto] bg-[#F8F7F5]'>
+        <div className='w-full -5 text-center h-[110px] pt-5'>
             <h1 className='text-xl font-bold px-5'>1,000,000+ business professionals trust us with their printing.</h1>
             <p className='px-5'>Our customers come back for out quality printing . See why were the printing company of choice by designers, marketers, and business owenrs. <a href='' className='text-[#00838D] hover:text-[rgb(0,131,56)]'>See all UPrinting reviews.</a></p>
         </div>
-        <div className='flex justify-between px-[2%] mt-7'>
-            <div className='bg-[#ffff] w-[49%] 2xl:w-[300px] h-[240px] lg:w-[260px] '>
+        <div className='flex justify-between px-[2%] mt-7 sm:pt-0 pt-10 pb-10'>
+            <div className='bg-[#ffff] w-[49%] 2xl:w-[300px] h-[auto] lg:w-[260px] '>
                 <div className='flex p-3'>
                     <div className='w-[66px] rounded-full'>
                         <img src="https://staticecp.uprinting.com/3514/Face1.png" alt="" />

@@ -54,7 +54,7 @@ const TopSellerBox = () => {
   return (
     <div className='w-[100%] h-[350px] md:pl-6 sm:pl-4 pl-2 mb-7'>
         <h1 className='text-xl sm:text-2xl md:text-2xl font-bold'>Top Sellers</h1>
-        <div className='flex flex-col overflow-auto topSellersBar mx-1'>
+        <div className='flex flex-col overflow-auto -10 topSellersBar mx-1'>
           <Slider {...settings} > 
             {
               data.map((item,index)=>{

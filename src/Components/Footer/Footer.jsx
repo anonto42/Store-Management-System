@@ -9,7 +9,7 @@ import { FaRegCopyright } from "react-icons/fa";
 const Footer = () => {
   return (
     <div className=' w-full h-auto bg-[#F8F7F5]'>
-      <div className='my-16 pt-16 flex justify-center'>
+      <div className='m-16 p-16 flex justify-center'>
         <input type="text" className='outline-none border-2 w-[50%] h-12 px-5' placeholder='Enter your email' />
         <button className='h-12 bg-[#B2B1B1] w-28 text-white font-bold'>SUBSCRIBE</button>
       </div>
@@ -40,7 +40,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
-        <div className=' ml-[10%] md:ml-0 flex justify-center  mb-16 '>
+        <div className=' ml-[10%] md:ml-0 flex justify-center  pb-10 '>
           <p className='text-[#0082C6]'>
             <a className='px-3 hover:text-green-600' href="">Terms of Service</a>
             <a className='px-3 hover:text-green-600' href="">Privacy Policy</a>

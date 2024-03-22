@@ -76,7 +76,7 @@ const PoliticalCampaing = () => {
                     </h2>
                   </a>
                   <a href='' keyclassName=' w-auto h-[300px] relative'>
-                    <div className='w-[140px] h-[140px] sm:w-[170px] sm:h-[170px] md:w-[220px] lg:w-[170px] lg:h-[170px] md:h-[220px] mt-5 hover:shadow-md hover:scale-105 duration-150 hover:drop-shadow-md mx-10'>
+                    <div className='w-[140px] h-[140px] sm:w-[170px] sm:h-[170px] md:w-[220px] lg:w-[170px] lg:h-[170px] md:h-[220px] mt-5 hover:shadow-md hover:scale-105 duration-150 hover:drop-shadow-md mx-5 lg:mx-10'>
                       <img src={data[i+1].img} className='w-full h-full' />
                     </div>
                     <h2 className='p-1 font-semibold absolute m-[3px] text-sm md:text-xl'>
