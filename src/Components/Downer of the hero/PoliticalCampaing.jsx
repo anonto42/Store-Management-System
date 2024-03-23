@@ -67,7 +67,7 @@ const PoliticalCampaing = () => {
         <div className='flex justify-center items-center scroll-smooth'>
            <CiCircleChevLeft onClick={()=>carcoual2()} className='text-5xl mr-4 hidden md:block text-gray-500 cursor-pointer' />
           <div className='flex'>
-                  <a href='' keyclassName=' w-auto h-[300px] relative'>
+                  <a href='/product/678765' keyclassName=' w-auto h-[300px] relative'>
                     <div className='w-[140px] h-[140px] sm:w-[170px] sm:h-[170px] md:w-[220px] lg:w-[170px] lg:h-[170px] md:h-[220px] mt-5 hover:shadow-md hover:scale-105 duration-150 hover:drop-shadow-md'>
                       <img src={data[i].img} className='w-full h-full' />
                     </div>
