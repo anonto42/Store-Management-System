@@ -9,9 +9,9 @@ import { FaRegCopyright } from "react-icons/fa";
 const Footer = () => {
   return (
     <div className=' w-full h-auto bg-[#F8F7F5]'>
-      <div className='m-16 p-16 flex justify-center'>
-        <input type="text" className='outline-none border-2 w-[50%] h-12 px-5' placeholder='Enter your email' />
-        <button className='h-12 bg-[#B2B1B1] w-28 text-white font-bold'>SUBSCRIBE</button>
+      <div className='my-16 pt-16 px-6 md:px-0 flex justify-center'>
+        <input type="text" className='outline-none w-[98%] border-2 md:w-[60%] h-12 px-5' placeholder='Enter your email' />
+        <button className='h-12 bg-[#B2B1B1] w-20 text-[12px] md:text-[15px] md:w-28 text-white font-bold'>SUBSCRIBE</button>
       </div>
       <div className='text-xl text-[#0082C6] md:flex justify-center'>
         <div className='mx-3 flex justify-center items-center py-2'><a className='hover:text-green-600' href="">Help & FAQs</a></div>

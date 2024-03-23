@@ -72,19 +72,19 @@ const TopSellerBox = () => {
     <div className='w-[100%] h-[220px] sm:h-[350px] md:pl-6 sm:pl-4 pl-2'>
         <h1 className='text-xl sm:text-2xl md:text-2xl font-bold'>Top Sellers</h1>
           <div className='wrapper max-w-[1200px] mt-10 flex px-10 relative' > 
-          <FaArrowCircleLeft id='left' className='text-3xl hidden lg:block cursor-pointer text-center absolute top-[50%] translate-y-[-50%] left-6 z-50 bg-white rounded-full' />
+          <FaArrowCircleLeft className='text-3xl cursor-pointer text-center absolute top-[50%] translate-y-[-50%] left-6 z-50 bg-white rounded-full' />
               <div onMouseMove={daring} onMouseDown={dar} onMouseUp={darStop} className='clgs flex cursor-pointer overflow-hidden'>
                   {
                     data.map((item,index)=>{
                       return(
                         <>
-                            <img key={index} src={item.img} className='xyz sm:h-[220px] ml-[14px] object-cover w-[calc(100%/3)]' />
+                            <img src={item.img} className='xyz sm:h-[220px] ml-[14px] object-cover w-[calc(100%/3)]' />
                         </>
                       )
                     })
                   }
               </div>
-          <FaArrowCircleRight id='right' className='text-3xl hidden lg:block cursor-pointer text-center absolute top-[50%] translate-y-[-50%] right-6 z-50 bg-white rounded-full' />
+          <FaArrowCircleRight className='text-3xl cursor-pointer text-center absolute top-[50%] translate-y-[-50%] right-6 z-50 bg-white rounded-full' />
           </div>
     </div>
   )
