@@ -14,6 +14,7 @@ import PrintChoice from './PrintChoice';
 import VideoReff from './VideoReff';
 import Services from './Services';
 import PAbout from './PAbout';
+import ReadUP from './ReadUP';
 
 const HeroDown = () => {
   var i = {
@@ -389,6 +390,7 @@ const HeroDown = () => {
           <VideoReff/>
           <Services />
           <PAbout />
+          <ReadUP/>
         </div>
     </div>
   )

@@ -64,7 +64,7 @@ const PoliticalCampaing = () => {
   return (
     <div className='w-[100%] md:pl-6 sm:pl-4 pl-2 mb-[60px]'>
         <h1 className='text-xl sm:text-2xl font-bold'>Polical Campaign Materials</h1>
-        <div className='flex justify-center items-center'>
+        <div className='flex justify-center items-center scroll-smooth'>
            <CiCircleChevLeft onClick={()=>carcoual2()} className='text-5xl mr-4 hidden md:block text-gray-500 cursor-pointer' />
           <div className='flex'>
                   <a href='' keyclassName=' w-auto h-[300px] relative'>
