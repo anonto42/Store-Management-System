@@ -64,18 +64,21 @@ const PoliticalCampaing = () => {
   return (
     <div className='w-[100%] md:pl-6 sm:pl-4 pl-2 mb-[60px]'>
         <h1 className='text-xl sm:text-2xl font-bold'>Polical Campaign Materials</h1>
-        <div className='flex justify-center items-center scroll-smooth'>
-           <CiCircleChevLeft onClick={()=>carcoual2()} className='text-5xl mr-4 hidden md:block text-gray-500 cursor-pointer' />
-          <div className='flex'>
-                  <a href='/product/678765' keyclassName=' w-auto h-[300px] relative'>
+        <div className='flex justify-center items-center '>
+           {/* <CiCircleChevLeft onClick={()=>carcoual2()} className='text-5xl mr-4 hidden md:block text-gray-500 cursor-pointer' /> */}
+          <div className='flex overflow-auto topSellersBar'>
+            {
+              data.map((item,index)=> <a href='/product/678765' key={index} className=' w-auto h-[280px] ml-3 relative'>
                     <div className='w-[140px] h-[140px] sm:w-[170px] sm:h-[170px] md:w-[220px] lg:w-[170px] lg:h-[170px] md:h-[220px] mt-5 hover:shadow-md hover:scale-105 duration-150 hover:drop-shadow-md'>
-                      <img src={data[i].img} className='w-full h-full' />
+                      <img src={item.img} className='w-full h-full' />
                     </div>
                     <h2 className='p-1 font-semibold absolute m-[3px] text-sm md:text-xl'>
-                        {data[i].title}
+                        {item.title}
                     </h2>
-                  </a>
-                  <a href='' keyclassName=' w-auto h-[300px] relative'>
+                  </a>)
+            }
+                 
+                  {/* <a href='' keyclassName=' w-auto h-[300px] relative'>
                     <div className='w-[140px] h-[140px] sm:w-[170px] sm:h-[170px] md:w-[220px] lg:w-[170px] lg:h-[170px] md:h-[220px] mt-5 hover:shadow-md hover:scale-105 duration-150 hover:drop-shadow-md mx-2 lg:mx-10'>
                       <img src={data[i+1].img} className='w-full h-full' />
                     </div>
@@ -90,9 +93,9 @@ const PoliticalCampaing = () => {
                     <h2 className='p-1 font-semibold absolute m-[3px] text-sm md:text-xl'>
                         {data[i+2].title}
                     </h2>
-                  </a>
+                  </a> */}
           </div>
-          <CiCircleChevRight onClick={()=>carcoual()} className='ml-4 hidden md:block text-5xl text-gray-500 cursor-pointer' />
+          {/* <CiCircleChevRight onClick={()=>carcoual()} className='ml-4 hidden md:block text-5xl text-gray-500 cursor-pointer' /> */}
         </div>
     </div>
   )
