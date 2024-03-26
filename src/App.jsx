@@ -12,7 +12,7 @@ import Login from './Pages/Ragister/Login';
 import ForgotPassword from './Pages/Ragister/ForgotPassword';
 import Accout from './Pages/account/Accout';
 import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from 'react-toastify';
+import { Slide, ToastContainer } from 'react-toastify';
 
 function App() {
 
