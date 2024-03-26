@@ -110,7 +110,7 @@ const ProductCart = () => {
         {/* lllkkk kkkk */}
         <div className=''>
 
-          
+          k
           <div className='lg:absolute -top-12 xl:right-[8%] lg:right-0 sm:border-2 sm:mx-10 sm:my-10'>
             <h1 className='flex md:r-[37%] md:mb-7 ml-8 text-sm font-bold mb-3 mt-8'>Sticker type:</h1>
             <div className='flex justify-center '>
