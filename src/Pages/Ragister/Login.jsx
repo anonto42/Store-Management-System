@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { MdCancel } from 'react-icons/md';
+import myContext from '../../Context/myContext';
+import Loader from '../../Components/loader/Loader';
 
 const Login = () => {
+  const {email,setEmail,password, setPassword,loginUser,loading} = useContext(myContext)
     function returnHome(){
         window.location.href = "/";
       }
   return (
     <div className='flex justify-center w-full h-full'>
+      { loading  && <Loader/>}
       <div className='top-0 mt-14 shadow-2xl drop-shadow-2xl shadow-black absolute sm:w-[640px] w-full bg-white' >
           <div className='w-full h-10 px-6 flex justify-end items-center text-2xl'>
             <MdCancel onClick={returnHome} className=' hover:text-gray-400 cursor-pointer' />
@@ -15,9 +19,9 @@ const Login = () => {
             <h1 className='mx-5'>Log In</h1>
           </div>
           <div className='px-10 w-full'>
-            <input type="email" placeholder='*Email Address' className='w-full mt-3 bg-slate-100 h-14 px-4 outline-none'  />
-            <input type="password" placeholder='*Password' className='w-full mt-3 bg-slate-100 h-14 px-4 outline-none'  />
-            <button className='w-full h-12 bg-green-600 mt-3 cursor-pointer font-bold text-white hover:bg-green-700'>CREATE MY ACCOUT</button>
+            <input type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder='*Email Address' className='w-full mt-3 bg-slate-100 h-14 px-4 outline-none'  />
+            <input type="password" value={password} onChange={e=>setPassword(e.target.value)} placeholder='*Password' className='w-full mt-3 bg-slate-100 h-14 px-4 outline-none'  />
+            <button onClick={()=>loginUser()} className='w-full h-12 bg-green-600 mt-3 cursor-pointer font-bold text-white hover:bg-green-700'>SIGNIN MY ACCOUT</button>
             <p className='mt-5 text-sm text-gray-400 pb-2 border-b'></p>
           </div>
           <div className='flex justify-between items-center px-10'>

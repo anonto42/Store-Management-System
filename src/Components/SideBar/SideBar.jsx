@@ -139,7 +139,7 @@ const SideBar = () => {
                 </a>
               </div>
               <div className='mb-4 relative'>
-                <a href="account">
+                <a href={localStorage.getItem("user")? "/account" : "ragister"}>
                   <p className='text-[10px] mt-7 absolute'>Account</p>
                   <LuUser2 />
                 </a>

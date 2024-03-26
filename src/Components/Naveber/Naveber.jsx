@@ -14,6 +14,10 @@ import AllProduct from '../NevBerLetterxl/AllProduct';
 import Serchber from '../SerchBar/Serchber';
 
 const Naveber = () => {
+  
+  const usr = JSON.parse(localStorage.getItem("user"));
+  console.log(usr.user)
+
   const {bar,barOnOff,Materials , setMaterials,Products , setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections} = useContext(myContext);
   
   return (
@@ -39,8 +43,8 @@ const Naveber = () => {
             <input type="text"placeholder='Search (e.g. labels, boxes, etc)' className=' placeholder:text-black outline-none placeholder:text-sm text-sm border h-[40px] p-[20px] border-[#88B5DA] w-[100%]' />
             <CiSearch className=' absolute right-[0px] cursor-pointer w-[40px] h-[40px] bg-[#126CB5] text-[#fff] outline-none ' />
           </div>
-          <div className=' hidden lg:block absolute xl:right-[12%] right-[6%] text-sm border-r pr-[1%] -mt-2 h-11 w-22'>
-            <a href='/ragister'>Hi, Log In! <br /> <span className='text-[#126CB5] font-semibold '>Your Account</span></a>
+          <div className=' hidden lg:block absolute xl:right-[12%] right-[6%] text-sm border-r pr-[1%] -mt-2 h-11 w-22 overflow-hidden'>
+            <a href={usr ? "account" : "ragister"}>Hi, {usr ? usr.user.email :"Log In"}! <br /> <span className='text-[#126CB5] font-semibold '>Your Account</span></a>
             <div></div>
           </div>
         </div>

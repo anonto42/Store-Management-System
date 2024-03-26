@@ -10,6 +10,9 @@ import Layout from './Components/Layout/Layout';
 import SignUp from './Pages/Ragister/SignUp';
 import Login from './Pages/Ragister/Login';
 import ForgotPassword from './Pages/Ragister/ForgotPassword';
+import Accout from './Pages/account/Accout';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
 
@@ -23,9 +26,11 @@ function App() {
               <Route path='/ragister' element={<SignUp/>} />
               <Route path='/login' element={<Login />} />
               <Route path='/forgot' element={<ForgotPassword/>} />
+              <Route path='/account' element={<Accout/>} />
             </Routes>
         </Layout>
       </BrowserRouter>
+      <ToastContainer />
     </MyState>
   )
 }
