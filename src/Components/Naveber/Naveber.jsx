@@ -41,7 +41,7 @@ const Naveber = () => {
             <CiSearch className=' absolute right-[0px] cursor-pointer w-[40px] h-[40px] bg-[#126CB5] text-[#fff] outline-none ' />
           </div>
           <div className=' hidden lg:block absolute xl:right-[12%] right-[6%] text-sm border-r pr-[1%] -mt-2 '>
-            <a href={usr ? "account" : "ragister"}>Hi, {usr ? '' :"Log In"}! <br /> <span className='text-[#126CB5] font-semibold '>Your Account</span></a>
+            <a href={usr ? "account" : "ragister"}>{usr ? '' :"Hi, Log In !"} <br /> <span className='text-[#126CB5] font-semibold '>Your Account</span></a>
             <div></div>
           </div>
         </div>

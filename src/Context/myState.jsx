@@ -137,7 +137,7 @@ const MyState = (props) => {
   // get user information
   const [user, setUser] = useState([]);
   
-  // get product
+  // get Users
   const getUserData = async () => {
     setLoading(true)
     try {
@@ -188,6 +188,22 @@ const MyState = (props) => {
     }
 }
 
+// create product
+const [ products, setProductsDoc] = useState({
+  title:null,
+  price:null,
+  imageUrl:null,
+  category:null,
+  description:null,
+  time:Timestamp.now(),
+  date: new Date().toLocaleString(
+    "en-US",{
+      month:"short",
+      day:"2-digit",
+      year:"numeric"
+    }
+  )
+});
 
   // const res = data.filter((item)=> item === 78);
 

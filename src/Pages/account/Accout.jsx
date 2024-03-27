@@ -8,8 +8,7 @@ const Accout = () => {
   return (
     <div>
       {
-        user?.user?.email == "anontom90@gmail" ? "" : <div>
-        
+        user?.user?.email == "anontom90@gmail.com" ? "" :   <div>
       <div className='flex justify-center'>
         <div className='w-[90%] text-xl font-bold border-b-2 pt-6 pb-9'>
           <h1 className='text-center'>Welcome,{`user.firstName`}!</h1>
@@ -97,14 +96,38 @@ const Accout = () => {
           </div>
         </div>
       </div>
-
       </div>
       }
+    
 
+
+        {/* this is for admin section */}
+
+        {
+          user.user.email == 'anontom90@gmail.com' ? 
+            <div className='mx-5'>
+              <div className='w-full flex justify-center mt-8 py-10 border text-xl font-semibold underline'>Add Product</div>
+              <div className='border w-full border-gray-300 h-[auto]'>
+                <input type="text" placeholder='Inter your product Titel' className='w-[90%] bg-slate-100 my-2 outline-none text-xl px-5 font-semibold text-center h-10 mx-[5%]'/>
+                <input type="text" placeholder='Product Price' className='w-[90%] bg-slate-100 my-2 outline-none text-xl px-5 font-semibold text-center h-10 mx-[5%]'/>
+                <input type="text" placeholder='Product Category' className='w-[90%] bg-slate-100 my-2 outline-none text-xl px-5 font-semibold text-center h-10 mx-[5%]'/>
+                <input type="file" id='imgTag' className='hidden'/>
+                <label htmlFor="imgTag" className='flex justify-center'>
+                  <img src="https://icons.veryicon.com/png/o/miscellaneous/simple-linear-icon/icon-img.png" className=' cursor-pointer w-[130px] md:w-[200px]' alt="" />
+                </label>
+                <textarea type="text" placeholder='Product Description' className='w-[90%] bg-slate-100 my-2 pt-2 outline-none text-xl px-5 font-semibold text-center h-10 mx-[5%]'/>
+
+                <div className='flex justify-center'>
+                  <button className='w-[90px] h-[40px] rounded-md cursor-pointer font-bold text-white mb-5 bg-[#1aab1a]'>Upload</button>
+                </div>
+              </div>
+            </div>
+           : console.log("this is an normal user")
+        }
       
 
 
-      <button onClick={()=>logOut()} className='w-[80px] h-[40px] rounded-lg active:scale-105 absolute right-8 bg-yellow-300'>Sign out</button>
+      <button onClick={()=>logOut()} className='w-[80px] mt-6 h-[40px] rounded-lg active:scale-105 absolute right-8 bg-yellow-300'>Sign out</button>
 
     </div>
   )
