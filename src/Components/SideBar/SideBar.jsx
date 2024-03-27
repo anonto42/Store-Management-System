@@ -155,7 +155,7 @@ const SideBar = () => {
       </div>
 
         <RxCross1 onClick={barOnOff}
-        className='absolute text-6xl right-[2%] text-[#BFC8C3] w-10 cursor-pointer -top-1'/>
+        className='absolute text-6xl right-[3%] text-[#BFC8C3] w-10 cursor-pointer top-2'/>
     </div>
   )
 }

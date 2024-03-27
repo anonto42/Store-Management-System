@@ -11,14 +11,12 @@ import BannerSSSS from '../NevBerLetterxl/BannerSSSS';
 import PromoSSSS from '../NevBerLetterxl/PromoSSSS';
 import CollectionSSSS from '../NevBerLetterxl/CollectionSSSS';
 import AllProduct from '../NevBerLetterxl/AllProduct';
-import Serchber from '../SerchBar/Serchber';
 
 const Naveber = () => {
   
   const usr = JSON.parse(localStorage.getItem("user"));
 
-  const {bar,barOnOff,Materials , setMaterials,Products , setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections} = useContext(myContext);
-  
+  const {bar,barOnOff,Materials,user, setMaterials,Products , setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections} = useContext(myContext);
   return (
     <div className='w-full mt-3 lg:mt-0 pb-[90px] lg:pb-[100px] h-[50px] bg-[#ffff]  flex justify-between p-4 xl:px-[8%] items-center text-3xl'>
       {bar && <SideBar/>}
@@ -42,8 +40,8 @@ const Naveber = () => {
             <input type="text"placeholder='Search (e.g. labels, boxes, etc)' className=' placeholder:text-black outline-none placeholder:text-sm text-sm border h-[40px] p-[20px] border-[#88B5DA] w-[100%]' />
             <CiSearch className=' absolute right-[0px] cursor-pointer w-[40px] h-[40px] bg-[#126CB5] text-[#fff] outline-none ' />
           </div>
-          <div className=' hidden lg:block absolute xl:right-[10%] right-[6%] text-sm border-r pr-[1%] -mt-2 '>
-            <a href={usr ? "account" : "ragister"}>Hi, {usr ? usr?.user?.email :"Log In"}! <br /> <span className='text-[#126CB5] font-semibold '>Your Account</span></a>
+          <div className=' hidden lg:block absolute xl:right-[12%] right-[6%] text-sm border-r pr-[1%] -mt-2 '>
+            <a href={usr ? "account" : "ragister"}>Hi, {usr ? '' :"Log In"}! <br /> <span className='text-[#126CB5] font-semibold '>Your Account</span></a>
             <div></div>
           </div>
         </div>

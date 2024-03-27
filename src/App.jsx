@@ -13,6 +13,7 @@ import ForgotPassword from './Pages/Ragister/ForgotPassword';
 import Accout from './Pages/account/Accout';
 import 'react-toastify/dist/ReactToastify.css';
 import { Slide, ToastContainer } from 'react-toastify';
+import Admin from './Pages/Admin/Dashbord/Admin';
 
 function App() {
 
@@ -26,7 +27,16 @@ function App() {
               <Route path='/ragister' element={<SignUp/>} />
               <Route path='/login' element={<Login />} />
               <Route path='/forgot' element={<ForgotPassword/>} />
-              <Route path='/account' element={<Accout/>} />
+              <Route path='/account' element={
+                <ProtectedRoutes>
+                  <Accout/>
+                </ProtectedRoutes>
+              } />
+              <Route path='/dashbord' element={
+                <ProtectedRoutesForAdmin>
+                  <Admin/>
+                </ProtectedRoutesForAdmin>
+              } />
             </Routes>
         </Layout>
       </BrowserRouter>
@@ -36,3 +46,21 @@ function App() {
 }
 
 export default App
+// for users
+export const ProtectedRoutes = ({children}) => {
+  const user = localStorage.getItem('user');
+  if(user){
+    return children
+  }else{
+    return window.location.href='/login'; 
+  }
+}
+// for admin
+export const ProtectedRoutesForAdmin = ({children}) =>{
+  const admin = JSON.parse(localStorage.getItem('user'));
+  if(admin.user.email === 'anontom90@gmail.com'){
+    return children;
+  }else{
+    return window.location.href = '/login'
+  }
+}

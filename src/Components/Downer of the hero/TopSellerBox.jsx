@@ -66,7 +66,7 @@ const TopSellerBox = () => {
         {
           data.map((item,index)=>{
             return(
-              <a href="">
+              <a href="" key={index}>
                 <SwiperSlide className='hover:scale-105'> 
                   <img className='' src={item.img}  />
                   <h1 className='text-xl font-semibold'>{item.title}</h1>

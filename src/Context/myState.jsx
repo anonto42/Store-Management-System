@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import myContext from './myContext';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
 import { toast } from 'react-toastify';
 import { FireDB, auth } from '../FireBase/FireBase';
-import { Timestamp, addDoc, collection } from 'firebase/firestore';
+import { Timestamp, addDoc, collection, doc, onSnapshot, query, setDoc } from 'firebase/firestore';
 
 const MyState = (props) => {
 
@@ -50,6 +50,8 @@ const MyState = (props) => {
     "",
     ""
 ];
+
+  // create user 
 
   const creactUser = async () =>{
     setLoading(true)
@@ -100,6 +102,8 @@ const MyState = (props) => {
 
   }
 
+  // signInUser 
+
   const loginUser = async () =>{
     setLoading(true);
     if (email == null || password == null) {
@@ -120,17 +124,76 @@ const MyState = (props) => {
     }
   }
 
+   // logOut user from device
   const logOut = ()=>{
     localStorage.removeItem('user');
-    toast.success('Logged out successfull')
+    localStorage.removeItem("userInfo");
+    toast.success('Logged out successfull');
     setTimeout(()=>{
       window.location.href ='/';
-    },800)
+    },800);
   }
+
+  // get user information
+  const [user, setUser] = useState([]);
+  
+  // get product
+  const getUserData = async () => {
+    setLoading(true)
+    try {
+      const q = query(
+        collection(FireDB, "user")
+      );
+      const data = onSnapshot(q, (QuerySnapshot) => {
+        let usersArray = [];
+        QuerySnapshot.forEach((doc) => {
+          usersArray.push({ ...doc.data(), id: doc.id });
+        });
+        setUser(usersArray)
+        setLoading(false);
+      });
+      return () => data;
+    } catch (error) {
+      console.log(error)
+      setLoading(false)
+    }
+  }
+
+  useEffect(()=>{
+    getUserData();
+  },[]);
+
+  // update data from doc
+
+  const [updatedUsers,setUpdatedUsers]= useState();
+
+  const getInformation = (item)=>{
+    setUpdatedUsers(item)
+  }
+  const updateInformation = async () => {
+    setLoading(true)
+    try {
+
+        await setDoc(doc(FireDB, 'user', updatedUsers.id), updatedUsers)
+        toast.success("user Updated successfully")
+        setTimeout(() => {
+            window.location.href = '/dashboard'
+        }, 800);
+        getUserData();
+        setLoading(false)
+
+    } catch (error) {
+        console.log(error)
+        setLoading(false)
+    }
+}
+
+
+  // const res = data.filter((item)=> item === 78);
 
 
   return (
-    <myContext.Provider value={{bar,setBar,barOnOff,item , Materials , setMaterials,Products , setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections,ragiser,setRagister,number, logOut,setNumber,lastName,loading,setLoading,loginUser, setLastName,firstName, setFirstName,email, setEmail,password, setPassword,creactUser}}>
+    <myContext.Provider value={{bar,setBar,barOnOff,item , Materials , setMaterials,Products , setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections,ragiser,setRagister,number, logOut,setNumber,lastName,loading,setLoading,loginUser, setLastName,firstName, setFirstName,email, setEmail,password, setPassword,creactUser,user,setUser}}>
         {props.children}
     </myContext.Provider>
   )

@@ -4,13 +4,15 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 
 const Accout = () => {
   const{logOut}=useContext(myContext);
-  const user = JSON.parse(localStorage.getItem('user')).user;
+  const user = JSON.parse(localStorage.getItem('user'));
   return (
     <div>
-
+      {
+        user?.user?.email == "anontom90@gmail" ? "" : <div>
+        
       <div className='flex justify-center'>
         <div className='w-[90%] text-xl font-bold border-b-2 pt-6 pb-9'>
-          <h1 className='text-center'>Welcome,{user.email}!</h1>
+          <h1 className='text-center'>Welcome,{`user.firstName`}!</h1>
         </div>
       </div>
 
@@ -95,6 +97,11 @@ const Accout = () => {
           </div>
         </div>
       </div>
+
+      </div>
+      }
+
+      
 
 
       <button onClick={()=>logOut()} className='w-[80px] h-[40px] rounded-lg active:scale-105 absolute right-8 bg-yellow-300'>Sign out</button>
