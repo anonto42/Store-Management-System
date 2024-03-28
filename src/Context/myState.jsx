@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react'
 import myContext from './myContext';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
 import { toast } from 'react-toastify';
-import { FireDB, auth } from '../FireBase/FireBase';
-import { Timestamp, addDoc, collection, doc, onSnapshot, query, setDoc } from 'firebase/firestore';
+import { FireDB, StorageDB, auth } from '../FireBase/FireBase';
+import { Firestore, Timestamp, addDoc, collection, doc, onSnapshot, query, setDoc } from 'firebase/firestore';
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import { v4 } from 'uuid';
 
 const MyState = (props) => {
 
@@ -188,28 +190,50 @@ const MyState = (props) => {
     }
 }
 
-// create product
-const [ products, setProductsDoc] = useState({
-  title:null,
-  price:null,
-  imageUrl:null,
-  category:null,
-  description:null,
-  time:Timestamp.now(),
-  date: new Date().toLocaleString(
-    "en-US",{
-      month:"short",
-      day:"2-digit",
-      year:"numeric"
+  // create product
+  
+  const [title,setTitle] = useState();
+  const [description,setDescription] = useState();
+  const [price,setPrice] = useState();
+  const [catagory,setCategory] = useState();
+  const [img,setImg] = useState();
+  
+  const [imgUrl,setImgUrl] = useState();
+  const [section,setSection] = useState();
+  const createProduct = async () =>{
+    setLoading(true)
+
+    const product ={
+      title:title,
+      description:description,
+      price:price,
+      catagory:catagory,
+      imgurl:imgUrl.toString(),
+      section:section
     }
-  )
-});
+    try {
+      if (product.title == null || product.price == null || product.catagory == null || product.description == null) {
+        return toast.error('Please fill all fields')
+      }
+      const productRef = collection(FireDB,'products')
+      await addDoc(productRef,product)
+    toast.success('product created successfully')
+    setLoading(false)
+
+    setCategory('')
+    setPrice('')
+    setDescription('')
+    setTitle('')
+    } catch (error) {
+      return toast.error(error.message)
+    }
+  }
 
   // const res = data.filter((item)=> item === 78);
 
 
   return (
-    <myContext.Provider value={{bar,setBar,barOnOff,item , Materials , setMaterials,Products , setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections,ragiser,setRagister,number, logOut,setNumber,lastName,loading,setLoading,loginUser, setLastName,firstName, setFirstName,email, setEmail,password, setPassword,creactUser,user,setUser}}>
+    <myContext.Provider value={{bar,setBar,barOnOff,item , Materials , setMaterials,Products , setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections,ragiser,setRagister,number, logOut,setNumber,lastName,loading,setLoading,loginUser, setLastName,firstName, setFirstName,email, setEmail,password, setPassword,creactUser,user,setUser,setCategory,setPrice,setDescription,setTitle,setImg,setImgUrl,img,catagory,price,description,title,createProduct,imgUrl,section,setSection}}>
         {props.children}
     </myContext.Provider>
   )
