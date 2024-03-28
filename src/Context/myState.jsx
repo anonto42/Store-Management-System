@@ -190,6 +190,8 @@ const MyState = (props) => {
     }
 }
 
+  const [editProduct,setEditeProduct] = useState(false);
+
   // create product
   
   const [title,setTitle] = useState();
@@ -233,7 +235,7 @@ const MyState = (props) => {
 
 
   return (
-    <myContext.Provider value={{bar,setBar,barOnOff,item , Materials , setMaterials,Products , setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections,ragiser,setRagister,number, logOut,setNumber,lastName,loading,setLoading,loginUser, setLastName,firstName, setFirstName,email, setEmail,password, setPassword,creactUser,user,setUser,setCategory,setPrice,setDescription,setTitle,setImg,setImgUrl,img,catagory,price,description,title,createProduct,imgUrl,section,setSection}}>
+    <myContext.Provider value={{bar,setBar,barOnOff,item , Materials , setMaterials,Products , setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections,ragiser,setRagister,number, logOut,setNumber,lastName,loading,setLoading,loginUser, setLastName,firstName, setFirstName,email, setEmail,password, setPassword,creactUser,user,setUser,setCategory,setPrice,setDescription,setTitle,setImg,setImgUrl,img,catagory,price,description,title,createProduct,imgUrl,section,setSection,editProduct,setEditeProduct}}>
         {props.children}
     </myContext.Provider>
   )

@@ -8,9 +8,10 @@ import { toast } from 'react-toastify';
 import Loader from './../../Components/loader/Loader';
 import { MdDeleteForever } from "react-icons/md";
 import { Link } from 'react-router-dom';
+import EditeProducts from '../Admin/Products/EditeProducts';
 
 const Accout = () => {
-  const{logOut,loading,setCategory,setPrice,setDescription,setTitle,setImg,imgUrl,setImgUrl,img,catagory,price,description,title,setLoading,createProduct,section,setSection } = useContext(myContext);
+  const{logOut,loading,setCategory,setPrice,setDescription,setTitle,setImg,imgUrl,setImgUrl,img,catagory,price,description,title,setLoading,createProduct,section,setSection,editProduct,setEditeProduct } = useContext(myContext);
   const user = JSON.parse(localStorage.getItem('user'));
 
   const imageUpload =async()=>{
@@ -214,13 +215,15 @@ const Accout = () => {
                         {'logo'}
                       </div>
                       <div className='w-[80px] border-l text-center h-full border-[#0e0e0e76]'>
-                        <div className='w-full h-[50%] bg-slate-300 flex justify-center items-center text-2xl'>
-                          <a href="">
+                        <div className='w-full h-[50%] bg-green-300 flex justify-center items-center text-2xl'>
+                          <a href="" onClick={()=>{
+                            setEditeProduct(true)
+                            }}>
                             <FaPenToSquare  className='' />                  
                           </a>
                         </div>
-                        <div className='w-full h-[50%] bg-blue-300 flex justify-center items-center text-3xl'>
-                          <a href="">
+                        <div className='w-full h-[50%] bg-red-400 flex justify-center items-center text-3xl'>
+                          <a href="" onClick={()=>{}}>
                             <MdDeleteForever className='' />
                           </a>
                         </div>
@@ -243,13 +246,15 @@ const Accout = () => {
                         {'logo'}
                       </div>
                       <div className='w-[80px] border-l text-center h-full border-[#0e0e0e76]'>
-                        <div className='w-full h-[50%] bg-slate-300 flex justify-center items-center text-2xl'>
-                          <a href="">
+                        <div className='w-full h-[50%] bg-green-300 flex justify-center items-center text-2xl'>
+                          <a href="" onClick={()=>{
+                            setEditeProduct(true)
+                            }}>
                             <FaPenToSquare  className='' />                  
                           </a>
                         </div>
-                        <div className='w-full h-[50%] bg-blue-300 flex justify-center items-center text-3xl'>
-                          <a href="">
+                        <div className='w-full h-[50%] bg-red-400 flex justify-center items-center text-3xl'>
+                          <a href="" onClick={()=>{}}>
                             <MdDeleteForever className='' />
                           </a>
                         </div>
@@ -272,13 +277,15 @@ const Accout = () => {
                         {'logo'}
                       </div>
                       <div className='w-[80px] border-l text-center h-full border-[#0e0e0e76]'>
-                        <div className='w-full h-[50%] bg-slate-300 flex justify-center items-center text-2xl'>
-                          <a href="">
+                        <div className='w-full h-[50%] bg-green-300 flex justify-center items-center text-2xl'>
+                          <a href="" onClick={()=>{
+                            setEditeProduct(true)
+                            }}>
                             <FaPenToSquare  className='' />                  
                           </a>
                         </div>
-                        <div className='w-full h-[50%] bg-blue-300 flex justify-center items-center text-3xl'>
-                          <a href="">
+                        <div className='w-full h-[50%] bg-red-400 flex justify-center items-center text-3xl'>
+                          <a href="" onClick={()=>{}}>
                             <MdDeleteForever className='' />
                           </a>
                         </div>
@@ -301,42 +308,15 @@ const Accout = () => {
                         {'logo'}
                       </div>
                       <div className='w-[80px] border-l text-center h-full border-[#0e0e0e76]'>
-                        <div className='w-full h-[50%] bg-slate-300 flex justify-center items-center text-2xl'>
-                          <a href="">
+                        <div className='w-full h-[50%] bg-green-300 flex justify-center items-center text-2xl'>
+                          <a href="" onClick={()=>{
+                            setEditeProduct(true)
+                            }}>
                             <FaPenToSquare  className='' />                  
                           </a>
                         </div>
-                        <div className='w-full h-[50%] bg-blue-300 flex justify-center items-center text-3xl'>
-                          <a href="">
-                            <MdDeleteForever className='' />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                  <Link to='' >
-                    <div className='w-[95%] h-[80px] border border-[#0e0e0e76] my-5 flex justify-between'>
-                      <div className='h-full w-[105px]'><img src="#" className='w-full h-full' /></div>
-                      <div className='w-[80px] font-bold border-[#0e0e0e76] text-center justify-center py-3 px-6 h-full border-l border-r flex'>
-                        title: <br />
-                        {'logo'}
-                      </div>
-                      <div className='w-[80px] font-bold border-[#0e0e0e76] text-center justify-center py-3 px-6 h-full border-l border-r flex'>
-                        Price: <br />
-                        {'699'}
-                      </div>
-                      <div className='w-[80px] font-bold hidden border-[#0e0e0e76] text-center justify-center py-3 px-6 h-full border-l  lg:flex'>
-                        Catagory: <br />
-                        {'logo'}
-                      </div>
-                      <div className='w-[80px] border-l text-center h-full border-[#0e0e0e76]'>
-                        <div className='w-full h-[50%] bg-slate-300 flex justify-center items-center text-2xl'>
-                          <a href="">
-                            <FaPenToSquare  className='' />                  
-                          </a>
-                        </div>
-                        <div className='w-full h-[50%] bg-blue-300 flex justify-center items-center text-3xl'>
-                          <a href="">
+                        <div className='w-full h-[50%] bg-red-400 flex justify-center items-center text-3xl'>
+                          <a href="" onClick={()=>{}}>
                             <MdDeleteForever className='' />
                           </a>
                         </div>
@@ -355,6 +335,9 @@ const Accout = () => {
       <button onClick={()=>logOut()} className='w-[80px] mt-6 h-[40px] rounded-lg active:scale-105 absolute right-8 bg-yellow-300'>Sign out</button>
       {
         loading && <Loader className='mt-[25%]'/>
+      }
+      {
+        editProduct && <EditeProducts />
       }
 
     </div>
