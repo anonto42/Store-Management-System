@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 import EditeProducts from '../Admin/Products/EditeProducts';
 
 const Accout = () => {
-  const{logOut,loading,setCategory,setPrice,setDescription,setTitle,setImg,imgUrl,setImgUrl,img,catagory,price,description,title,setLoading,createProduct,section,setSection,editProduct,setEditeProduct } = useContext(myContext);
+  const{logOut,loading,setCategory,setPrice,setDescription,setTitle,setImg,imgUrl,setImgUrl,img,catagory,price,description,title,setLoading,createProduct,section,setSection,editProduct,setEditeProduct,product } = useContext(myContext);
   const user = JSON.parse(localStorage.getItem('user'));
 
   const imageUpload =async()=>{
@@ -199,20 +199,44 @@ const Accout = () => {
                 <div className='flex border-b border-[#3333] justify-center py-10 text-xl font-semibold underline'>Manage Products</div>
                   <h1 className='text-xl font-semibold text-[#0e0e0e76] py-3 ml-3'>All Product's :</h1>
                 <div className='ml-[4%] overflow-auto h-[400px]'>
-                  <Link to='' >
+                <div className='w-[95%] h-[40px] border border-[#0e0e0e76] my-5 flex justify-between'>
+                      <div className='font-bold border-[#0e0e0e76] text-center h-full border-l border-r flex justify-center items-center w-[105px]'>Image</div>
+                      <div className='w-[80px] font-bold border-[#0e0e0e76] text-center h-full border-l border-r flex justify-center items-center'>
+                        <p>Title:</p>
+                      </div>
+                      <div className='w-[80px] font-bold border-[#0e0e0e76] text-center justify-center items-center h-full border-l border-r flex'>
+                        Price:
+                      </div>
+                      <div className='w-[80px] font-bold hidden border-[#0e0e0e76] border-r text-center justify-center py-3 px-6 h-full border-l items-center lg:flex'>
+                        Catagory:
+                      </div>
+                      <div className='w-[80px] border-l text-center h-full border-[#0e0e0e76]'>
+                        <div className='w-full h-[50%] bg-green-300 flex justify-center items-center text-2xl'>
+                            <p className='text-xs font-bold uppercase'>Edit</p>
+                        </div>
+                        <div className='w-full h-[50%] bg-red-400 flex justify-center items-center text-3xl'>
+                            <p className='text-xs font-bold uppercase'>delet</p>
+                        </div>
+                      </div>
+                    </div>
+                  {
+                    product.map((item,index)=>{
+                      return(
+                        <Link to='' >
                     <div className='w-[95%] h-[80px] border border-[#0e0e0e76] my-5 flex justify-between'>
-                      <div className='h-full w-[105px]'><img src="#" className='w-full h-full' /></div>
-                      <div className='w-[80px] font-bold border-[#0e0e0e76] text-center justify-center py-3 px-6 h-full border-l border-r flex'>
-                        title: <br />
-                        {'logo'}
+                      <div className='h-full w-[105px]'>
+                        <img src={item.imgurl} className='w-full h-full' />
                       </div>
-                      <div className='w-[80px] font-bold border-[#0e0e0e76] text-center justify-center py-3 px-6 h-full border-l border-r flex'>
-                        Price: <br />
-                        {'699'}
+                      <div className='w-[80px] px-1 font-bold border-[#0e0e0e76] text-center justify-center flex items-center h-full border-l border-r'>
+                        <p className='text-xs'>
+                          {item.title}
+                        </p>
                       </div>
-                      <div className='w-[80px] font-bold hidden border-[#0e0e0e76] text-center justify-center py-3 px-6 h-full border-l  lg:flex'>
-                        Catagory: <br />
-                        {'logo'}
+                      <div className='w-[80px] font-bold border-[#0e0e0e76] text-center justify-center items-center h-full border-l border-r flex'>
+                        {item.price}
+                      </div>
+                      <div className='w-[80px] font-bold hidden border-[#0e0e0e76] border-r text-center justify-center h-full border-l lg:flex items-center'>
+                        {item.catagory}
                       </div>
                       <div className='w-[80px] border-l text-center h-full border-[#0e0e0e76]'>
                         <div className='w-full h-[50%] bg-green-300 flex justify-center items-center text-2xl'>
@@ -230,99 +254,10 @@ const Accout = () => {
                       </div>
                     </div>
                   </Link>
-                  <Link to='' >
-                    <div className='w-[95%] h-[80px] border border-[#0e0e0e76] my-5 flex justify-between'>
-                      <div className='h-full w-[105px]'><img src="#" className='w-full h-full' /></div>
-                      <div className='w-[80px] font-bold border-[#0e0e0e76] text-center justify-center py-3 px-6 h-full border-l border-r flex'>
-                        title: <br />
-                        {'logo'}
-                      </div>
-                      <div className='w-[80px] font-bold border-[#0e0e0e76] text-center justify-center py-3 px-6 h-full border-l border-r flex'>
-                        Price: <br />
-                        {'699'}
-                      </div>
-                      <div className='w-[80px] font-bold hidden border-[#0e0e0e76] text-center justify-center py-3 px-6 h-full border-l  lg:flex'>
-                        Catagory: <br />
-                        {'logo'}
-                      </div>
-                      <div className='w-[80px] border-l text-center h-full border-[#0e0e0e76]'>
-                        <div className='w-full h-[50%] bg-green-300 flex justify-center items-center text-2xl'>
-                          <a href="" onClick={()=>{
-                            setEditeProduct(true)
-                            }}>
-                            <FaPenToSquare  className='' />                  
-                          </a>
-                        </div>
-                        <div className='w-full h-[50%] bg-red-400 flex justify-center items-center text-3xl'>
-                          <a href="" onClick={()=>{}}>
-                            <MdDeleteForever className='' />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                  <Link to='' >
-                    <div className='w-[95%] h-[80px] border border-[#0e0e0e76] my-5 flex justify-between'>
-                      <div className='h-full w-[105px]'><img src="#" className='w-full h-full' /></div>
-                      <div className='w-[80px] font-bold border-[#0e0e0e76] text-center justify-center py-3 px-6 h-full border-l border-r flex'>
-                        title: <br />
-                        {'logo'}
-                      </div>
-                      <div className='w-[80px] font-bold border-[#0e0e0e76] text-center justify-center py-3 px-6 h-full border-l border-r flex'>
-                        Price: <br />
-                        {'699'}
-                      </div>
-                      <div className='w-[80px] font-bold hidden border-[#0e0e0e76] text-center justify-center py-3 px-6 h-full border-l  lg:flex'>
-                        Catagory: <br />
-                        {'logo'}
-                      </div>
-                      <div className='w-[80px] border-l text-center h-full border-[#0e0e0e76]'>
-                        <div className='w-full h-[50%] bg-green-300 flex justify-center items-center text-2xl'>
-                          <a href="" onClick={()=>{
-                            setEditeProduct(true)
-                            }}>
-                            <FaPenToSquare  className='' />                  
-                          </a>
-                        </div>
-                        <div className='w-full h-[50%] bg-red-400 flex justify-center items-center text-3xl'>
-                          <a href="" onClick={()=>{}}>
-                            <MdDeleteForever className='' />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                  <Link to='' >
-                    <div className='w-[95%] h-[80px] border border-[#0e0e0e76] my-5 flex justify-between'>
-                      <div className='h-full w-[105px]'><img src="#" className='w-full h-full' /></div>
-                      <div className='w-[80px] font-bold border-[#0e0e0e76] text-center justify-center py-3 px-6 h-full border-l border-r flex'>
-                        title: <br />
-                        {'logo'}
-                      </div>
-                      <div className='w-[80px] font-bold border-[#0e0e0e76] text-center justify-center py-3 px-6 h-full border-l border-r flex'>
-                        Price: <br />
-                        {'699'}
-                      </div>
-                      <div className='w-[80px] font-bold hidden border-[#0e0e0e76] text-center justify-center py-3 px-6 h-full border-l  lg:flex'>
-                        Catagory: <br />
-                        {'logo'}
-                      </div>
-                      <div className='w-[80px] border-l text-center h-full border-[#0e0e0e76]'>
-                        <div className='w-full h-[50%] bg-green-300 flex justify-center items-center text-2xl'>
-                          <a href="" onClick={()=>{
-                            setEditeProduct(true)
-                            }}>
-                            <FaPenToSquare  className='' />                  
-                          </a>
-                        </div>
-                        <div className='w-full h-[50%] bg-red-400 flex justify-center items-center text-3xl'>
-                          <a href="" onClick={()=>{}}>
-                            <MdDeleteForever className='' />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
+                      )
+                    })
+                  }
+                  
                 </div>
 
               </div>

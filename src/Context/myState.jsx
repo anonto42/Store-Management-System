@@ -233,9 +233,38 @@ const MyState = (props) => {
 
   // const res = data.filter((item)=> item === 78);
 
+  const [product,setProduct] = useState([]);
+
+  console.log(product)
+
+    // get product data
+    const getProductData = async () => {
+      setLoading(true)
+      try {
+        const q = query(
+          collection(FireDB, "products")
+        );
+        const data = onSnapshot(q, (QuerySnapshot) => {
+          let productsArray = [];
+          QuerySnapshot.forEach((doc) => {
+            productsArray.push({ ...doc.data(), id: doc.id });
+          });
+          setProduct(productsArray)
+          setLoading(false);
+        });
+        return () => data;
+      } catch (error) {
+        console.log(error)
+        setLoading(false)
+      }
+    }
+
+    useEffect(()=>{
+      getProductData();
+    },[])
 
   return (
-    <myContext.Provider value={{bar,setBar,barOnOff,item , Materials , setMaterials,Products , setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections,ragiser,setRagister,number, logOut,setNumber,lastName,loading,setLoading,loginUser, setLastName,firstName, setFirstName,email, setEmail,password, setPassword,creactUser,user,setUser,setCategory,setPrice,setDescription,setTitle,setImg,setImgUrl,img,catagory,price,description,title,createProduct,imgUrl,section,setSection,editProduct,setEditeProduct}}>
+    <myContext.Provider value={{bar,setBar,barOnOff,item , Materials , setMaterials,Products , setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections,ragiser,setRagister,number, logOut,setNumber,lastName,loading,setLoading,loginUser, setLastName,firstName, setFirstName,email, setEmail,password, setPassword,creactUser,user,setUser,setCategory,setPrice,setDescription,setTitle,setImg,setImgUrl,img,catagory,price,description,title,createProduct,imgUrl,section,setSection,editProduct,setEditeProduct,product}}>
         {props.children}
     </myContext.Provider>
   )
