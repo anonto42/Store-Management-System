@@ -1,13 +1,14 @@
 import { useContext } from "react"
 import { CiSettings } from "react-icons/ci"
-import myContext from "../../Context/myContext"
+import myContext from '../../../Context/myContext'
 
-const PromoSSSS =()=>{
-    const {Materials,Packaging , setPackaging , setMaterials} = useContext(myContext)
+const NarltemAfterLg =()=>{
+    const {item,setMaterials} = useContext(myContext);
+    console.log(item)
     return(
-        <>
-            <div onMouseLeave={()=>{setPackaging(false)}}  
-        onMouseEnter={()=> setPackaging(true) } className='hidden lg:flex xl:w-[85%] xl:mx-[7.5%] w-full absolute bottom-0 bg-[#F8F7F5] left-0 h-[] top-[158px] z-[999]'>
+        <> 
+            <div onMouseLeave={()=>{setMaterials(false)}}  
+        onMouseEnter={()=> setMaterials(true) } className='hidden lg:flex xl:w-[85%] xl:mx-[9.5%] w-full absolute ottom-0 bg-[#F8F7F5] left-0 top-[114px] z-[50]'>
             <div className='w-full h-full'>
             <div className='text-sm m-7 '>
                 <div className='text-xl font-semibold text-[#126CBA] mb-[7px]'>
@@ -140,4 +141,4 @@ const PromoSSSS =()=>{
     )
 }
 
-export default PromoSSSS
+export default NarltemAfterLg

@@ -6,18 +6,18 @@ import { FiBox } from 'react-icons/fi'
 import { GiKnightBanner } from 'react-icons/gi'
 import { MdInsertPageBreak, MdOutlineKeyboardArrowRight, MdOutlineShoppingBag } from 'react-icons/md'
 import { PiPackageLight, PiSliders, PiSmileySticker, PiTShirtLight } from 'react-icons/pi'
-import myContext from '../../Context/myContext'
+import myContext from '../../../Context/myContext'
 
 const AllProduct = () => {
     const {setProducts,Products} = useContext(myContext);
      
   return (
-    <div >
+    <div className=''>
         <div 
         onMouseEnter={()=> setProducts(true)}
         onMouseLeave={()=>{setProducts(false)}}  
-     className='h-full left-0 top-[160px] pt-5 z-[999] absolute hidden shadow-lg shadow-[#100f0f58] lg:block border border-[#E1E1E1] lg:w-[25%] mr-6 bg-[#F8F7F5]'>
-                <div className='text-[15px] hover:bg-[#EBF1F1] flex justify-start items-center pl-5 mb-4'>
+     className='h-auto left-0 top-[113px] pt-5  absolute hidden shadow-lg shadow-[#100f0f58] lg:block border border-[#E1E1E1] lg:w-[25%] mr-6 bg-[#F8F7F5]'>
+                <div className='text-[15px] flex justify-start items-center pl-5 mb-4'>
                 <CiSettings className='text-2xl text-[#9F9F9F]'/>
                 <p>Custom Product Builder</p>
                 </div>

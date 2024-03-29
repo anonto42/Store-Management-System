@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 import EditeProducts from '../Admin/Products/EditeProducts';
 
 const Accout = () => {
-  const{logOut,loading,setCategory,setPrice,setDescription,setTitle,setImg,imgUrl,setImgUrl,img,catagory,price,description,title,setLoading,createProduct,section,setSection,editProduct,setEditeProduct,product } = useContext(myContext);
+  const{logOut,loading,setCategory,setPrice,setDescription,setTitle,setImg,imgUrl,setImgUrl,img,catagory,price,description,title,setLoading,createProduct,section,setSection,editProduct,setEditeProduct,product,deletProduct } = useContext(myContext);
   const user = JSON.parse(localStorage.getItem('user'));
 
   const imageUpload =async()=>{
@@ -247,7 +247,7 @@ const Accout = () => {
                           </a>
                         </div>
                         <div className='w-full h-[50%] bg-red-400 flex justify-center items-center text-3xl'>
-                          <a href="" onClick={()=>{}}>
+                          <a href="" onClick={()=>deletProduct()}>
                             <MdDeleteForever className='' />
                           </a>
                         </div>

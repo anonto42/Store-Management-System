@@ -1,24 +1,39 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { FaBars } from "react-icons/fa";
 import SideBar from '../SideBar/SideBar';
 import { GrCart } from "react-icons/gr";
 import myContext from '../../Context/myContext';
 import { CiSearch } from 'react-icons/ci';
-import NarltemAfterLg from '../NevBerLetterxl/NarItemAfterLg';
-import PackagingCompo from '../NevBerLetterxl/PackagingCompo';
-import LabelsSSSSS from '../NevBerLetterxl/LabelsSSSSS';
-import BannerSSSS from '../NevBerLetterxl/BannerSSSS';
-import PromoSSSS from '../NevBerLetterxl/PromoSSSS';
-import CollectionSSSS from '../NevBerLetterxl/CollectionSSSS';
-import AllProduct from '../NevBerLetterxl/AllProduct';
+import AllProduct from './NavBerComponents/AllProduct';
+import NarltemAfterLg from './NavBerComponents/NarItemAfterLg';
+import PackagingCompo from './NavBerComponents/PackagingCompo';
+import LabelsSSSSS from './NavBerComponents/LabelsSSSSS';
+import BannerSSSS from './NavBerComponents/BannerSSSS';
+import PromoSSSS from './NavBerComponents/PromoSSSS';
+import CollectionSSSS from './NavBerComponents/CollectionSSSS';
 
 const Naveber = () => {
   
   const usr = JSON.parse(localStorage.getItem("user"));
 
-  const {bar,barOnOff,Materials,user, setMaterials,Products , setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections} = useContext(myContext);
+  const {bar,barOnOff,Materials, setMaterials,Products,item , setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections} = useContext(myContext);
+
+  const [maneuBar,setManeuBar] = useState(false)
+
+  useEffect(()=>{
+    window.addEventListener("scroll",()=>{
+      window.scrollY > 0 ? setManeuBar(true) : setManeuBar(false);
+
+      return ()=>{
+        window.removeEventListener('scroll',()=>{
+          window.scrollY > 0 ? setManeuBar(true) : setManeuBar(false);
+        })
+      }
+    })
+  },[])
+
   return (
-    <div className='w-full mt-3 lg:mt-0 pb-[90px] lg:pb-[100px] h-[50px] bg-[#ffff]  flex justify-between p-4 xl:px-[8%] items-center text-3xl'>
+    <div className='w-full mt-3 lg:mt-0 pb-[90px] shadow-md lg:pb-[48px] h-[0px] bg-[#ffff] sticky top-0 flex justify-between p-4 xl:px-[8%] items-center text-3xl z-50'>
       {bar && <SideBar/>}
       {/* main bar */}
       <div className='cursor-pointer lg:hidden'><FaBars onClick={()=> barOnOff()} /></div>
@@ -56,25 +71,25 @@ const Naveber = () => {
       </div>
       {/* destop */}
 
-      <div className='lg:flex hidden w-full h-14 border-t border-[#3333] absolute left-0 right-0 top-[102px] text-[15px] justify-between items-center text-[#126CBA] font-semibold px-[3%] xl:px-[10%] 2xl:px-[13%]'>
-        <div className='h-[110%] mt-1 cursor-pointer pt-2 border border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' onMouseLeave={()=>{setProducts(false)}}  
+      <div className={  maneuBar ? '-top-[150px] duration-200 ease-in lg:flex hidden w-full h-14 border-t shadow-md border-[#3333] absolute left-0 right-0 bg-white text-[15px] justify-between items-center text-[#126CBA] font-semibold px-[3%] xl:px-[10%] 2xl:px-[13%]' : 'duration-100 ease-in top-[58px] lg:flex hidden w-full h-14 border-t shadow-md border-[#3333] absolute left-0 right-0 bg-white text-[15px] justify-between items-center text-[#126CBA] font-semibold px-[3%] xl:px-[10%] 2xl:px-[13%]'}>
+        <div className='h-[100%] cursor-pointer pt-2 border-l border-r px-[4px] border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' onMouseLeave={()=>{setProducts(false)}}  
         onMouseEnter={()=> setProducts(true) }>View All Products</div>
-        <div className='h-[110%] mt-1 cursor-pointer pt-2 border border-transparent hover:bg-[#f8f7f5] hover:border-[#3333] b-5' 
+        <div className='h-[100%] cursor-pointer pt-2 border-l border-r px-[4px] border-transparent hover:bg-[#f8f7f5] hover:border-[#3333] b-5' 
         onMouseLeave={()=>{setMaterials(false)}}  
         onMouseEnter={()=> setMaterials(true) }>Marketing Materials</div>
-        <div className='h-[110%] mt-1 cursor-pointer pt-2 border border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' 
+        <div className='h-[100%] cursor-pointer pt-2 border-l border-r px-[4px] border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' 
         onMouseLeave={()=>{setPackaging(false)}}  
         onMouseEnter={()=> setPackaging(true) }>Boxes & Packaging</div>
-        <div className='h-[110%] mt-1 cursor-pointer pt-2 border border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]'
+        <div className='h-[100%] cursor-pointer pt-2 border-l border-r px-[4px] border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]'
         onMouseEnter={()=>setLabels(true)}
         onMouseLeave={()=>setLabels(false)}>Stickets & Labels</div>
-        <div className='h-[110%] mt-1 cursor-pointer pt-2 border border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' 
+        <div className='h-[100%] cursor-pointer pt-2 border-l border-r px-[4px] border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' 
         onMouseEnter={()=>setBanners(true)}
         onMouseLeave={()=>setBanners(false)}>Signs & Banners</div>
-        <div className='h-[110%] mt-1 cursor-pointer pt-2 border border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' 
+        <div className='h-[100%] cursor-pointer pt-2 border-l border-r px-[4px] border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' 
         onMouseEnter={()=>setPromo(true)}
         onMouseLeave={()=>setPromo(false)}>Apparel & Promo</div>
-        <div className='h-[110%] mt-1 cursor-pointer pt-2 border border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' 
+        <div className='h-[100%] cursor-pointer pt-2 border-l border-r px-[4px] border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' 
         onMouseEnter={()=>setCollections(true)}
         onMouseLeave={()=>setCollections(false)}>Featured Collections</div>
       </div>

@@ -3,7 +3,7 @@ import myContext from './myContext';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
 import { toast } from 'react-toastify';
 import { FireDB, StorageDB, auth } from '../FireBase/FireBase';
-import { Firestore, Timestamp, addDoc, collection, doc, onSnapshot, query, setDoc } from 'firebase/firestore';
+import { Firestore, Timestamp, addDoc, collection, deleteDoc, doc, onSnapshot, query, setDoc } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { v4 } from 'uuid';
 
@@ -235,7 +235,7 @@ const MyState = (props) => {
 
   const [product,setProduct] = useState([]);
 
-  console.log(product)
+  // console.log(product)
 
     // get product data
     const getProductData = async () => {
@@ -263,8 +263,23 @@ const MyState = (props) => {
       getProductData();
     },[])
 
+    // delete product
+
+    const deletProduct = async (item)=>{
+      try {
+        setLoading(true);
+        await deleteDoc(doc(FireDB,'products',item.id));
+        toast.success("Product deleted successfully");
+        getProductData();
+        setLoading(false);
+      } catch (error) {
+        toast.error(error.message);
+        setLoading(false);
+      }
+    }
+
   return (
-    <myContext.Provider value={{bar,setBar,barOnOff,item , Materials , setMaterials,Products , setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections,ragiser,setRagister,number, logOut,setNumber,lastName,loading,setLoading,loginUser, setLastName,firstName, setFirstName,email, setEmail,password, setPassword,creactUser,user,setUser,setCategory,setPrice,setDescription,setTitle,setImg,setImgUrl,img,catagory,price,description,title,createProduct,imgUrl,section,setSection,editProduct,setEditeProduct,product}}>
+    <myContext.Provider value={{bar,setBar,barOnOff,item , Materials , setMaterials,Products , setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections,ragiser,setRagister,number, logOut,setNumber,lastName,loading,setLoading,loginUser, setLastName,firstName, setFirstName,email, setEmail,password, setPassword,creactUser,user,setUser,setCategory,setPrice,setDescription,setTitle,setImg,setImgUrl,img,catagory,price,description,title,createProduct,imgUrl,section,setSection,editProduct,setEditeProduct,product,deletProduct}}>
         {props.children}
     </myContext.Provider>
   )
