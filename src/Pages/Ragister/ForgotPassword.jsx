@@ -6,8 +6,8 @@ const ForgotPassword = () => {
         window.location.href = "/";
       }
   return (
-    <div className='flex justify-center w-full h-full'>
-      <div className='top-0 mt-14 shadow-2xl drop-shadow-2xl shadow-black absolute sm:w-[640px] w-full bg-white' >
+    <div className='flex justify-center w-full h-[50vh]'>
+      <div className='mt-14 shadow-2xl drop-shadow-2xl shadow-black absolute sm:w-[640px] w-full bg-white' >
           <div className='w-full h-10 px-6 flex justify-end items-center text-2xl'>
             <MdCancel onClick={returnHome} className=' hover:text-gray-400 cursor-pointer' />
           </div>

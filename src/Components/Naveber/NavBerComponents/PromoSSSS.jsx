@@ -21,7 +21,7 @@ const PromoSSSS =()=>{
         <>
             <div onMouseLeave={()=>{setPackaging(false)}}  
         onMouseEnter={()=> setPackaging(true) } 
-        className={top? 'hidden lg:flex xl:w-[85%] xl:mx-[7.5%] w-full absolute bg-[#F8F7F5] left-0 overflow-auto top-[68px]  h-[85vh] z-[50]' :'hidden lg:flex xl:w-[85%] xl:mx-[7.5%] w-full absolute bg-[#F8F7F5] left-0 h-[85vh] top-[114px] z-[50]'}>
+        className={top? 'hidden lg:flex xl:w-[85%] xl:mx-[7.5%] w-full absolute bg-[#F8F7F5] left-0 overflow-auto top-[68px]  h-[85vh]k z-[50]' :'hidden lg:flex xl:w-[85%] xl:mx-[7.5%] w-full absolute bg-[#F8F7F5] left-0 h-[85vh] top-[114px] z-[50]'}>
             <div className='w-full h-full'>
             <div className='text-sm m-7 '>
                 <div className='text-xl font-semibold text-[#126CBA] mb-[7px]'>

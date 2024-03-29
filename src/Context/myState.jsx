@@ -6,6 +6,7 @@ import { FireDB, StorageDB, auth } from '../FireBase/FireBase';
 import { Firestore, Timestamp, addDoc, collection, deleteDoc, doc, onSnapshot, query, setDoc } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { v4 } from 'uuid';
+import env from 'react-dotenv';
 
 const MyState = (props) => {
 

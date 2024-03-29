@@ -3,6 +3,7 @@ import { getAnalytics } from "firebase/analytics";
 import {getStorage} from "firebase/storage";
 import {getFirestore} from "firebase/firestore";
 import { getAuth } from "firebase/auth";
+import env from "react-dotenv";
 
 
 const firebaseConfig = {

@@ -82,7 +82,7 @@ const Naveber = () => {
             <div></div>
           </div>
         </div>
-      <div className='relative lg:mt-7'>
+      <div className='relative lg:mt-7 -mr-[24%] sm:-mr-[32%] md:-mr-[36%] lg:-mr-0'>
         <a href="/cart"><GrCart title="Cart's"/></a>
         <div className=' absolute text-xs w-4 h-4 flex justify-center items-center rounded-full bg-red-700 text-white top-[46px] cursor-help -right-1 -mt-[54px]'>{1}</div>
       </div>
