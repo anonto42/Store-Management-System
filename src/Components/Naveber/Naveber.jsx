@@ -32,10 +32,32 @@ const Naveber = () => {
     })
   },[])
 
+
   return (
-    <div className='w-full mt-3 lg:mt-0 pb-[90px] shadow-md lg:pb-[48px] h-[0px] bg-[#ffff] sticky top-0 flex justify-between p-4 xl:px-[8%] items-center text-3xl z-50'>
+    <div className='w-full pt-8 lg:pt-4 pb-[90px] shadow-md lg:pb-[48px] h-[0px] bg-[#ffff] sticky top-0 flex justify-between p-4 xl:px-[8%] items-center text-3xl z-50'>
+      {/* main bar */}<div className={  maneuBar ? '-top-[0px] opacity-0 duration-200 ease-in lg:flex hidden w-full h-14 border-t shadow-md border-[#3333] absolute left-0 right-0 bg-white text-[15px] justify-between items-center text-[#126CBA] font-semibold px-[3%] xl:px-[10%] 2xl:px-[13%]' : 'duration-100 ease-in top-[58px] lg:flex hidden w-full h-14 border-t shadow-md border-[#3333] absolute left-0 right-0 bg-white text-[15px] justify-between items-center text-[#126CBA] font-semibold px-[3%] xl:px-[10%] 2xl:px-[13%]'}>
+        <div className='h-[100%] cursor-pointer pt-2 border-l border-r px-[4px] border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' onMouseLeave={()=>{setProducts(false)}}  
+        onMouseEnter={()=> setProducts(true) }>View All Products</div>
+        <div className='h-[100%] cursor-pointer pt-2 border-l border-r px-[4px] border-transparent hover:bg-[#f8f7f5] hover:border-[#3333] b-5' 
+        onMouseLeave={()=>{setMaterials(false)}}  
+        onMouseEnter={()=> setMaterials(true) }>Marketing Materials</div>
+        <div className='h-[100%] cursor-pointer pt-2 border-l border-r px-[4px] border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' 
+        onMouseLeave={()=>{setPackaging(false)}}  
+        onMouseEnter={()=> setPackaging(true) }>Boxes & Packaging</div>
+        <div className='h-[100%] cursor-pointer pt-2 border-l border-r px-[4px] border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]'
+        onMouseEnter={()=>setLabels(true)}
+        onMouseLeave={()=>setLabels(false)}>Stickets & Labels</div>
+        <div className='h-[100%] cursor-pointer pt-2 border-l border-r px-[4px] border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' 
+        onMouseEnter={()=>setBanners(true)}
+        onMouseLeave={()=>setBanners(false)}>Signs & Banners</div>
+        <div className='h-[100%] cursor-pointer pt-2 border-l border-r px-[4px] border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' 
+        onMouseEnter={()=>setPromo(true)}
+        onMouseLeave={()=>setPromo(false)}>Apparel & Promo</div>
+        <div className='h-[100%] cursor-pointer pt-2 border-l border-r px-[4px] border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' 
+        onMouseEnter={()=>setCollections(true)}
+        onMouseLeave={()=>setCollections(false)}>Featured Collections</div>
+      </div>
       {bar && <SideBar/>}
-      {/* main bar */}
       <div className='cursor-pointer lg:hidden'><FaBars onClick={()=> barOnOff()} /></div>
         <div className='lg:w-full lg:h-full flex '>
          <a href="/">
@@ -71,28 +93,7 @@ const Naveber = () => {
       </div>
       {/* destop */}
 
-      <div className={  maneuBar ? '-top-[150px] duration-200 ease-in lg:flex hidden w-full h-14 border-t shadow-md border-[#3333] absolute left-0 right-0 bg-white text-[15px] justify-between items-center text-[#126CBA] font-semibold px-[3%] xl:px-[10%] 2xl:px-[13%]' : 'duration-100 ease-in top-[58px] lg:flex hidden w-full h-14 border-t shadow-md border-[#3333] absolute left-0 right-0 bg-white text-[15px] justify-between items-center text-[#126CBA] font-semibold px-[3%] xl:px-[10%] 2xl:px-[13%]'}>
-        <div className='h-[100%] cursor-pointer pt-2 border-l border-r px-[4px] border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' onMouseLeave={()=>{setProducts(false)}}  
-        onMouseEnter={()=> setProducts(true) }>View All Products</div>
-        <div className='h-[100%] cursor-pointer pt-2 border-l border-r px-[4px] border-transparent hover:bg-[#f8f7f5] hover:border-[#3333] b-5' 
-        onMouseLeave={()=>{setMaterials(false)}}  
-        onMouseEnter={()=> setMaterials(true) }>Marketing Materials</div>
-        <div className='h-[100%] cursor-pointer pt-2 border-l border-r px-[4px] border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' 
-        onMouseLeave={()=>{setPackaging(false)}}  
-        onMouseEnter={()=> setPackaging(true) }>Boxes & Packaging</div>
-        <div className='h-[100%] cursor-pointer pt-2 border-l border-r px-[4px] border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]'
-        onMouseEnter={()=>setLabels(true)}
-        onMouseLeave={()=>setLabels(false)}>Stickets & Labels</div>
-        <div className='h-[100%] cursor-pointer pt-2 border-l border-r px-[4px] border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' 
-        onMouseEnter={()=>setBanners(true)}
-        onMouseLeave={()=>setBanners(false)}>Signs & Banners</div>
-        <div className='h-[100%] cursor-pointer pt-2 border-l border-r px-[4px] border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' 
-        onMouseEnter={()=>setPromo(true)}
-        onMouseLeave={()=>setPromo(false)}>Apparel & Promo</div>
-        <div className='h-[100%] cursor-pointer pt-2 border-l border-r px-[4px] border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' 
-        onMouseEnter={()=>setCollections(true)}
-        onMouseLeave={()=>setCollections(false)}>Featured Collections</div>
-      </div>
+      
       {
         Products && <AllProduct/>
       }
