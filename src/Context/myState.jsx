@@ -215,7 +215,7 @@ const MyState = (props) => {
     }
     try {
       if (product.title == null || product.price == null || product.catagory == null || product.description == null) {
-        return toast.error('Please fill all fields')
+        return toast.error("Error")
       }
       const productRef = collection(FireDB,'products')
       await addDoc(productRef,product)

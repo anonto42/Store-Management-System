@@ -1,13 +1,31 @@
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import { CiSettings } from "react-icons/ci"
 import myContext from "../../../Context/myContext"
 
 const PackagingCompo =()=>{
-    const {Materials,Packaging , setPackaging , setMaterials} = useContext(myContext)
+    const {setPackaging } = useContext(myContext)
+
+    const[Top,setTTop] = useState();
+
+    useEffect(()=>{
+        window.addEventListener("scroll",()=>{
+          window.scrollY > 0 ? setTTop(true) : setTTop(false);
+    
+          return ()=>{
+            window.removeEventListener('scroll',()=>{
+              window.scrollY > 0 ? setTTop(true) : setTTop(false);
+            })
+          }
+        })
+      },[])
+
+
     return(
         <> 
-            <div onMouseLeave={()=>{setPackaging(false)}}  
-        onMouseEnter={()=> setPackaging(true) } className='hidden lg:flex xl:w-[85%] xl:mx-[7.5%] w-full absolute bg-[#F8F7F5] left-0 h-[] top-[114px] z-[999]'>
+            <div 
+            onMouseLeave={()=>{setPackaging(false)}}  
+            onMouseEnter={()=> setPackaging(true) } 
+            className={ Top ? 'hidden lg:flex xl:w-[85%] xl:mx-[7.5%] w-full absolute bg-[#F8F7F5] left-0 top-[68px] overflow-auto h-[85vh] z-[55]' : 'hidden lg:flex xl:w-[85%] xl:mx-[7.5%] w-full absolute bg-[#F8F7F5] left-0 overflow-auto h-[85vh] top-[114px] z-[55]'}>
             <div className='w-full h-full'>
             <div className='text-sm m-7 '>
                 <div className='text-xl font-semibold text-[#126CBA] mb-[7px]'>

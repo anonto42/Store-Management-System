@@ -16,8 +16,8 @@ const Naveber = () => {
   
   const usr = JSON.parse(localStorage.getItem("user"));
 
-  const {bar,barOnOff,Materials, setMaterials,Products,item , setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections} = useContext(myContext);
-
+  const {bar,barOnOff,Materials, setMaterials,Products,item , setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections} = useContext(myContext);  
+  
   const [maneuBar,setManeuBar] = useState(false)
 
   useEffect(()=>{
@@ -34,7 +34,7 @@ const Naveber = () => {
 
 
   return (
-    <div className='w-full pt-8 lg:pt-4 pb-[90px] shadow-md lg:pb-[48px] h-[0px] bg-[#ffff] sticky top-0 flex justify-between p-4 xl:px-[8%] items-center text-3xl z-50'>
+    <div className='w-full pt-8 lg:pt-5 pb-[90px] shadow-md lg:pb-[48px] h-[0px] bg-[#ffff] sticky top-0 flex justify-between p-4 xl:px-[8%] items-center text-3xl z-50'>
       {/* main bar */}<div className={  maneuBar ? '-top-[0px] opacity-0 duration-200 ease-in lg:flex hidden w-full h-14 border-t shadow-md border-[#3333] absolute left-0 right-0 bg-white text-[15px] justify-between items-center text-[#126CBA] font-semibold px-[3%] xl:px-[10%] 2xl:px-[13%]' : 'duration-100 ease-in top-[58px] lg:flex hidden w-full h-14 border-t shadow-md border-[#3333] absolute left-0 right-0 bg-white text-[15px] justify-between items-center text-[#126CBA] font-semibold px-[3%] xl:px-[10%] 2xl:px-[13%]'}>
         <div className='h-[100%] cursor-pointer pt-2 border-l border-r px-[4px] border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' onMouseLeave={()=>{setProducts(false)}}  
         onMouseEnter={()=> setProducts(true) }>View All Products</div>
@@ -93,28 +93,30 @@ const Naveber = () => {
       </div>
       {/* destop */}
 
+      <div>
+        {
+          Products && <AllProduct/>
+        }
+        {
+          Materials && <NarltemAfterLg/>
+        }
+        {
+          Packaging && <PackagingCompo />
+        }
+        {
+          Labels && <LabelsSSSSS/>
+        }
+        {
+          Banners && <BannerSSSS />
+        }
+        {
+          Promo && <PromoSSSS/>
+        }
+        {
+          Collections && <CollectionSSSS/>
+        }
+      </div>
       
-      {
-        Products && <AllProduct/>
-      }
-      {
-        Materials && <NarltemAfterLg/>
-      }
-      {
-        Packaging && <PackagingCompo />
-      }
-      {
-        Labels && <LabelsSSSSS/>
-      }
-      {
-        Banners && <BannerSSSS />
-      }
-      {
-        Promo && <PromoSSSS/>
-      }
-      {
-        Collections && <CollectionSSSS/>
-      }
     </div>
   )
 }

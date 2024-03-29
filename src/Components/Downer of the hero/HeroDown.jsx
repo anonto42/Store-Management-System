@@ -6,15 +6,15 @@ import { MdAddCircleOutline, MdInsertPageBreak, MdOutlineKeyboardArrowRight, MdO
 import { GiKnightBanner } from "react-icons/gi";
 import { FiBox } from "react-icons/fi";
 import { BsCardList } from 'react-icons/bs';
-import TopSellerBox from './TopSellerBox';
-import PoliticalCampaing from './PoliticalCampaing';
-import UpdateProduct from './New&UpdatePro';
-import BestDeals from './BestDeals';
-import PrintChoice from './PrintChoice';
-import VideoReff from './VideoReff';
-import Services from './Services';
-import PAbout from './PAbout';
-import ReadUP from './ReadUP';
+import TopSellerBox from '../AlllOtherComponents/TopSellerBox';
+import PoliticalCampaing from '../AlllOtherComponents/PoliticalCampaing';
+import UpdateProduct from '../AlllOtherComponents/New&UpdatePro';
+import BestDeals from '../AlllOtherComponents/BestDeals';
+import PrintChoice from '../AlllOtherComponents/PrintChoice';
+import VideoReff from '../AlllOtherComponents/VideoReff';
+import Services from '../AlllOtherComponents/Services';
+import PAbout from '../AlllOtherComponents/PAbout';
+import ReadUP from '../AlllOtherComponents/ReadUP';
 
 const HeroDown = () => {
   var i = {

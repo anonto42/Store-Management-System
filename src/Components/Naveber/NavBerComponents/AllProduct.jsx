@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { BsCardList } from 'react-icons/bs'
 import { CiMap, CiSettings } from 'react-icons/ci'
 import { FaIdCard, FaIdCardAlt } from 'react-icons/fa'
@@ -10,13 +10,27 @@ import myContext from '../../../Context/myContext'
 
 const AllProduct = () => {
     const {setProducts,Products} = useContext(myContext);
+
+    const[ttop,setTTop] = useState();
+
+    useEffect(()=>{
+        window.addEventListener("scroll",()=>{
+          window.scrollY > 0 ? setTTop(true) : setTTop(false);
+    
+          return ()=>{
+            window.removeEventListener('scroll',()=>{
+              window.scrollY > 0 ? setTTop(true) : setTTop(false);
+            })
+          }
+        })
+      },[])
      
   return (
     <div className=''>
         <div 
         onMouseEnter={()=> setProducts(true)}
         onMouseLeave={()=>{setProducts(false)}}  
-     className='h-auto left-0 top-[113px] pt-5  absolute hidden shadow-lg shadow-[#100f0f58] lg:block border border-[#E1E1E1] lg:w-[25%] mr-6 bg-[#F8F7F5]'>
+     className={ ttop ? 'left-0 top-[68px] h-auto pt-5  absolute hidden shadow-lg shadow-[#100f0f58] lg:block border border-[#E1E1E1] lg:w-[25%] mr-6 bg-[#F8F7F5]' : 'h-auto left-0 top-[113px] pt-5  absolute hidden shadow-lg shadow-[#100f0f58] lg:block border border-[#E1E1E1] lg:w-[25%] mr-6 bg-[#F8F7F5]'}>
                 <div className='text-[15px] flex justify-start items-center pl-5 mb-4'>
                 <CiSettings className='text-2xl text-[#9F9F9F]'/>
                 <p>Custom Product Builder</p>

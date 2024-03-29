@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 
 const Cart = (props) => {
-    const [state,setState] = useState(true);
-    // console.log(val)
   return (
     <a href='' className=' w-auto h-[300px] relative'>
         <div
