@@ -1,10 +1,6 @@
 import React from 'react'
-import {Swiper,SwiperSlide} from 'swiper/react';
-import { Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import Slide from '../Slider/Slider'
+import CatCart from '../Cart/CatCart/CatCart'
 
 
 const TopSellerBox = () => {
@@ -52,57 +48,19 @@ const TopSellerBox = () => {
   ]
 
   return (
-    <div className='w-[full] px-2 lg:px-9 mt-2 mb-3'>
+    <div className='p-3 lg:p-0'>
       <h1 className='text-xl mb-3 sm:text-2xl md:text-2xl font-bold'>Top Sellers</h1>
-      <Swiper 
-      spaceBetween={10}
-      slidesPerView={4}
-      pagination={{
-        clickable:true
-      }}
-      modules={[]}
-      className='mySwiper'
-      >
-        {
-          data.map((item,index)=>{
-            return(
-              <a href="" key={index}>
-                <SwiperSlide className='hover:scale-105'> 
-                  <img className='' src={item.img}  />
-                  <h1 className='text-xl font-semibold'>{item.title}</h1>
-                </SwiperSlide>
-              </a>
-            )
-          })
-        }
-      </Swiper>
+      <div className='my-6'>
+        <Slide slidesToShow={4} >
+          {
+            data.map((data,index)=><CatCart item={data} key={index} />  )
+          }
+        </Slide>
       </div>
+    </div>
   )
 }
 
 export default TopSellerBox
 
 
-
-
-
-{/* <div className='w-[100%] h-[220px] sm:h-[350px] mb-[30px] md:pl-6 sm:pl-4 pl-2'>
-<h1 className='text-xl sm:text-2xl md:text-2xl font-bold'>Top Sellers</h1>
-      <div className='swiper w-[300px] h-[500px]'>
-        <div className='swiper-wrapper card_slider'>
-          {
-            data.map((item,index)=>{
-              return(
-                <div className='swiper-slide '>
-                  <div className='img_box'>
-                    <img src={item.img} className='xyz w-full h-full ml-[14px] ' />
-                    <h1 className='p-1 font-semibold absolute m-[3px] text-sm md:text-xl'>{item.title}</h1>
-                  </div>
-                </div>
-                
-              )
-            })
-          }
-          </div>
-      </div>
-</div> */}
