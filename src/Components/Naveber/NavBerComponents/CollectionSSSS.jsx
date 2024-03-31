@@ -3,7 +3,7 @@ import { CiSettings } from "react-icons/ci"
 import myContext from "../../../Context/myContext"
 
 const CollectionSSSS =()=>{
-    const {Materials,Packaging , setPackaging , setMaterials} = useContext(myContext)
+    const {setCollections} = useContext(myContext)
     const[top,setTop] = useState();
 
     useEffect(()=>{
@@ -19,13 +19,13 @@ const CollectionSSSS =()=>{
       },[])
     return(
         <>
-            <div onMouseLeave={()=>{setPackaging(false)}}  
-        onMouseEnter={()=> setPackaging(true) } 
-        className={top ? 'hidden lg:flex xl:w-[85%] xl:mx-[7.5%] w-full absolute bg-[#F8F7F5] left-0 overflow-auto top-[68px] z-[50]' : 'hidden h-[85vh] lg:flex xl:w-[85%] xl:mx-[7.5%] w-full absolute bg-[#F8F7F5] left-0 top-[114px] z-[50]'}>
+            <div onMouseLeave={()=>{setCollections(false)}}  
+        onMouseEnter={()=> setCollections(true) } 
+        className={top ? 'hidden lg:flex xl:w-[85%] xl:mx-[7.5%] h-[60vh] w-full absolute bg-[#F8F7F5] left-0 top-[68px] z-[50]' : 'hidden h-[65vh] lg:flex xl:w-[85%] xl:mx-[7.5%] w-full absolute bg-[#F8F7F5] left-0 top-[114px] z-[50]'}>
             <div className='w-full h-full'>
             <div className='text-sm m-7 '>
                 <div className='text-xl font-semibold text-[#126CBA] mb-[7px]'>
-                <h1>Business Cards</h1>
+                <h1>Trade Show & Events</h1>
                 </div>
                 <div className='border-t pt-4'>
                 <h3 className='hover:text-[#008338] cursor-pointer mb-2'>Standar Business Cards</h3>
@@ -35,28 +35,13 @@ const CollectionSSSS =()=>{
                 <h3 className='hover:text-[#008338] cursor-pointer mb-2'>Painted Edge Business Cards</h3>
                 <h3 className='hover:text-[#008338] cursor-pointer mb-2'>Plastic Business Cards</h3>
                 <h3 className='hover:text-[#008338] cursor-pointer mb-2'>All Business Cards</h3>
-                </div>
-            </div>
-            <div className=' text-sm m-7' >
-                <div className='text-xl font-semibold mb-[7px]'>
-                <h1>Brochures & Flyers</h1>
-                </div>
-                <div className='border-t pt-4'>
-                <h3 className='hover:text-[#008338] cursor-pointer mb-2'>Brochures</h3>
-                <h3 className='hover:text-[#008338] cursor-pointer mb-2'>Flyers</h3>
-                <h3 className='hover:text-[#008338] cursor-pointer mb-2'>Club Flyers</h3>
-                <h3 className='hover:text-[#008338] cursor-pointer mb-2'>Die-Cut Flyers</h3>
-                <h3 className='hover:text-[#008338] cursor-pointer mb-2'>Leaflets</h3>
-                <h3 className='hover:text-[#008338] cursor-pointer mb-2'>Mini Brochures</h3>
-                <h3 className='hover:text-[#008338] cursor-pointer mb-2'>Mailing Brochures</h3>
-                <h3 className='hover:text-[#008338] cursor-pointer mb-2'>Raised Spot UV Flyers</h3>
                 </div>
             </div>
             </div>
             <div className='w-full h-full'>
             <div className=' text-sm m-7 '>
                 <div className='text-xl font-semibold text-[#126CBA] mb-[7px]'>
-                <h1>Business Cards</h1>
+                <h1>Featured Collection</h1>
                 </div>
                 <div className='border-t pt-4'>
                 <h3 className='hover:text-[#008338] cursor-pointer mb-2'>Standar Business Cards</h3>
@@ -66,83 +51,6 @@ const CollectionSSSS =()=>{
                 <h3 className='hover:text-[#008338] cursor-pointer mb-2'>Painted Edge Business Cards</h3>
                 <h3 className='hover:text-[#008338] cursor-pointer mb-2'>Plastic Business Cards</h3>
                 <h3 className='hover:text-[#008338] cursor-pointer mb-2'>All Business Cards</h3>
-                </div>
-            </div>
-            <div className=' text-sm m-7' >
-                <div className='text-xl font-semibold mb-[7px]'>
-                <h1>Brochures & Flyers</h1>
-                </div>
-                <div className='border-t pt-4'>
-                <h3 className='hover:text-[#008338] mb-2'>Brochures</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Flyers</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Club Flyers</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Die-Cut Flyers</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Leaflets</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Mini Brochures</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Mailing Brochures</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Raised Spot UV Flyers</h3>
-                </div>
-            </div>
-            </div>
-            <div className='w-full h-full'>
-            <div className='columns-1 text-sm m-7'>
-                <div className='text-xl font-semibold text-[#126CBA] mb-[7px]'>
-                <h1>Business Cards</h1>
-                </div>
-                <div className='border-t pt-4'>
-                <h3 className='hover:text-[#008338] mb-2'>Standar Business Cards</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Die-Cut Business Cards</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Foil Business Cards</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Folded Business Cards</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Painted Edge Business Cards</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Plastic Business Cards</h3>
-                <h3 className='hover:text-[#008338] mb-2'>All Business Cards</h3>
-                </div>
-            </div>
-            <div className='columns-1 text-sm m-7]' >
-                <div className='text-xl font-semibold mb-[7px]'>
-                <h1>Brochures & Flyers</h1>
-                </div>
-                <div className='border-t pt-4'>
-                <h3 className='hover:text-[#008338] mb-2'>Brochures</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Flyers</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Club Flyers</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Die-Cut Flyers</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Leaflets</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Mini Brochures</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Mailing Brochures</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Raised Spot UV Flyers</h3>
-                </div>
-            </div>
-            </div>
-            <div className='w-full h-full'>
-            <div className='columns-1 text-sm m-7'>
-                <div className='text-xl font-semibold text-[#126CBA] mb-[7px]'>
-                <h1>Business Cards</h1>
-                </div>
-                <div className='border-t pt-4'>
-                <h3 className='hover:text-[#008338] mb-2'>Standar Business Cards</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Die-Cut Business Cards</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Foil Business Cards</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Folded Business Cards</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Painted Edge Business Cards</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Plastic Business Cards</h3>
-                <h3 className='hover:text-[#008338] mb-2'>All Business Cards</h3>
-                </div>
-            </div>
-            <div className='columns-1 text-sm m-7' >
-                <div className='text-xl font-semibold mb-[7px]'>
-                <h1>Brochures & Flyers</h1>
-                </div>
-                <div className='border-t pt-4'>
-                <h3 className='hover:text-[#008338] mb-2'>Brochures</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Flyers</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Club Flyers</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Die-Cut Flyers</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Leaflets</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Mini Brochures</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Mailing Brochures</h3>
-                <h3 className='hover:text-[#008338] mb-2'>Raised Spot UV Flyers</h3>
                 </div>
             </div>
             </div>

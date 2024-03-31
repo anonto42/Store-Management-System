@@ -25,7 +25,7 @@ const LabelsSSSSS =()=>{
                 <div className='w-full h-full'>
                     <div className='text-sm m-7 '>
                         <div className='text-xl font-semibold text-[#126CBA] mb-[7px]'>
-                        <h1>Business Cards</h1>
+                        <h1>Stickers</h1>
                         </div>
                         <div className='border-t pt-4'>
                             <h3 className='hover:text-[#008338] cursor-pointer mb-2'>Standar Business Cards</h3>
@@ -39,7 +39,7 @@ const LabelsSSSSS =()=>{
                     </div>
                     <div className=' text-sm m-7' >
                         <div className='text-xl font-semibold mb-[7px]'>
-                            <h1>Brochures & Flyers</h1>
+                            <h1>Spacialty Stickers</h1>
                         </div>
                         <div className='border-t pt-4'>
                             <h3 className='hover:text-[#008338] cursor-pointer mb-2'>Brochures</h3>
@@ -56,7 +56,7 @@ const LabelsSSSSS =()=>{
                 <div className='w-full h-full'>
                 <div className=' text-sm m-7 '>
                     <div className='text-xl font-semibold text-[#126CBA] mb-[7px]'>
-                        <h1>Business Cards</h1>
+                        <h1>Product Labels</h1>
                     </div>
                         <div className='border-t pt-4'>
                         <h3 className='hover:text-[#008338] cursor-pointer mb-2'>Standar Business Cards</h3>
@@ -70,7 +70,7 @@ const LabelsSSSSS =()=>{
                 </div>
                 <div className=' text-sm m-7' >
                     <div className='text-xl font-semibold mb-[7px]'>
-                    <h1>Brochures & Flyers</h1>
+                    <h1>Business Labels</h1>
                     </div>
                         <div className='border-t pt-4'>
                         <h3 className='hover:text-[#008338] mb-2'>Brochures</h3>

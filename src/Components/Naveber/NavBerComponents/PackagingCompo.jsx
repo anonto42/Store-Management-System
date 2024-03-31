@@ -29,7 +29,7 @@ const PackagingCompo =()=>{
             <div className='w-full h-full'>
             <div className='text-sm m-7 '>
                 <div className='text-xl font-semibold text-[#126CBA] mb-[7px]'>
-                <h1>Business Cards</h1>
+                <h1>Castom Boxes</h1>
                 </div>
                 <div className='border-t pt-4'>
                 <h3 className='hover:text-[#008338] cursor-pointer mb-2'>Standar Business Cards</h3>
@@ -43,7 +43,7 @@ const PackagingCompo =()=>{
             </div>
             <div className=' text-sm m-7' >
                 <div className='text-xl font-semibold mb-[7px]'>
-                <h1>Brochures & Flyers</h1>
+                <h1>Product Packaging</h1>
                 </div>
                 <div className='border-t pt-4'>
                 <h3 className='hover:text-[#008338] cursor-pointer mb-2'>Brochures</h3>
@@ -60,7 +60,7 @@ const PackagingCompo =()=>{
             <div className='w-full h-full'>
             <div className=' text-sm m-7 '>
                 <div className='text-xl font-semibold text-[#126CBA] mb-[7px]'>
-                <h1>Business Cards</h1>
+                <h1>Shipping Supplies</h1>
                 </div>
                 <div className='border-t pt-4'>
                 <h3 className='hover:text-[#008338] cursor-pointer mb-2'>Standar Business Cards</h3>
@@ -74,7 +74,7 @@ const PackagingCompo =()=>{
             </div>
             <div className=' text-sm m-7' >
                 <div className='text-xl font-semibold mb-[7px]'>
-                <h1>Brochures & Flyers</h1>
+                <h1>Shopping Bags</h1>
                 </div>
                 <div className='border-t pt-4'>
                 <h3 className='hover:text-[#008338] mb-2'>Brochures</h3>
@@ -91,7 +91,7 @@ const PackagingCompo =()=>{
             <div className='w-full h-full'>
             <div className='columns-1 text-sm m-7'>
                 <div className='text-xl font-semibold text-[#126CBA] mb-[7px]'>
-                <h1>Business Cards</h1>
+                <h1>Labels,Tags,and Sleeves</h1>
                 </div>
                 <div className='border-t pt-4'>
                 <h3 className='hover:text-[#008338] mb-2'>Standar Business Cards</h3>
@@ -105,7 +105,7 @@ const PackagingCompo =()=>{
             </div>
             <div className='columns-1 text-sm m-7]' >
                 <div className='text-xl font-semibold mb-[7px]'>
-                <h1>Brochures & Flyers</h1>
+                <h1>Industry</h1>
                 </div>
                 <div className='border-t pt-4'>
                 <h3 className='hover:text-[#008338] mb-2'>Brochures</h3>
@@ -122,7 +122,7 @@ const PackagingCompo =()=>{
             <div className='w-full h-full'>
             <div className='columns-1 text-sm m-7'>
                 <div className='text-xl font-semibold text-[#126CBA] mb-[7px]'>
-                <h1>Business Cards</h1>
+                <h1>Gift Wrapping</h1>
                 </div>
                 <div className='border-t pt-4'>
                 <h3 className='hover:text-[#008338] mb-2'>Standar Business Cards</h3>
@@ -136,7 +136,7 @@ const PackagingCompo =()=>{
             </div>
             <div className='columns-1 text-sm m-7' >
                 <div className='text-xl font-semibold mb-[7px]'>
-                <h1>Brochures & Flyers</h1>
+                <h1>Castom Pouches</h1>
                 </div>
                 <div className='border-t pt-4'>
                 <h3 className='hover:text-[#008338] mb-2'>Brochures</h3>

@@ -59,7 +59,7 @@ const NarltemAfterLg =()=>{
             <div className='w-full h-full'>
             <div className=' text-sm m-7 '>
                 <div className='text-xl font-semibold text-[#126CBA] mb-[7px]'>
-                <h1>Business Cards</h1>
+                <h1>Booklets & Catalogs</h1>
                 </div>
                 <div className='border-t pt-4'>
                 <h3 className='hover:text-[#008338] cursor-pointer mb-2'>Standar Business Cards</h3>
@@ -73,7 +73,7 @@ const NarltemAfterLg =()=>{
             </div>
             <div className=' text-sm m-7' >
                 <div className='text-xl font-semibold mb-[7px]'>
-                <h1>Brochures & Flyers</h1>
+                <h1>PostCards</h1>
                 </div>
                 <div className='border-t pt-4'>
                 <h3 className='hover:text-[#008338] mb-2'>Brochures</h3>
@@ -90,7 +90,7 @@ const NarltemAfterLg =()=>{
             <div className='w-full h-full'>
             <div className='columns-1 text-sm m-7'>
                 <div className='text-xl font-semibold text-[#126CBA] mb-[7px]'>
-                <h1>Business Cards</h1>
+                <h1>Cards & Events</h1>
                 </div>
                 <div className='border-t pt-4'>
                 <h3 className='hover:text-[#008338] mb-2'>Standar Business Cards</h3>
@@ -104,7 +104,7 @@ const NarltemAfterLg =()=>{
             </div>
             <div className='columns-1 text-sm m-7]' >
                 <div className='text-xl font-semibold mb-[7px]'>
-                <h1>Brochures & Flyers</h1>
+                <h1>Forms & Stationery</h1>
                 </div>
                 <div className='border-t pb-4'>
                 <h3 className='hover:text-[#008338] mb-2'>Brochures</h3>
@@ -118,7 +118,7 @@ const NarltemAfterLg =()=>{
             <div className='w-full h-full'>
             <div className='columns-1 text-sm m-7'>
                 <div className='text-xl font-semibold text-[#126CBA] mb-[7px]'>
-                <h1>Business Cards</h1>
+                <h1>Advertising</h1>
                 </div>
                 <div className='border-t pt-4'>
                 <h3 className='hover:text-[#008338] mb-2'>Standar Business Cards</h3>
@@ -132,7 +132,7 @@ const NarltemAfterLg =()=>{
             </div>
             <div className='columns-1 text-sm m-7' >
                 <div className='text-xl font-semibold mb-[7px]'>
-                <h1>Brochures & Flyers</h1>
+                <h1>Restaurants</h1>
                 </div>
                 <div className='border-t pt-4'>
                 <h3 className='hover:text-[#008338] mb-2'>Brochures</h3>

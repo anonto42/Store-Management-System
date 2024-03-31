@@ -3,7 +3,7 @@ import { CiSettings } from "react-icons/ci"
 import myContext from "../../../Context/myContext"
 
 const BannerSSSS =()=>{
-    const { setPackaging } = useContext(myContext)
+    const {  setBanners } = useContext(myContext)
 
     const[top,setTop] = useState();
 
@@ -22,13 +22,13 @@ const BannerSSSS =()=>{
     return(
         <>
             <div 
-            onMouseLeave={()=>{setPackaging(false)}}  
-            onMouseEnter={()=> setPackaging(true) } 
+            onMouseLeave={()=>{ setBanners(false)}}  
+            onMouseEnter={()=>  setBanners(true) } 
             className={top ? 'hidden lg:flex xl:w-[85%] xl:mx-[7.5%] w-full absolute bg-[#F8F7F5] left-0 overflow-auto top-[68px]  h-[85vh] z-[50]' : 'hidden lg:flex xl:w-[85%] xl:mx-[7.5%] w-full absolute bg-[#F8F7F5] left-0 overflow-auto top-[114px]  h-[85vh] z-[50]'}>
             <div className='w-full h-full'>
             <div className='text-sm m-7 '>
                 <div className='text-xl font-semibold text-[#126CBA] mb-[7px]'>
-                <h1>Business Cards</h1>
+                <h1>Banners</h1>
                 </div>
                 <div className='border-t pt-4'>
                 <h3 className='hover:text-[#008338] cursor-pointer mb-2'>Standar Business Cards</h3>
@@ -42,7 +42,7 @@ const BannerSSSS =()=>{
             </div>
             <div className=' text-sm m-7' >
                 <div className='text-xl font-semibold mb-[7px]'>
-                <h1>Brochures & Flyers</h1>
+                <h1>Banners with Stands</h1>
                 </div>
                 <div className='border-t pt-4'>
                 <h3 className='hover:text-[#008338] cursor-pointer mb-2'>Brochures</h3>
@@ -59,7 +59,7 @@ const BannerSSSS =()=>{
             <div className='w-full h-full'>
             <div className=' text-sm m-7 '>
                 <div className='text-xl font-semibold text-[#126CBA] mb-[7px]'>
-                <h1>Business Cards</h1>
+                <h1>Posters</h1>
                 </div>
                 <div className='border-t pt-4'>
                 <h3 className='hover:text-[#008338] cursor-pointer mb-2'>Standar Business Cards</h3>
@@ -73,7 +73,7 @@ const BannerSSSS =()=>{
             </div>
             <div className=' text-sm m-7' >
                 <div className='text-xl font-semibold mb-[7px]'>
-                <h1>Brochures & Flyers</h1>
+                <h1>Decals & Magnetic Signs</h1>
                 </div>
                 <div className='border-t pt-4'>
                 <h3 className='hover:text-[#008338] mb-2'>Brochures</h3>
@@ -90,7 +90,7 @@ const BannerSSSS =()=>{
             <div className='w-full h-full'>
             <div className='columns-1 text-sm m-7'>
                 <div className='text-xl font-semibold text-[#126CBA] mb-[7px]'>
-                <h1>Business Cards</h1>
+                <h1>Yard Signs</h1>
                 </div>
                 <div className='border-t pt-4'>
                 <h3 className='hover:text-[#008338] mb-2'>Standar Business Cards</h3>
@@ -104,7 +104,7 @@ const BannerSSSS =()=>{
             </div>
             <div className='columns-1 text-sm m-7]' >
                 <div className='text-xl font-semibold mb-[7px]'>
-                <h1>Brochures & Flyers</h1>
+                <h1>Rigid Signs</h1>
                 </div>
                 <div className='border-t pt-4'>
                 <h3 className='hover:text-[#008338] mb-2'>Brochures</h3>
@@ -121,7 +121,7 @@ const BannerSSSS =()=>{
             <div className='w-full h-full'>
             <div className='columns-1 text-sm m-7'>
                 <div className='text-xl font-semibold text-[#126CBA] mb-[7px]'>
-                <h1>Business Cards</h1>
+                <h1>Photo Prints</h1>
                 </div>
                 <div className='border-t pt-4'>
                 <h3 className='hover:text-[#008338] mb-2'>Standar Business Cards</h3>
@@ -135,7 +135,7 @@ const BannerSSSS =()=>{
             </div>
             <div className='columns-1 text-sm m-7' >
                 <div className='text-xl font-semibold mb-[7px]'>
-                <h1>Brochures & Flyers</h1>
+                <h1>Flags</h1>
                 </div>
                 <div className='border-t pt-4'>
                 <h3 className='hover:text-[#008338] mb-2'>Brochures</h3>
