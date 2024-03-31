@@ -14,6 +14,7 @@ import Accout from './Pages/account/Accout';
 import 'react-toastify/dist/ReactToastify.css';
 import { Slide, ToastContainer } from 'react-toastify';
 import Admin from './Pages/Admin/Dashbord/Admin';
+import Catagory from './Pages/Product/Catagory';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
               <Route path='/ragister' element={<SignUp/>} />
               <Route path='/login' element={<Login />} />
               <Route path='/forgot' element={<ForgotPassword/>} />
+              <Route path='/product/catagory/:id' element={<Catagory />} />
               <Route path='/account' element={
                 <ProtectedRoutes>
                   <Accout/>

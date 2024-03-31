@@ -252,10 +252,6 @@ const ProductCart = () => {
           </div>
 
 
-
-
-
-
           <div className='p-8 w-full lg:mb-[440px]'>
             <h1 className='text-2xl font-bold lg:hidden'>Features</h1>
             <p className='text-xs mt-2 mb-3'>New lower prices on our most popular roll stickers!</p>
@@ -348,25 +344,8 @@ const ProductCart = () => {
             </div>
           </div>
 
-
-
-
-
-
-
         </div>
       </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
       <div className='fixed md:hidden flex w-full justify-between px-4 items-center h-[80px] bg-white shadow-2xl shadow-black bottom-0'>
