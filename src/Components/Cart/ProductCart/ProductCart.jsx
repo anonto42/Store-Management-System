@@ -2,13 +2,72 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 const ProductCart = ({item}) => {
+  console.log(item.reating)
+  
   return (
     <Link to='/product/xyz'>
-        <div className=' w-[300px] h-[150px] border-2 border-white'>
-            <img className='' src={''} />
-            <div className=''>
-                <h3 className=''>{'this is the title'}</h3>
-                <h3 className=''>{'item.price'}</h3>
+        <div className=' w-[460px] sm:w-[540px] md:w-[700px] mt-5 h-[350px] lg:mx-6 lg:w-[350px] lg:h-[280px] hover:scale-105 hover:shadow-md duration-100 ease-in border-2 bg-white rounded-lg pb-2'>
+            <img className='w-full h-[75%]' src={item.img} />
+            <div className='flex justify-between items-center px-5 pt-2'>
+              <div className='tracking-tight leading-6 lg:leading-5'>  
+                  <h3 className='text-[20px] lg:text-[17px]  font-[670] font-serif'>{item.title}</h3>
+                  {/* Rating */}
+
+                  <div className='text-yellow-400 text-[20px] font-[670] font-serif lg:text-[16.2px]'>
+                    {
+                      item.reating == 1? 
+                      <div>
+                        <span>&#9733;</span> 
+                        <span>&#9734;</span> 
+                        <span>&#9734;</span> 
+                        <span>&#9734;</span> 
+                        <span>&#9734;</span> 
+                      </div> : <></> 
+                            && 
+                    item.reating == 2 ? 
+                      <div>
+                        <span>&#9733;</span> 
+                        <span>&#9733;</span> 
+                        <span>&#9734;</span> 
+                        <span>&#9734;</span> 
+                        <span>&#9734;</span> 
+                      </div>  : <></>
+                              &&
+                    item.reating == 3 ?
+                    <div>
+                        <span>&#9733;</span> 
+                        <span>&#9733;</span> 
+                        <span>&#9733;</span> 
+                        <span>&#9734;</span> 
+                        <span>&#9734;</span> 
+                      </div>  : <></>
+                      &&
+                      item.reating == 4 ?
+                      <div>
+                          <span>&#9733;</span> 
+                          <span>&#9733;</span> 
+                          <span>&#9733;</span> 
+                          <span>&#9733;</span> 
+                          <span>&#9734;</span> 
+                        </div>  : <></>
+                      &&
+                      item.reating == 5 ?
+                      <div>
+                          <span>&#9733;</span> 
+                          <span>&#9733;</span> 
+                          <span>&#9733;</span> 
+                          <span>&#9733;</span> 
+                          <span>&#9733;</span> 
+                        </div>  : <></>
+                    }
+                    
+                    
+                    
+                  </div>
+
+                  <h3 className='text-sm font-[670] font-serif'>{'item.price'}</h3>
+              </div>
+              <button>View</button>
             </div>
         </div>
     </Link>
