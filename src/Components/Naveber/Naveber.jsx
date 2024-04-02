@@ -34,8 +34,12 @@ const Naveber = () => {
 
 
   return (
-    <div className='w-full pt-8 lg:pt-5 pb-[90px] shadow-md lg:pb-[48px] h-[0px] bg-[#ffff] sticky top-0 flex justify-between p-4 xl:px-[8%] items-center text-3xl z-50'>
-      {/* main bar */}<div className={  maneuBar ? '-top-[0px] opacity-0 duration-200 ease-in lg:flex hidden w-full h-14 border-t shadow-md border-[#3333] absolute left-0 right-0 bg-white text-[15px] justify-between items-center text-[#126CBA] font-semibold px-[3%] xl:px-[10%] 2xl:px-[13%]' : 'duration-100 ease-in top-[58px] lg:flex hidden w-full h-14 border-t shadow-md border-[#3333] absolute left-0 right-0 bg-white text-[15px] justify-between items-center text-[#126CBA] font-semibold px-[3%] xl:px-[10%] 2xl:px-[13%]'}>
+    <div className='w-full pt-8 lg:pt-4 pb-[90px] shadow-md lg:pb-[48px] h-[0px] bg-[#ffff] sticky top-0 flex justify-between p-4 xl:px-[8%] items-center text-3xl z-50'>
+      <a href='/' className=' hidden lg:block absolute w-[150px] top-[4px] z-50'>
+        <img src="/public/logo/sbrand-logo-02.png" />
+      </a>
+      {/* main bar */}
+      <div className={  maneuBar ? '-top-[0px] opacity-0 duration-200 ease-in lg:flex hidden w-full h-14 border-t shadow-md border-[#3333] absolute left-0 right-0 bg-white text-[15px] justify-between items-center text-[#126CBA] font-semibold px-[3%] xl:px-[10%] 2xl:px-[13%]' : 'duration-100 ease-in top-[58px] lg:flex hidden w-full h-14 border-t shadow-md border-[#3333] absolute left-0 right-0 bg-white text-[15px] justify-between items-center text-[#126CBA] font-semibold px-[3%] xl:px-[10%] 2xl:px-[13%]'}>
         <div className='h-[100%] cursor-pointer pt-2 border-l border-r px-[4px] border-transparent hover:bg-[#f8f7f5] hover:border-[#3333]' onMouseLeave={()=>{setProducts(false)}}  
         onMouseEnter={()=> setProducts(true) }>View All Products</div>
         <div className='h-[100%] cursor-pointer pt-2 border-l border-r px-[4px] border-transparent hover:bg-[#f8f7f5] hover:border-[#3333] b-5' 
@@ -60,8 +64,9 @@ const Naveber = () => {
       {bar && <SideBar/>}
       <div className='cursor-pointer lg:hidden'><FaBars onClick={()=> barOnOff()} /></div>
         <div className='lg:w-full lg:h-full flex '>
-         <a href="/">
-            <img className='w-[150px]' src="https://s1.uprinting.com/assets/img/uprinting-logo-new.webp" alt="" />
+         <a href="/" className='w-[150px]'>
+          {/* logo */}
+            <img className='lg:opacity-0' src="/public/logo/sbrand-logo-02.png" alt="" />
           </a>
 
           <div className='absolute ml-[170px]'>

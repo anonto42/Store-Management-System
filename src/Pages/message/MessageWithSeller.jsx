@@ -29,27 +29,121 @@ const MessageWithSeller = () => {
                     <HiDotsCircleHorizontal />
                 </div>
             </div>
-            <div className='w-full h-[61vh] overflow-auto relative'>
+            <div className='makeItScroll pb-5 w-full h-[61vh] overflow-auto font-semibold'>
                 {/* seller message */}
-                <div className='absolute left-4 bottom-[105px]'>
+                <div className='mt-[10px] ml-4'>
                     <div className='flex items-center relative'>
                             <img src="https://media.istockphoto.com/id/1393750072/vector/flat-white-icon-man-for-web-design-silhouette-flat-illustration-vector-illustration-stock.jpg?s=612x612&w=0&k=20&c=s9hO4SpyvrDIfELozPpiB_WtzQV9KhoMUP9R9gVohoU=" className='w-[30px] rounded-full h-[30px]' />
-                            <div className='max-w-[300px] px-3 bg-[#ffffff9d] py-1 rounded-lg ml-5'>
+                            <div className='max-w-[300px] px-3 bg-[#e3f9cbbd] py-1 rounded-lg ml-5'>
                                 <p>{'How can i help you'}</p>
                             </div>
-                        </div>
+                    </div>
                 </div>
                 {/* my message */}
-                <div className='absolute right-3 bottom-3 pr-3 pb-5'>
+                <div className='w-full flex justify-end mt-2 pr-4'>
                     <div className='flex items-center relative'>
-                        <div className='max-w-[300px] px-3 bg-[#ffffff9d] py-1 rounded-lg mr-5'>
+                        <div className='max-w-[300px] px-3 bg-[#d3d9fcbd] py-1 rounded-lg mr-5'>
                             <p>{'what is the price lasdfsdf asldjfs df sdlfsdfkj sdkf of this logo'}</p>
                         </div>
                         <img src="https://media.istockphoto.com/id/1393750072/vector/flat-white-icon-man-for-web-design-silhouette-flat-illustration-vector-illustration-stock.jpg?s=612x612&w=0&k=20&c=s9hO4SpyvrDIfELozPpiB_WtzQV9KhoMUP9R9gVohoU=" className='w-[30px] rounded-full h-[30px]' />
                         <p className='absolute -bottom-1 right-[6.2px] text-white text-[8px] font-serif'>Send</p>
                     </div>
                 </div>
-                
+                {/* seller message */}
+                <div className='mt-[10px] ml-4'>
+                    <div className='flex items-center relative'>
+                            <img src="https://media.istockphoto.com/id/1393750072/vector/flat-white-icon-man-for-web-design-silhouette-flat-illustration-vector-illustration-stock.jpg?s=612x612&w=0&k=20&c=s9hO4SpyvrDIfELozPpiB_WtzQV9KhoMUP9R9gVohoU=" className='w-[30px] rounded-full h-[30px]' />
+                            <div className='max-w-[300px] px-3 bg-[#e3f9cbbd] py-1 rounded-lg ml-5'>
+                                <p>{'How can i help you'}</p>
+                            </div>
+                    </div>
+                </div>
+                {/* my message */}
+                <div className='w-full flex justify-end mt-2 pr-4'>
+                    <div className='flex items-center relative'>
+                        <div className='max-w-[300px] px-3 bg-[#d3d9fcbd] py-1 rounded-lg mr-5'>
+                            <p>{'what is the price lasdfsdf asldjfs df sdlfsdfkj sdkf of this logo'}</p>
+                        </div>
+                        <img src="https://media.istockphoto.com/id/1393750072/vector/flat-white-icon-man-for-web-design-silhouette-flat-illustration-vector-illustration-stock.jpg?s=612x612&w=0&k=20&c=s9hO4SpyvrDIfELozPpiB_WtzQV9KhoMUP9R9gVohoU=" className='w-[30px] rounded-full h-[30px]' />
+                        <p className='absolute -bottom-1 right-[6.2px] text-white text-[8px] font-serif'>Send</p>
+                    </div>
+                </div>
+                {/* seller message */}
+                <div className='mt-[10px] ml-4'>
+                    <div className='flex items-center relative'>
+                            <img src="https://media.istockphoto.com/id/1393750072/vector/flat-white-icon-man-for-web-design-silhouette-flat-illustration-vector-illustration-stock.jpg?s=612x612&w=0&k=20&c=s9hO4SpyvrDIfELozPpiB_WtzQV9KhoMUP9R9gVohoU=" className='w-[30px] rounded-full h-[30px]' />
+                            <div className='max-w-[300px] px-3 bg-[#e3f9cbbd] py-1 rounded-lg ml-5'>
+                                <p>{'How can i help you'}</p>
+                            </div>
+                    </div>
+                </div>
+                {/* my message */}
+                <div className='w-full flex justify-end mt-2 pr-4'>
+                    <div className='flex items-center relative'>
+                        <div className='max-w-[300px] px-3 bg-[#d3d9fcbd] py-1 rounded-lg mr-5'>
+                            <p>{'what is the price lasdfsdf asldjfs df sdlfsdfkj sdkf of this logo'}</p>
+                        </div>
+                        <img src="https://media.istockphoto.com/id/1393750072/vector/flat-white-icon-man-for-web-design-silhouette-flat-illustration-vector-illustration-stock.jpg?s=612x612&w=0&k=20&c=s9hO4SpyvrDIfELozPpiB_WtzQV9KhoMUP9R9gVohoU=" className='w-[30px] rounded-full h-[30px]' />
+                        <p className='absolute -bottom-1 right-[6.2px] text-white text-[8px] font-serif'>Send</p>
+                    </div>
+                </div>
+                {/* seller message */}
+                <div className='mt-[10px] ml-4'>
+                    <div className='flex items-center relative'>
+                            <img src="https://media.istockphoto.com/id/1393750072/vector/flat-white-icon-man-for-web-design-silhouette-flat-illustration-vector-illustration-stock.jpg?s=612x612&w=0&k=20&c=s9hO4SpyvrDIfELozPpiB_WtzQV9KhoMUP9R9gVohoU=" className='w-[30px] rounded-full h-[30px]' />
+                            <div className='max-w-[300px] px-3 bg-[#e3f9cbbd] py-1 rounded-lg ml-5'>
+                                <p>{'How can i help you'}</p>
+                            </div>
+                    </div>
+                </div>
+                {/* my message */}
+                <div className='w-full flex justify-end mt-2 pr-4'>
+                    <div className='flex items-center relative'>
+                        <div className='max-w-[300px] px-3 bg-[#d3d9fcbd] py-1 rounded-lg mr-5'>
+                            <p>{'what is the price lasdfsdf asldjfs df sdlfsdfkj sdkf of this logo'}</p>
+                        </div>
+                        <img src="https://media.istockphoto.com/id/1393750072/vector/flat-white-icon-man-for-web-design-silhouette-flat-illustration-vector-illustration-stock.jpg?s=612x612&w=0&k=20&c=s9hO4SpyvrDIfELozPpiB_WtzQV9KhoMUP9R9gVohoU=" className='w-[30px] rounded-full h-[30px]' />
+                        <p className='absolute -bottom-1 right-[6.2px] text-white text-[8px] font-serif'>Send</p>
+                    </div>
+                </div>
+                {/* seller message */}
+                <div className='mt-[10px] ml-4'>
+                    <div className='flex items-center relative'>
+                            <img src="https://media.istockphoto.com/id/1393750072/vector/flat-white-icon-man-for-web-design-silhouette-flat-illustration-vector-illustration-stock.jpg?s=612x612&w=0&k=20&c=s9hO4SpyvrDIfELozPpiB_WtzQV9KhoMUP9R9gVohoU=" className='w-[30px] rounded-full h-[30px]' />
+                            <div className='max-w-[300px] px-3 bg-[#e3f9cbbd] py-1 rounded-lg ml-5'>
+                                <p>{'How can i help you'}</p>
+                            </div>
+                    </div>
+                </div>
+                {/* my message */}
+                <div className='w-full flex justify-end mt-2 pr-4'>
+                    <div className='flex items-center relative'>
+                        <div className='max-w-[300px] px-3 bg-[#d3d9fcbd] py-1 rounded-lg mr-5'>
+                            <p>{'what is the price lasdfsdf asldjfs df sdlfsdfkj sdkf of this logo'}</p>
+                        </div>
+                        <img src="https://media.istockphoto.com/id/1393750072/vector/flat-white-icon-man-for-web-design-silhouette-flat-illustration-vector-illustration-stock.jpg?s=612x612&w=0&k=20&c=s9hO4SpyvrDIfELozPpiB_WtzQV9KhoMUP9R9gVohoU=" className='w-[30px] rounded-full h-[30px]' />
+                        <p className='absolute -bottom-1 right-[6.2px] text-white text-[8px] font-serif'>Send</p>
+                    </div>
+                </div>
+                {/* seller message */}
+                <div className='mt-[10px] ml-4'>
+                    <div className='flex items-center relative'>
+                            <img src="https://media.istockphoto.com/id/1393750072/vector/flat-white-icon-man-for-web-design-silhouette-flat-illustration-vector-illustration-stock.jpg?s=612x612&w=0&k=20&c=s9hO4SpyvrDIfELozPpiB_WtzQV9KhoMUP9R9gVohoU=" className='w-[30px] rounded-full h-[30px]' />
+                            <div className='max-w-[300px] px-3 bg-[#e3f9cbbd] py-1 rounded-lg ml-5'>
+                                <p>{'How can i help you'}</p>
+                            </div>
+                    </div>
+                </div>
+                {/* my message */}
+                <div className='w-full flex justify-end mt-2 pr-4'>
+                    <div className='flex items-center relative'>
+                        <div className='max-w-[300px] px-3 bg-[#d3d9fcbd] py-1 rounded-lg mr-5'>
+                            <p>{'what is the price lasdfsdf asldjfs df sdlfsdfkj sdkf of this logo'}</p>
+                        </div>
+                        <img src="https://media.istockphoto.com/id/1393750072/vector/flat-white-icon-man-for-web-design-silhouette-flat-illustration-vector-illustration-stock.jpg?s=612x612&w=0&k=20&c=s9hO4SpyvrDIfELozPpiB_WtzQV9KhoMUP9R9gVohoU=" className='w-[30px] rounded-full h-[30px]' />
+                        <p className='absolute -bottom-1 right-[6.2px] text-white text-[8px] font-serif'>Send</p>
+                    </div>
+                </div>
             </div>
             <div className='absolute bottom-0 w-full h-[9vh] bg-[#283B45] flex justify-between px-6 items-center'>
                 <div className=''>

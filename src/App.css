@@ -8,6 +8,16 @@
 body::-webkit-scrollbar{
 	display: none;
 }
+.makeItScroll::-webkit-scrollbar{
+	background-color: rgba(7, 160, 76, 0.311);
+	width: 5px;
+	cursor: all-scroll;
+}
+.makeItScroll::-webkit-scrollbar-thumb{
+	background: #1c6afb;
+	border-radius: 50px;
+	cursor:cell;
+}
 
 .default-dropdown {
     display: inline-block;
