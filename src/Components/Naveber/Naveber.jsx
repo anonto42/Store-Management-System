@@ -11,6 +11,7 @@ import LabelsSSSSS from './NavBerComponents/LabelsSSSSS';
 import BannerSSSS from './NavBerComponents/BannerSSSS';
 import PromoSSSS from './NavBerComponents/PromoSSSS';
 import CollectionSSSS from './NavBerComponents/CollectionSSSS';
+import logo from '../../images/sbrand-logo-02.png'
 
 const Naveber = () => {
   
@@ -36,7 +37,7 @@ const Naveber = () => {
   return (
     <div className='w-full pt-8 lg:pt-4 pb-[90px] shadow-md lg:pb-[48px] h-[0px] bg-[#ffff] sticky top-0 flex justify-between p-4 xl:px-[8%] items-center text-3xl z-50'>
       <a href='/' className=' hidden lg:block absolute w-[150px] top-[4px] z-50'>
-        <img src="/public/logo/sbrand-logo-02.png" />
+        <img src={logo} />
       </a>
       {/* main bar */}
       <div className={  maneuBar ? '-top-[0px] opacity-0 duration-200 ease-in lg:flex hidden w-full h-14 border-t shadow-md border-[#3333] absolute left-0 right-0 bg-white text-[15px] justify-between items-center text-[#126CBA] font-semibold px-[3%] xl:px-[10%] 2xl:px-[13%]' : 'duration-100 ease-in top-[58px] lg:flex hidden w-full h-14 border-t shadow-md border-[#3333] absolute left-0 right-0 bg-white text-[15px] justify-between items-center text-[#126CBA] font-semibold px-[3%] xl:px-[10%] 2xl:px-[13%]'}>
@@ -66,7 +67,7 @@ const Naveber = () => {
         <div className='lg:w-full lg:h-full flex '>
          <a href="/" className='w-[150px]'>
           {/* logo */}
-            <img className='lg:opacity-0' src="/public/logo/sbrand-logo-02.png" alt="" />
+            <img className='lg:opacity-0' src={logo} alt="" />
           </a>
 
           <div className='absolute ml-[170px]'>
