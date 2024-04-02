@@ -15,6 +15,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Slide, ToastContainer } from 'react-toastify';
 import Admin from './Pages/Admin/Dashbord/Admin';
 import Catagory from './Pages/Product/Catagory';
+import MessageWithSeller from './Pages/message/MessageWithSeller';
 
 function App() {
 
@@ -29,6 +30,11 @@ function App() {
               <Route path='/login' element={<Login />} />
               <Route path='/forgot' element={<ForgotPassword/>} />
               <Route path='/product/catagory/:id' element={<Catagory />} />
+              <Route path='/custom:product' element={
+                <ProtectedRoutes>
+                  <MessageWithSeller/>
+                </ProtectedRoutes>
+              } />
               <Route path='/account' element={
                 <ProtectedRoutes>
                   <Accout/>
