@@ -1,9 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import myContext from '../../Context/myContext';
 import { FaMagnifyingGlass, FaPenToSquare } from "react-icons/fa6";
-import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { v4 } from 'uuid';
-import { StorageDB } from '../../FireBase/FireBase';
 import { toast } from 'react-toastify';
 import Loader from './../../Components/loader/Loader';
 import { MdDeleteForever } from "react-icons/md";
@@ -11,7 +9,7 @@ import { Link } from 'react-router-dom';
 import EditeProducts from '../Admin/Products/EditeProducts';
 
 const Accout = () => {
-  const{logOut,loading,setCategory,setPrice,setDescription,setTitle,setImg,imgUrl,setImgUrl,img,catagory,price,description,title,setLoading,createProduct,section,setSection,editProduct,setEditeProduct,product,deletProduct } = useContext(myContext);
+  const{loading,setPrice,setDescription,setTitle,setImg,imgUrl,img,price,description,title,setLoading,section,setSection,editProduct,product } = useContext(myContext);
   const user = JSON.parse(localStorage.getItem('user'));
 
   const imageUpload =async()=>{
@@ -22,12 +20,6 @@ const Accout = () => {
         setLoading(false)
         return;
       }
-      const imgRef =  ref(StorageDB,`files/${v4()}`)
-      await uploadBytes(imgRef,img).then(value=>{
-        getDownloadURL(value.ref).then(url=>{
-            setImgUrl(url)
-        });
-    })
     toast.success("image uploaded successfully")
     setLoading(false)
     } catch (error) {
@@ -145,7 +137,9 @@ const Accout = () => {
                 </label>
                 <p className='flex justify-center py-2 mb-3 text-sm text-stone-300'> *At First you should upload your image</p>
                 <div className='flex justify-center'>
-                  <button onClick={()=> imageUpload()} className='px-4 h-[40px] rounded-md cursor-pointer font-bold text-white mb-5 bg-[#1aab1a]'>Upload image</button>
+                  <button 
+                    onClick={''}
+                  className='px-4 h-[40px] rounded-md cursor-pointer font-bold text-white mb-5 bg-[#1aab1a]'>Upload image</button>
                 </div>
                 <input type="text" value={imgUrl} placeholder='This is your image url (dont change it)'className='w-[90%] bg-slate-100 my-2 outline-none text-sm placeholder:text-xl px-5 font-semibold text-center h-10 mx-[5%]'/>
                 <select type="text" placeholder='wich section do you want to show it' value={section} onChange={e=>setSection(e.target.value)} className='w-[90%] bg-slate-100 my-2 outline-none text-xl px-5 font-semibold text-center h-10 mx-[5%]'>
@@ -192,7 +186,9 @@ const Accout = () => {
                 <textarea type="text" value={description} onChange={e=>setDescription(e.target.value)} placeholder='Product Description' className='w-[90%] bg-slate-100 my-2 pt-2 outline-none text-xl px-5 font-semibold text-center h-10 mx-[5%]'/>
 
                 <div className='flex justify-center'>
-                  <button onClick={()=>{ createProduct()}} className='px-4 h-[40px] rounded-md cursor-pointer font-bold text-white mb-5 bg-[#1aab1a]'>Upload product</button>
+                  <button 
+                    onClick={''} 
+                  className='px-4 h-[40px] rounded-md cursor-pointer font-bold text-white mb-5 bg-[#1aab1a]'>Upload product</button>
                 </div>
               </div>
               <div className='border border-[#3333] mt-8 w-full'>
@@ -240,14 +236,14 @@ const Accout = () => {
                       </div>
                       <div className='w-[80px] border-l text-center h-full border-[#0e0e0e76]'>
                         <div className='w-full h-[50%] bg-green-300 flex justify-center items-center text-2xl'>
-                          <a href="" onClick={()=>{
-                            setEditeProduct(true)
-                            }}>
+                          <a href="" 
+                            onClick={''}
+                          >
                             <FaPenToSquare  className='' />                  
                           </a>
                         </div>
                         <div className='w-full h-[50%] bg-red-400 flex justify-center items-center text-3xl'>
-                          <a href="" onClick={()=>deletProduct()}>
+                          <a href="" onClick={''}>
                             <MdDeleteForever className='' />
                           </a>
                         </div>
@@ -257,9 +253,7 @@ const Accout = () => {
                       )
                     })
                   }
-                  
                 </div>
-
               </div>
             </div>
            : console.log("this is an normal user")
@@ -267,7 +261,7 @@ const Accout = () => {
       
 
 
-      <button onClick={()=>logOut()} className='w-[80px] mt-6 h-[40px] rounded-lg active:scale-105 absolute right-8 bg-yellow-300'>Sign out</button>
+      <button onClick={'()=>logOut()'} className='w-[80px] mt-6 h-[40px] rounded-lg active:scale-105 absolute right-8 bg-yellow-300'>Sign out</button>
       {
         loading && <Loader className='mt-[25%]'/>
       }

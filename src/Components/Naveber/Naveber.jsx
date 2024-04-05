@@ -17,7 +17,7 @@ const Naveber = () => {
   
   const usr = JSON.parse(localStorage.getItem("user"));
 
-  const {bar,barOnOff,Materials, setMaterials,Products,item , setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections} = useContext(myContext);  
+  const {bar,barOnOff,Materials, setMaterials,Products, setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections} = useContext(myContext);  
   
   const [maneuBar,setManeuBar] = useState(false)
 
@@ -84,7 +84,7 @@ const Naveber = () => {
             <CiSearch className=' absolute right-[0px] cursor-pointer w-[40px] h-[40px] bg-[#126CB5] text-[#fff] outline-none ' />
           </div>
           <div className=' hidden lg:block absolute xl:right-[12%] right-[6%] text-sm border-r pr-[1%] -mt-2 '>
-            <a href={usr ? "account" : "ragister"}>{usr ? '' :"Hi, Log In !"} <br /> <span className='text-[#126CB5] font-semibold '>Your Account</span></a>
+            <a href={usr ? "/account" : "/ragister"}>{usr ? '' :"Hi, Log In !"} <br /> <span className='text-[#126CB5] font-semibold '>Your Account</span></a>
             <div></div>
           </div>
         </div>

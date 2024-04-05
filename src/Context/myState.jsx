@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import myContext from './myContext';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
 import { toast } from 'react-toastify';
-import { FireDB, StorageDB, auth } from '../FireBase/FireBase';
-import { Firestore, Timestamp, addDoc, collection, deleteDoc, doc, onSnapshot, query, setDoc } from 'firebase/firestore';
-import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { v4 } from 'uuid';
-import env from 'react-dotenv';
 
 const MyState = (props) => {
 
@@ -36,23 +31,7 @@ const MyState = (props) => {
       setBar(false);
     } 
   }
-  const item = [
-    "Marketing Materials",
-    "Stickers & Labels",
-    "Boxes & Packaging",
-    "Signs, Banners & Decals",
-    "Apparel",
-    "Events and Holidays",
-    "Forms and Stationery",
-    "Mailing Services",
-    "Promotioal Products",
-    "Photo Products",
-    "Cusrom Quote",
-    "Design Services",
-    "",
-    "",
-    ""
-];
+  const item = [];
 
   // create user 
 
@@ -65,21 +44,15 @@ const MyState = (props) => {
 
     try {
       
-      const user = await createUserWithEmailAndPassword(auth,email,password);
-      
       const userDoc = {
         firstName:firstName,
         lastName:lastName,
         number:number,
         email:email,
-        time:Timestamp.now(),
-        posts:[],
+        posts:[]
       }
 
-      localStorage.setItem('user',JSON.stringify(user));
-      
-      const userRef = collection(FireDB,"user");
-      await addDoc(userRef,userDoc);
+      localStorage.setItem('user',JSON.stringify('user'));
 
       setNumber('');
       setEmail('');
@@ -113,8 +86,7 @@ const MyState = (props) => {
       return toast.error("All fields are required");
     }
     try {
-      const user = await signInWithEmailAndPassword(auth,email,password);
-      localStorage.setItem('user',JSON.stringify(user));
+      localStorage.setItem('user',JSON.stringify('user'));
       toast.success('loagin successfully done');
       setLoading(false);
       setTimeout(() => {
@@ -144,17 +116,9 @@ const MyState = (props) => {
   const getUserData = async () => {
     setLoading(true)
     try {
-      const q = query(
-        collection(FireDB, "user")
-      );
-      const data = onSnapshot(q, (QuerySnapshot) => {
-        let usersArray = [];
-        QuerySnapshot.forEach((doc) => {
-          usersArray.push({ ...doc.data(), id: doc.id });
-        });
         setUser(usersArray)
         setLoading(false);
-      });
+  
       return () => data;
     } catch (error) {
       console.log(error)
@@ -177,7 +141,6 @@ const MyState = (props) => {
     setLoading(true)
     try {
 
-        await setDoc(doc(FireDB, 'user', updatedUsers.id), updatedUsers)
         toast.success("user Updated successfully")
         setTimeout(() => {
             window.location.href = '/dashboard'
@@ -218,8 +181,6 @@ const MyState = (props) => {
       if (product.title == null || product.price == null || product.catagory == null || product.description == null) {
         return toast.error("Error")
       }
-      const productRef = collection(FireDB,'products')
-      await addDoc(productRef,product)
     toast.success('product created successfully')
     setLoading(false)
 
@@ -242,17 +203,8 @@ const MyState = (props) => {
     const getProductData = async () => {
       setLoading(true)
       try {
-        const q = query(
-          collection(FireDB, "products")
-        );
-        const data = onSnapshot(q, (QuerySnapshot) => {
-          let productsArray = [];
-          QuerySnapshot.forEach((doc) => {
-            productsArray.push({ ...doc.data(), id: doc.id });
-          });
-          setProduct(productsArray)
+          setProduct()
           setLoading(false);
-        });
         return () => data;
       } catch (error) {
         console.log(error)
@@ -268,9 +220,6 @@ const MyState = (props) => {
 
     const deletProduct = async (item)=>{
       try {
-        setLoading(true);
-        await deleteDoc(doc(FireDB,'products',item.id));
-        toast.success("Product deleted successfully");
         getProductData();
         setLoading(false);
       } catch (error) {
