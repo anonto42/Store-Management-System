@@ -14,6 +14,9 @@ import { ToastContainer } from 'react-toastify';
 import Admin from './Pages/Admin/Dashbord/Admin';
 import Catagory from './Pages/Product/Catagory';
 import MessageWithSeller from './Pages/message/MessageWithSeller';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import EditeProduct from './Pages/Product/EditeProduct';
 
 function App() {
 
@@ -28,6 +31,7 @@ function App() {
               <Route path='/login' element={<Login />} />
               <Route path='/forgot' element={<ForgotPassword/>} />
               <Route path='/product/catagory/:id' element={<Catagory />} />
+              <Route path= '/product/edit&addtocardorbuy/1234' element={<EditeProduct/>} />
               <Route path='/product/catagory/custom:product/:id' element={
                 <ProtectedRoutes>
                   <MessageWithSeller/>

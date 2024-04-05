@@ -266,7 +266,9 @@ const ProductCart = () => {
             </div>
 
             <div className='flex justify-center my-9'>
-              <button className='w-[95%] lg:w-[420px] h-[70px] bg-green-700 flex justify-center items-center text-xl font-bold text-white'>ORDER NOW</button>
+              <a href='/product/edit&addtocardorbuy/1234' className='w-[95%] lg:w-[420px] h-[70px] bg-[#008024] flex justify-center items-center text-xl font-bold text-white'>
+                Edit & Buy
+              </a>
             </div>
           </div>
 
@@ -367,7 +369,7 @@ const ProductCart = () => {
       </div>
 
 
-      <div className='fixed md:hidden flex w-full justify-between px-4 items-center h-[80px] bg-white shadow-2xl shadow-black bottom-0'>
+      {/* <div className='fixed md:hidden flex w-full justify-between px-4 items-center h-[80px] bg-white shadow-2xl shadow-black bottom-0'>
         <div>
           <p>Printing Cost:</p>
           <h1 className='text-[#008338] text-3xl font-semibold'>${"43.90"}</h1>
@@ -377,7 +379,9 @@ const ProductCart = () => {
             <div className='text-xl flex justify-center items-center font-bold text-white w-[200px] h-[50px] hover:bg-[#1b9650] bg-[#008338] '>ORDER NOW</div>
           </a>
         </div>
-      </div>
+      </div> */}
+
+
     </div>
   )
 }
