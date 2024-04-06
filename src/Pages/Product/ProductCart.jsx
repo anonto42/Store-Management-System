@@ -48,6 +48,19 @@ const ProductCart = () => {
     }
   ]
 
+  // const item= [
+  //   {reating:2,},
+  //   {reating:2,},
+  //   {reating:2,},
+  //   {reating:2,},
+  //   {reating:2,},
+  //   {reating:2,},
+  //   {reating:2,},
+  // ]
+
+    
+    const item={reating:2,}
+
 
   return (
     <div className='w-full h-auto mt-[80px]'>
@@ -287,11 +300,248 @@ const ProductCart = () => {
 
 
 
-          <div className='text-xl font-bold mt-3 border-t-2 order-b-2 flex lg:px-[220px]  justify-between px-8 py-5'>
-            {/* <div className='hover:text-black cursor-pointer text-gray-400'>Overviex</div>
-            <div className='hover:text-black cursor-pointer text-gray-400'>Templates</div>
-            <div className='hover:text-black cursor-pointer text-gray-400'>Reviews</div>
-            <div className='hover:text-black cursor-pointer text-gray-400'>Customer Questions</div> */}
+          <div className='mt-3 border-t-2 lg:px-[220px] px-8 py-5'>
+            <div className='text-black text-xl font-bold cursor-pointer hover:text-gray-400 border--2 mb-5'>Rerview's</div>
+            <div className='border-2  w-full h-[450px] overflow-auto'>
+
+              {/* review's */}
+              <div className='w-full border-y-2 mt-2'>
+                <div className='flex items-center'>
+                  <img src="https://scontent.fzyl2-2.fna.fbcdn.net/v/t39.30808-6/341765031_953652662306684_1914603144356339145_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFHOo-IlyL3sFxZbZAu9E_DGyW6C3agn34bJboLdqCffqeEFamp2-xGiSSQq44YSUOCmriiAfjXMDDwgJvlPvq1&_nc_ohc=24XsstB5Ow4Ab4x-ARa&_nc_ht=scontent.fzyl2-2.fna&oh=00_AfCXwo6BPYZ3MhlcQVANB2rwiJ6GYAz0TJjzaEw7AJQ4yA&oe=6616EB59" className='rounded-[90%] w-[60px] h-[60px] m-3' />
+                  
+                  <div className='text-yellow-400 ml-7 text-[26px] font-[670] font-serif lg:text-[22.2px]'>
+                      {
+                        item.reating == 1? 
+                        <div>
+                          <span>&#9733;</span> 
+                          <span>&#9734;</span> 
+                          <span>&#9734;</span> 
+                          <span>&#9734;</span> 
+                          <span>&#9734;</span> 
+                        </div> : <></> 
+                              && 
+                      item.reating == 2 ? 
+                        <div>
+                          <span>&#9733;</span> 
+                          <span>&#9733;</span> 
+                          <span>&#9734;</span> 
+                          <span>&#9734;</span> 
+                          <span>&#9734;</span> 
+                        </div>  : <></>
+                                &&
+                      item.reating == 3 ?
+                      <div>
+                          <span>&#9733;</span> 
+                          <span>&#9733;</span> 
+                          <span>&#9733;</span> 
+                          <span>&#9734;</span> 
+                          <span>&#9734;</span> 
+                        </div>  : <></>
+                        &&
+                        item.reating == 4 ?
+                        <div>
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                            <span>&#9734;</span> 
+                          </div>  : <></>
+                        &&
+                        item.reating == 5 ?
+                        <div>
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                          </div>  : <></>
+                      }
+                  </div>
+
+                  <p className='text-[22px] font-serif ml-[20px]'>{item.reating} <span className='font-light text-sm text-[gray]'>Star Reating</span></p>
+                </div>
+                <div className='px-4 my-2'>
+                  <li className='text-sm text-[#605f5fe2]'> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro nesciunt similique a quo mollitia, at nihil excepturi deleniti quaerat sint.</li>
+                </div>
+              </div>
+              <div className='w-full border-y-2 mt-2'>
+                <div className='flex items-center'>
+                  <img src="https://scontent.fzyl2-2.fna.fbcdn.net/v/t39.30808-6/341765031_953652662306684_1914603144356339145_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFHOo-IlyL3sFxZbZAu9E_DGyW6C3agn34bJboLdqCffqeEFamp2-xGiSSQq44YSUOCmriiAfjXMDDwgJvlPvq1&_nc_ohc=24XsstB5Ow4Ab4x-ARa&_nc_ht=scontent.fzyl2-2.fna&oh=00_AfCXwo6BPYZ3MhlcQVANB2rwiJ6GYAz0TJjzaEw7AJQ4yA&oe=6616EB59" className='rounded-[90%] w-[60px] h-[60px] m-3' />
+                  
+                  <div className='text-yellow-400 ml-7 text-[26px] font-[670] font-serif lg:text-[22.2px]'>
+                      {
+                        item.reating == 1? 
+                        <div>
+                          <span>&#9733;</span> 
+                          <span>&#9734;</span> 
+                          <span>&#9734;</span> 
+                          <span>&#9734;</span> 
+                          <span>&#9734;</span> 
+                        </div> : <></> 
+                              && 
+                      item.reating == 2 ? 
+                        <div>
+                          <span>&#9733;</span> 
+                          <span>&#9733;</span> 
+                          <span>&#9734;</span> 
+                          <span>&#9734;</span> 
+                          <span>&#9734;</span> 
+                        </div>  : <></>
+                                &&
+                      item.reating == 3 ?
+                      <div>
+                          <span>&#9733;</span> 
+                          <span>&#9733;</span> 
+                          <span>&#9733;</span> 
+                          <span>&#9734;</span> 
+                          <span>&#9734;</span> 
+                        </div>  : <></>
+                        &&
+                        item.reating == 4 ?
+                        <div>
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                            <span>&#9734;</span> 
+                          </div>  : <></>
+                        &&
+                        item.reating == 5 ?
+                        <div>
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                          </div>  : <></>
+                      }
+                  </div>
+
+                  <p className='text-[22px] font-serif ml-[20px]'>{item.reating} <span className='font-light text-sm text-[gray]'>Star Reating</span></p>
+                </div>
+                <div className='px-4 my-2'>
+                  <li className='text-sm text-[#605f5fe2]'> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro nesciunt similique a quo mollitia, at nihil excepturi deleniti quaerat sint.</li>
+                </div>
+              </div>
+              <div className='w-full border-y-2 mt-2'>
+                <div className='flex items-center'>
+                  <img src="https://scontent.fzyl2-2.fna.fbcdn.net/v/t39.30808-6/341765031_953652662306684_1914603144356339145_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFHOo-IlyL3sFxZbZAu9E_DGyW6C3agn34bJboLdqCffqeEFamp2-xGiSSQq44YSUOCmriiAfjXMDDwgJvlPvq1&_nc_ohc=24XsstB5Ow4Ab4x-ARa&_nc_ht=scontent.fzyl2-2.fna&oh=00_AfCXwo6BPYZ3MhlcQVANB2rwiJ6GYAz0TJjzaEw7AJQ4yA&oe=6616EB59" className='rounded-[90%] w-[60px] h-[60px] m-3' />
+                  
+                  <div className='text-yellow-400 ml-7 text-[26px] font-[670] font-serif lg:text-[22.2px]'>
+                      {
+                        item.reating == 1? 
+                        <div>
+                          <span>&#9733;</span> 
+                          <span>&#9734;</span> 
+                          <span>&#9734;</span> 
+                          <span>&#9734;</span> 
+                          <span>&#9734;</span> 
+                        </div> : <></> 
+                              && 
+                      item.reating == 2 ? 
+                        <div>
+                          <span>&#9733;</span> 
+                          <span>&#9733;</span> 
+                          <span>&#9734;</span> 
+                          <span>&#9734;</span> 
+                          <span>&#9734;</span> 
+                        </div>  : <></>
+                                &&
+                      item.reating == 3 ?
+                      <div>
+                          <span>&#9733;</span> 
+                          <span>&#9733;</span> 
+                          <span>&#9733;</span> 
+                          <span>&#9734;</span> 
+                          <span>&#9734;</span> 
+                        </div>  : <></>
+                        &&
+                        item.reating == 4 ?
+                        <div>
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                            <span>&#9734;</span> 
+                          </div>  : <></>
+                        &&
+                        item.reating == 5 ?
+                        <div>
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                          </div>  : <></>
+                      }
+                  </div>
+
+                  <p className='text-[22px] font-serif ml-[20px]'>{item.reating} <span className='font-light text-sm text-[gray]'>Star Reating</span></p>
+                </div>
+                <div className='px-4 my-2'>
+                  <li className='text-sm text-[#605f5fe2]'> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro nesciunt similique a quo mollitia, at nihil excepturi deleniti quaerat sint.</li>
+                </div>
+              </div>
+              <div className='w-full border-y-2 mt-2'>
+                <div className='flex items-center'>
+                  <img src="https://scontent.fzyl2-2.fna.fbcdn.net/v/t39.30808-6/341765031_953652662306684_1914603144356339145_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFHOo-IlyL3sFxZbZAu9E_DGyW6C3agn34bJboLdqCffqeEFamp2-xGiSSQq44YSUOCmriiAfjXMDDwgJvlPvq1&_nc_ohc=24XsstB5Ow4Ab4x-ARa&_nc_ht=scontent.fzyl2-2.fna&oh=00_AfCXwo6BPYZ3MhlcQVANB2rwiJ6GYAz0TJjzaEw7AJQ4yA&oe=6616EB59" className='rounded-[90%] w-[60px] h-[60px] m-3' />
+                  
+                  <div className='text-yellow-400 ml-7 text-[26px] font-[670] font-serif lg:text-[22.2px]'>
+                      {
+                        item.reating == 1? 
+                        <div>
+                          <span>&#9733;</span> 
+                          <span>&#9734;</span> 
+                          <span>&#9734;</span> 
+                          <span>&#9734;</span> 
+                          <span>&#9734;</span> 
+                        </div> : <></> 
+                              && 
+                      item.reating == 2 ? 
+                        <div>
+                          <span>&#9733;</span> 
+                          <span>&#9733;</span> 
+                          <span>&#9734;</span> 
+                          <span>&#9734;</span> 
+                          <span>&#9734;</span> 
+                        </div>  : <></>
+                                &&
+                      item.reating == 3 ?
+                      <div>
+                          <span>&#9733;</span> 
+                          <span>&#9733;</span> 
+                          <span>&#9733;</span> 
+                          <span>&#9734;</span> 
+                          <span>&#9734;</span> 
+                        </div>  : <></>
+                        &&
+                        item.reating == 4 ?
+                        <div>
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                            <span>&#9734;</span> 
+                          </div>  : <></>
+                        &&
+                        item.reating == 5 ?
+                        <div>
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                            <span>&#9733;</span> 
+                          </div>  : <></>
+                      }
+                  </div>
+
+                  <p className='text-[22px] font-serif ml-[20px]'>{item.reating} <span className='font-light text-sm text-[gray]'>Star Reating</span></p>
+                </div>
+                <div className='px-4 my-2'>
+                  <li className='text-sm text-[#605f5fe2]'> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro nesciunt similique a quo mollitia, at nihil excepturi deleniti quaerat sint.</li>
+                </div>
+              </div>
+            </div>
           </div>
 
 

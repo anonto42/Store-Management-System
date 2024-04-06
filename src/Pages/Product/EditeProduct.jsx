@@ -2,7 +2,7 @@ import React from 'react'
 
 const EditeProduct = () => {
   return (
-    <div className='w-full bg-[#666b66] pt-[60px] pb-[40px] lg:pt-[90px]'>
+    <div className='w-full bg-[666b66] pt-[60px] pb-[40px] lg:pt-[90px]'>
         <div className='w-[470px] sm:w-[600px] md:w-[700px] lg:w-[800px] h-auto border-2 border-[#2cfd2c] m-auto flex'>
           <div className='h-full w-[100px] border-r-2 border-[#2cfd2c]'>
             <div className='w-full border-b-2 border-[#2cfd2c] h-[11.667vh]'></div>

@@ -1,5 +1,5 @@
-import React from 'react'
-import ProductCart from '../../Components/Cart/ProductCart/ProductCart'
+import React from 'react';
+import CardsForProduct from '../../Components/Cart/ProductCart/CardsForProduct';
 
 const Catagory = () => {
   const data =[
@@ -79,7 +79,7 @@ const Catagory = () => {
       </div>
       <div className='flex flex-wrap px-[2px] justify-center'>
         {
-          data.map((item,index)=><ProductCart item={item} key={index} />)
+          data.map((item,index)=><CardsForProduct item={item} key={index} />)
         }
         
       </div>
