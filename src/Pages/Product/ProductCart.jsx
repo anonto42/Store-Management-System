@@ -309,7 +309,7 @@ const ProductCart = () => {
             <div className='border-2  w-full h-[450px] overflow-auto'>
 
               {/* review's */}
-              <div className='w-full border-y-2 mt-2'>
+              <div className='w-full border-y-2 mb-2 bg-[#a2abb451]'>
                 <div className='flex items-center'>
                   <img src="https://scontent.fzyl2-2.fna.fbcdn.net/v/t39.30808-6/341765031_953652662306684_1914603144356339145_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFHOo-IlyL3sFxZbZAu9E_DGyW6C3agn34bJboLdqCffqeEFamp2-xGiSSQq44YSUOCmriiAfjXMDDwgJvlPvq1&_nc_ohc=24XsstB5Ow4Ab4x-ARa&_nc_ht=scontent.fzyl2-2.fna&oh=00_AfCXwo6BPYZ3MhlcQVANB2rwiJ6GYAz0TJjzaEw7AJQ4yA&oe=6616EB59" className='rounded-[90%] w-[60px] h-[60px] m-3' />
                   
@@ -368,7 +368,7 @@ const ProductCart = () => {
                   <li className='text-sm text-[#605f5fe2]'> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro nesciunt similique a quo mollitia, at nihil excepturi deleniti quaerat sint.</li>
                 </div>
               </div>
-              <div className='w-full border-y-2 mt-2'>
+              <div className='w-full border-y-2 mb-2'>
                 <div className='flex items-center'>
                   <img src="https://scontent.fzyl2-2.fna.fbcdn.net/v/t39.30808-6/341765031_953652662306684_1914603144356339145_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFHOo-IlyL3sFxZbZAu9E_DGyW6C3agn34bJboLdqCffqeEFamp2-xGiSSQq44YSUOCmriiAfjXMDDwgJvlPvq1&_nc_ohc=24XsstB5Ow4Ab4x-ARa&_nc_ht=scontent.fzyl2-2.fna&oh=00_AfCXwo6BPYZ3MhlcQVANB2rwiJ6GYAz0TJjzaEw7AJQ4yA&oe=6616EB59" className='rounded-[90%] w-[60px] h-[60px] m-3' />
                   
@@ -427,7 +427,7 @@ const ProductCart = () => {
                   <li className='text-sm text-[#605f5fe2]'> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro nesciunt similique a quo mollitia, at nihil excepturi deleniti quaerat sint.</li>
                 </div>
               </div>
-              <div className='w-full border-y-2 mt-2'>
+              <div className='w-full border-y-2 mb-2'>
                 <div className='flex items-center'>
                   <img src="https://scontent.fzyl2-2.fna.fbcdn.net/v/t39.30808-6/341765031_953652662306684_1914603144356339145_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFHOo-IlyL3sFxZbZAu9E_DGyW6C3agn34bJboLdqCffqeEFamp2-xGiSSQq44YSUOCmriiAfjXMDDwgJvlPvq1&_nc_ohc=24XsstB5Ow4Ab4x-ARa&_nc_ht=scontent.fzyl2-2.fna&oh=00_AfCXwo6BPYZ3MhlcQVANB2rwiJ6GYAz0TJjzaEw7AJQ4yA&oe=6616EB59" className='rounded-[90%] w-[60px] h-[60px] m-3' />
                   
@@ -486,7 +486,7 @@ const ProductCart = () => {
                   <li className='text-sm text-[#605f5fe2]'> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro nesciunt similique a quo mollitia, at nihil excepturi deleniti quaerat sint.</li>
                 </div>
               </div>
-              <div className='w-full border-y-2 mt-2'>
+              <div className='w-full border-y-2 mb-2'>
                 <div className='flex items-center'>
                   <img src="https://scontent.fzyl2-2.fna.fbcdn.net/v/t39.30808-6/341765031_953652662306684_1914603144356339145_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFHOo-IlyL3sFxZbZAu9E_DGyW6C3agn34bJboLdqCffqeEFamp2-xGiSSQq44YSUOCmriiAfjXMDDwgJvlPvq1&_nc_ohc=24XsstB5Ow4Ab4x-ARa&_nc_ht=scontent.fzyl2-2.fna&oh=00_AfCXwo6BPYZ3MhlcQVANB2rwiJ6GYAz0TJjzaEw7AJQ4yA&oe=6616EB59" className='rounded-[90%] w-[60px] h-[60px] m-3' />
                   
