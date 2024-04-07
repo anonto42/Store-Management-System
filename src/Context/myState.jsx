@@ -116,7 +116,7 @@ const MyState = (props) => {
   const getUserData = async () => {
     setLoading(true)
     try {
-        setUser(usersArray)
+        setUser()
         setLoading(false);
   
       return () => data;

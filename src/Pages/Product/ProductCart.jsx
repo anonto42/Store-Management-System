@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaArrowCircleDown, FaArrowCircleLeft } from "react-icons/fa";
 import { FaArrowCircleRight } from "react-icons/fa";
+import { IoMdSend } from "react-icons/io";
 
 const ProductCart = () => {
 
@@ -48,32 +49,35 @@ const ProductCart = () => {
     }
   ]
 
-  // const item= [
-  //   {reating:2,},
-  //   {reating:2,},
-  //   {reating:2,},
-  //   {reating:2,},
-  //   {reating:2,},
-  //   {reating:2,},
-  //   {reating:2,},
-  // ]
-
+    function sendToQuistionPart(){
+      window.scrollY = 555
+    }
     
     const item={reating:2,}
 
+    const images = [
+      "https://staticecp.uprinting.com/260/250x250/Vinyl_Banners_Marketing_Materials_A.jpg",
+      "https://scontent.fzyl2-2.fna.fbcdn.net/v/t45.1600-4/429013119_120207173936020238_7172691787705959260_n.jpg?stp=c0.88.526.526a_cp0_dst-jpg_p526x296_q75_spS444&_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeF_LaTQOZusq6r5BJ6P8Mnj-HdAPYRRtCr4d0A9hFG0Kr0UtKaK6NCuDiFvrFQXXomlmo1WEBiPiFzecUSwWRLc&_nc_ohc=bFWoKerFR0gAb6TaE-z&_nc_ht=scontent.fzyl2-2.fna&oh=00_AfCQO4jNF8-9gzgv8LKhC2s3VS_Hy4wSWizkqVsnWTar0A&oe=66180F3E",
+      'https://scontent.fzyl2-2.fna.fbcdn.net/v/t39.30808-6/435335203_454618396994474_6319775153152898424_n.jpg?stp=cp6_dst-jpg_s1080x2048&_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHx14UCflKpH4k3xOBhagqUC9AMMNO_VNkL0Aww079U2QMGi5C8OaTk4Sko3NUIhEe5UT6VHVxUv9ElZlIanEo5&_nc_ohc=RxzkrkXpIX8Ab6ZsIcV&_nc_ht=scontent.fzyl2-2.fna&oh=00_AfALODgzWjJNA-4CIk94TBjupOWNIfIBsDw-542LTcXY8g&oe=661815AF'
+    ]
+
+    const [frontImgValue,setImgValue] = useState(images[0]);
+    const [quistonText,setQuistonText] = useState();
 
   return (
     <div className='w-full h-auto mt-[80px]'>
       <div className='mt-16 relative'>
         <div className=' lg:w-[30%] lg:ml-[10%]'>
           <div className='flex justify-center'>
-            <img className='w-[350px] h-[350px]' src={'https://staticecp.uprinting.com/260/250x250/Vinyl_Banners_Marketing_Materials_A.jpg'}/>
+            <img className='w-[350px] h-[350px] easy-in' src={frontImgValue}/>
           </div>
           <div className='pl-[15%] sm:pl-[25%] md:pl-[32.5%] lg:pl-[1px] xl:pl-[38px] 2xl:pl-[58px]'>
             <div className='w-[350px] mt-10 flex relative' >
-              <img src="https://staticecp.uprinting.com/260/250x250/Vinyl_Banners_Marketing_Materials_A.jpg" className='w-[100px] h-[100px] ml-3' />
-              <img src="https://staticecp.uprinting.com/260/250x250/Vinyl_Banners_Marketing_Materials_A.jpg" className='w-[100px] h-[100px] ml-3' />
-              <img src="https://staticecp.uprinting.com/260/250x250/Vinyl_Banners_Marketing_Materials_A.jpg" className='w-[100px] h-[100px] ml-3' />
+            {
+              images.map((item,index)=><img key={index} onClick={()=>setImgValue(item)} src={item} className='w-[100px] cursor-pointer h-[100px] ml-3' />
+            )
+            }
+              
             </div>
             <div className='hidden lg:flex justify-between w-[350px] px-3 mt-5'>
               <div className='text-yellow-400 text-[20px] font-[670] font-serif lg:text-[16.2px]'>
@@ -136,7 +140,7 @@ const ProductCart = () => {
               <p>1889 Reviews |</p>
             </div>
           </div>
-          <h2 className='flex md:hidden justify-center underline italic font-light my-4'>Question & Answers ({'7'})</h2>
+          <h2 onClick={()=>sendToQuistionPart()} className='flex cursor-pointer md:hidden justify-center underline italic font-light my-4'>Question & Answers ({'7'})</h2>
           <div className='flex justify-center'>
             <div className='w-[90%] flex text-white md:hidden text-2xl font-bold cursor-pointer hover:bg-[#1a924e] justify-center items-center h-[60px] bg-[#008338]'>ORDER NOW</div>
           </div>
@@ -544,6 +548,73 @@ const ProductCart = () => {
             </div>
           </div>
 
+            {/* Quistion and answer's */}
+
+          <div className='w-full h-[550px] bg-[#523c3c00] p-5'>
+              <h1 className='text-[25px] font-[500] italic'>Question & Answers</h1>
+              <div className='w-[full] border border-[#1c1d1d8e] h-[450px] mt-4 relative'>
+                <div className='bg-[#2f2f3c21] w-full h-full overflow-auto'>
+                      {/* Quistion and answer's */}
+                      <div className='w-full bg-white mb-3'>
+                        {/* buyer */}
+                        <div className='w-[full] min-h-[40px] bg-blue-200 text-black'>
+                          <p className='text-[23px] flex items-center p-2'>Q-:<span className='text-sm font-semibold pl-2'>{"How can i got this"} ?</span></p>
+                        </div>
+                        {/* seller */}
+                        <div className='w-[full] min-h-[40px] bg-[#9e9ee054] text-black'>
+                          <p className='text-[20px] flex items-center p-2'>A-:<span className='text-[14px] font-semibold pl-2'>{"Press order"}. <small className='p-3 italic font-light'>(seller)</small> </span></p>
+                        </div>
+                      </div>
+                      <div className='w-full bg-white mb-3'>
+                        {/* buyer */}
+                        <div className='w-[full] min-h-[40px] bg-blue-200 text-black'>
+                          <p className='text-[23px] flex items-center p-2'>Q-:<span className='text-sm font-semibold pl-2'>{"How can i got this"} ?</span></p>
+                        </div>
+                        {/* seller */}
+                        <div className='w-[full] min-h-[40px] bg-[#9e9ee054] text-black'>
+                          <p className='text-[20px] flex items-center p-2'>A-:<span className='text-[14px] font-semibold pl-2'>{"Press order"}. <small className='p-3 italic font-light'>(seller)</small> </span></p>
+                        </div>
+                      </div>
+                      <div className='w-full bg-white mb-3'>
+                        {/* buyer */}
+                        <div className='w-[full] min-h-[40px] bg-blue-200 text-black'>
+                          <p className='text-[23px] flex items-center p-2'>Q-:<span className='text-sm font-semibold pl-2'>{"How can i got this"} ?</span></p>
+                        </div>
+                        {/* seller */}
+                        <div className='w-[full] min-h-[40px] bg-[#9e9ee054] text-black'>
+                          <p className='text-[20px] flex items-center p-2'>A-:<span className='text-[14px] font-semibold pl-2'>{"Press order"}. <small className='p-3 italic font-light'>(seller)</small> </span></p>
+                        </div>
+                      </div>
+                      <div className='w-full bg-white mb-3'>
+                        {/* buyer */}
+                        <div className='w-[full] min-h-[40px] bg-blue-200 text-black'>
+                          <p className='text-[23px] flex items-center p-2'>Q-:<span className='text-sm font-semibold pl-2'>{"How can i got this"} ?</span></p>
+                        </div>
+                        {/* seller */}
+                        <div className='w-[full] min-h-[40px] bg-[#9e9ee054] text-black'>
+                          <p className='text-[20px] flex items-center p-2'>A-:<span className='text-[14px] font-semibold pl-2'>{"Press order"}. <small className='p-3 italic font-light'>(seller)</small> </span></p>
+                        </div>
+                      </div>
+                      <div className='w-full bg-white mb-3'>
+                        {/* buyer */}
+                        <div className='w-[full] min-h-[40px] bg-blue-200 text-black'>
+                          <p className='text-[23px] flex items-center p-2'>Q-:<span className='text-sm font-semibold pl-2'>{"How can i got this"} ?</span></p>
+                        </div>
+                        {/* seller */}
+                        <div className='w-[full] min-h-[40px] bg-[#9e9ee054] text-black'>
+                          <p className='text-[20px] flex items-center p-2'>A-:<span className='text-[14px] font-semibold pl-2'>{"Press order"}. <small className='p-3 italic font-light'>(seller)</small> </span></p>
+                        </div>
+                      </div>
+                      <div className='p-3 w-full h-[30px]'></div>
+                </div>
+                <div className='absolute w-[100%] h-[40px] bottom-0 flex'>
+                  <input type="text" placeholder='Write Quistion & Wait For Answer' className='h-full w-[100%] placeholder:text-[18px] px-3 bg-[#e4fae0] outline-none placeholder:text-[#6a7ec4]' value={quistonText} onChange={e=>setQuistonText(e.terget.value)} />
+                  <div className='bg-[green] cursor-pointer flex justify-center items-center text-[31px] text-white h-full w-[65px]'>
+                    <IoMdSend className='active:scale-105' />
+                  </div>
+                </div>
+              </div>
+          </div>
 
           <div className='mx-5 py-9 border-b-2'>
             <h1 className='text-xl font-bold mb-5 text-center'>Custom Stickers: Crafting Unique Messages</h1>
