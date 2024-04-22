@@ -33,7 +33,7 @@ const Footer = () => {
       <div className='py-2 font-thin'>
         <div className='md:flex justify-center items-center py-2'>
           <p className=' flex justify-center items-center'>
-            <FaRegCopyright /> 2000-2024 UPrinting.com.
+            <FaRegCopyright /> 2024-2028 Sbrand.com.
           </p>
           <p className='flex items-center justify-center'>
             All rights reserved.
