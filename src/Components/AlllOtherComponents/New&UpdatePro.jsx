@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { CiCircleChevLeft, CiCircleChevRight } from 'react-icons/ci';
 import Slide from '../Slider/Slider';
 import DealsCart from '../Cart/DealsCart/DealsCart';
 
@@ -39,10 +38,6 @@ const UpdateProduct = () => {
           })
         }
     },[])
-     
-    // useEffect(()=>{
-    //   window.innerWidth < 769? setMobileView(true) : setMobileView(false)
-    // },[])
   return (
     <div className='p-3 lg:p-0'>
         <h1 className='text-xl sm:text-2xl font-bold mb-7'>New & Updated Products</h1>
