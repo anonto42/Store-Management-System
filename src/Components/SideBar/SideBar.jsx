@@ -18,7 +18,7 @@ const SideBar = () => {
     l = serchText
   }
   return (
-    <div className='fixed bottom-1 right-0 bg-[#000000a5] z-[9999] w-full h-full'>
+    <div className='fixed bottom-1 right-0 bg-[#000000a5] z-[99] w-full h-full'>
           
           {/* SideBar */}
           
