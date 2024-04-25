@@ -7,17 +7,17 @@ const BestDeals = () => {
     const [MobileView,setMobileView]= useState(false)
 
     useEffect(()=>{
-        window.addEventListener("resize",()=>{
+        window.addEventListener("load",()=>{
             window.innerWidth < 769? setMobileView(true) : setMobileView(false)
         })
 
 
          return ()=>{
-          window.removeEventListener('resize',()=>{
+          window.removeEventListener('load',()=>{
             window.innerWidth < 769? setMobileView(true) : setMobileView(false)
           })
         }
-    },[])
+    })
   return (
     <div className='p-3 lg:p-0'>
         <h1 className='text-xl sm:text-2xl font-bold mb-7'>Best Deals</h1>

@@ -30,11 +30,11 @@ const UpdateProduct = () => {
     const [MobileView,setMobileView]= useState(false)
 
     useEffect(()=>{
-        window.addEventListener("resize",()=>{
+        window.addEventListener("load",()=>{
             window.innerWidth < 769? setMobileView(true) : setMobileView(false)
         })
          return ()=>{
-          window.removeEventListener('resize',()=>{
+          window.removeEventListener('load',()=>{
             window.innerWidth < 769? setMobileView(true) : setMobileView(false)
           })
         }

@@ -13,7 +13,7 @@ const SemelerCompo = (props) => {
           </span>
                 <FaChevronRight className='text-sm' />
         </div>
-        <hr className=' cursor-wait border' />
+        <hr className='cursor-wait border' />
     </>
   )
 }
