@@ -51,7 +51,7 @@ const TopSellerBox = () => {
     <div className='p-3 lg:p-0'>
       <h1 className='text-xl mb-3 sm:text-2xl md:text-2xl font-bold'>Top Sellers</h1>
       <div className='my-6'>
-        <Slide slidesToShow={4} >
+        <Slide >
           {
             data.map((data,index)=><CatCart item={data} key={index} />  )
           }

@@ -1,11 +1,11 @@
 import React from 'react'
 // import { Slider } from 'infinite-react-carousel'
 
-const Slide = ({children,slidesToShow}) => {
+const Slide = ({children}) => {
   
   return (
       <div className='px-2 containers'>
-        <div slidesToShow={slidesToShow} arrowsScroll={1} >
+        <div className='flex overflow-auto overflow-y-hidden slider-container-div' >
           {children}
         </div>
       </div>

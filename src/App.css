@@ -92,3 +92,15 @@ body::-webkit-scrollbar{
 		}
 	}
 }
+
+.slider-container-div::-webkit-scrollbar{
+	width: 5px;
+	height: 8px;
+	background-color: #769ace13;
+}
+.slider-container-div::-webkit-scrollbar-thumb{
+	width: 20px;
+	height: 30px;
+	background: #00A400;
+	border-radius: 50px;
+}
