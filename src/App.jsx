@@ -15,6 +15,7 @@ import Admin from './Pages/Admin/Dashbord/Admin';
 import Catagory from './Pages/Product/Catagory';
 import MessageWithSeller from './Pages/message/MessageWithSeller';
 import EditeProduct from './Pages/Product/EditeProduct';
+import Cart_page from './Pages/Cart_Page/Cart_page';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
               <Route path='/forgot' element={<ForgotPassword/>} />
               <Route path='/product/catagory/:id' element={<Catagory />} />
               <Route path= '/product/edit&addtocardorbuy/1234' element={<EditeProduct/>} />
+              <Route path= '/cart' element={<Cart_page/>} />
               <Route path='/product/catagory/custom:product/:id' element={
                 <ProtectedRoutes>
                   <MessageWithSeller/>
