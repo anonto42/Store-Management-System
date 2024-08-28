@@ -1,10 +1,8 @@
 import React from 'react'
-
-//             "imageUrl" : "",
-//             "title" : "Logo",
-//             "price" : "12$",
-//             "Status" : "edited",
-//             "itemAmount" : "3"
+import { CiCirclePlus } from "react-icons/ci";
+import { CiCircleMinus } from "react-icons/ci";
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { FaOpencart } from "react-icons/fa";
 
 const Page_cart = ({cartData}) => {
   return (
@@ -37,15 +35,23 @@ const Page_cart = ({cartData}) => {
             </div>
             <div className='w-[90px] h-full'>
                     <div className='flex justify-around pt-3'>
-                        <div className='w-[30px] h-[30px] rounded-full bg-red-600 active:scale-105 ease-in-out'></div>
-                        <div className='w-[30px] h-[30px] rounded-full bg-red-600 active:scale-105 ease-in-out'></div>
+                        <div className='w-[30px] h-[30px] rounded-full active:scale-105 ease-in-out flex justify-center items-center text-[40px] cursor-pointer'>
+                            <CiCirclePlus />
+                        </div>
+                        <div className='w-[30px] h-[30px] rounded-full active:scale-105 ease-in-out flex justify-center items-center text-[40px] cursor-pointer'>
+                            <CiCircleMinus />
+                        </div>
                     </div>
-                    <div className='w-full h-full mt-1 flex justify-center'>
-                        <div className='w-[35px] h-[27px] rounded-lg bg-red-600 active:scale-105 ease-in-out'></div>
+                    <div className='w-full h-full flex justify-center'>
+                        <div className='w-[35px] h-[27px] rounded-lg active:scale-105 ease-in-out flex justify-center items-center text-[27px] cursor-pointer'>
+                            <RiDeleteBin6Line />
+                        </div>
                     </div>
             </div>
             <div className='w-auto h-full flex justify-center items-center'>
-                <div className='w-[45px] h-[40px] bg-[green] rounded-lg active:scale-105 ease-in-out mr-4'></div>
+                <div className='w-[45px] flex justify-center cursor-pointer items-center text-[25px] h-[40px] border-2 border-[#ffffff] rounded-lg active:scale-105 ease-in-out mr-4'>
+                    <FaOpencart />
+                </div>
             </div>
         </div>
     </div>
