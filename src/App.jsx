@@ -30,7 +30,7 @@ function App() {
               <Route path='/login' element={<Login />} />
               <Route path='/forgot' element={<ForgotPassword/>} />
               <Route path='/product/catagory/:id' element={<Catagory />} />
-              <Route path= '/product/edit&addtocardorbuy/1234' element={<EditeProduct/>} />
+              <Route path= '/product/edit&addtocardorbuy/:id' element={<EditeProduct/>} />
               <Route path= '/cart' element={<Cart_page/>} />
               <Route path='/product/catagory/custom:product/:id' element={
                 <ProtectedRoutes>
