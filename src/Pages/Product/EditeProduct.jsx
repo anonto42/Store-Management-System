@@ -12,9 +12,11 @@ const EditeProduct = () => {
   useEffect(()=>{
 
     const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
 
-    let isDrawing = false;
+    let isDrawing = false,
+    brushWidth = 5;
+
 
     window.addEventListener("load" , ()=>{
       canvas.width = canvas.offsetWitdth;
@@ -23,6 +25,8 @@ const EditeProduct = () => {
 
     const startDraw = () => { 
       isDrawing = true;
+      ctx.beginPath();
+      ctx.lineWidth = brushWidth;
     }
 
     const drawing = (e) => {
