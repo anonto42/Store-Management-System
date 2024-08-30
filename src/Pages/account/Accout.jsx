@@ -1,36 +1,24 @@
 import React, { useContext, useEffect, useState } from 'react'
 import myContext from '../../Context/myContext';
 import { FaMagnifyingGlass, FaPenToSquare } from "react-icons/fa6";
-import { v4 } from 'uuid';
-import { toast } from 'react-toastify';
 import Loader from './../../Components/loader/Loader';
 import { MdDeleteForever } from "react-icons/md";
-import { Link } from 'react-router-dom';
 import EditeProducts from '../Admin/Products/EditeProducts';
 
 const Accout = () => {
-  const{loading,setPrice,setDescription,setTitle,setImg,imgUrl,img,price,description,title,setLoading,section,setSection,editProduct,product } = useContext(myContext);
+  const{ } = useContext(myContext);
   const user = JSON.parse(localStorage.getItem('user'));
+  console.log(user)
+  function logOut (){
+    localStorage.removeItem('user');
+    window.location.href = "/";
+  }
 
-  const imageUpload =async()=>{
-    setLoading(true)
-    try {
-      if(img == null){
-        toast.error("Please select an image")
-        setLoading(false)
-        return;
-      }
-    toast.success("image uploaded successfully")
-    setLoading(false)
-    } catch (error) {
-      toast.error(error.message)
-      setLoading(false)
-    }
-}
   return (
     <div>
       {
-        user?.user?.email == "anontom90@gmail.com" ? "" :   <div>
+        user?.user ? '' :
+      <div>
       <div className='flex justify-center'>
         <div className='w-[90%] text-xl font-bold border-b-2 pt-6 pb-9'>
           <h1 className='text-center'>Welcome,{`user.firstName`}!</h1>
@@ -125,8 +113,6 @@ const Accout = () => {
 
         {/* this is for admin section */}
 
-        {
-          user.user.email == 'anontom90@gmail.com' ? 
             <div className='mx-5'>
               <div className='w-full flex justify-center mt-8 py-10 border text-xl font-semibold underline'>Add Product</div>
               <div className='border w-full border-gray-300 h-[auto]'>
@@ -256,17 +242,14 @@ const Accout = () => {
                 </div>
               </div>
             </div>
-           : console.log("this is an normal user")
-        }
-      
 
 
-      <button onClick={'()=>logOut()'} className='w-[80px] mt-6 h-[40px] rounded-lg active:scale-105 absolute right-8 bg-yellow-300'>Sign out</button>
+      <button onClick={()=>logOut()} className='w-[80px] mt-6 h-[40px] rounded-lg active:scale-105 absolute right-8 bg-yellow-300'>Sign out</button>
       {
         loading && <Loader className='mt-[25%]'/>
       }
       {
-        editProduct && <EditeProducts />
+       <EditeProducts />
       }
 
     </div>
