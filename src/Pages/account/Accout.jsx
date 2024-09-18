@@ -1,27 +1,68 @@
-import React, { useContext, useEffect, useState } from 'react'
-import myContext from '../../Context/myContext';
+import React, {useContext, useEffect, useState } from 'react'
 import { FaMagnifyingGlass, FaPenToSquare } from "react-icons/fa6";
 import Loader from './../../Components/loader/Loader';
 import { MdDeleteForever } from "react-icons/md";
 import EditeProducts from '../Admin/Products/EditeProducts';
+import axios from 'axios';
+import { IoMdSend } from 'react-icons/io';
+import { useCookies } from 'react-cookie';
+import { toast } from 'react-toastify';
+import myContext from '../../Context/myContext';
 
 const Accout = () => {
-  const{ } = useContext(myContext);
-  const user = JSON.parse(localStorage.getItem('user'));
-  console.log(user)
-  function logOut (){
-    localStorage.removeItem('user');
-    window.location.href = "/";
+
+  const [user, setUser] = useState();
+  const [isAdmin, setIsAdmin] = useState();
+  const [loader , setLoader] = useState();
+  const [img , useImg] = useState();
+  const [product , setProduct] = useState();
+  const [cookies, setCookie] = useCookies(["refreshtoken","accestokens"]);
+  const {editeProduct,setEditeProduct} = useContext(myContext);
+  
+
+  useEffect(()=>{
+    axios.get("/user/getUser")
+    .then(res=> setUser(res.data.user))
+    .catch(err => console.log(err));
+
+    axios.get("/user/getUser")
+    .then(res=> setIsAdmin(res.data.user.isAdmin))
+    .catch(err => console.log(err));
+
+    axios.get('/user/getProducts')
+    .then( res => setProduct(res.data.products))
+    .catch(err => console.log(err));
+
+  },[])
+
+  // console.log(user)
+
+  const logOut = async () =>{
+    try {
+      const res = await axios.post("/user/logout")
+
+      setCookie('refreshtoken', '');
+      setCookie('accestokens', '');
+
+      toast.success(res.data.message)
+
+      setTimeout(() => {
+        window.location.href = '/'
+      }, 4000);
+
+    } catch (error) {
+      console.log(error)
+      toast.error(error.message)
+    }
   }
 
   return (
     <div>
       {
-        user?.user ? '' :
-      <div>
+        isAdmin == false ? <div>
       <div className='flex justify-center'>
         <div className='w-[90%] text-xl font-bold border-b-2 pt-6 pb-9'>
-          <h1 className='text-center'>Welcome,{`user.firstName`}!</h1>
+          <h1 className='text-center'>Welcome,{}!</h1>
         </div>
       </div>
 
@@ -106,17 +147,10 @@ const Accout = () => {
           </div>
         </div>
       </div>
-      </div>
-      }
-    
-
-
-        {/* this is for admin section */}
-
-            <div className='mx-5'>
+      </div> :  <div className='mx-5'>
               <div className='w-full flex justify-center mt-8 py-10 border text-xl font-semibold underline'>Add Product</div>
               <div className='border w-full border-gray-300 h-[auto]'>
-                <input type="file" id='imgTag' onChange={e=>setImg(e.target.files[0])} className='hidden'/>
+                <input type="file" id='imgTag' value={img} onChange={e=>useImg(e.target.files[0])} className='hidden'/>
                 <label htmlFor="imgTag" className='flex justify-center text-center'>
                   <img src={"https://icons.veryicon.com/png/o/miscellaneous/simple-linear-icon/icon-img.png"} className=' cursor-pointer w-[130px] md:w-[200px]' alt="" />
                   <p className='mt-12 font-bold'>{img==null ? 'file wass not selected' : "file wass selected"}</p>
@@ -124,11 +158,11 @@ const Accout = () => {
                 <p className='flex justify-center py-2 mb-3 text-sm text-stone-300'> *At First you should upload your image</p>
                 <div className='flex justify-center'>
                   <button 
-                    onClick={''}
+                    onClick={e => e}
                   className='px-4 h-[40px] rounded-md cursor-pointer font-bold text-white mb-5 bg-[#1aab1a]'>Upload image</button>
                 </div>
-                <input type="text" value={imgUrl} placeholder='This is your image url (dont change it)'className='w-[90%] bg-slate-100 my-2 outline-none text-sm placeholder:text-xl px-5 font-semibold text-center h-10 mx-[5%]'/>
-                <select type="text" placeholder='wich section do you want to show it' value={section} onChange={e=>setSection(e.target.value)} className='w-[90%] bg-slate-100 my-2 outline-none text-xl px-5 font-semibold text-center h-10 mx-[5%]'>
+                <input type="text" value={''} placeholder='This is your image url (dont change it)'className='w-[90%] bg-slate-100 my-2 outline-none text-sm placeholder:text-xl px-5 font-semibold text-center h-10 mx-[5%]'/>
+                <select type="text" placeholder='wich section do you want to show it' value={''} onChange={e => e} className='w-[90%] bg-slate-100 my-2 outline-none text-xl px-5 font-semibold text-center h-10 mx-[5%]'>
                   <option className='text-stone-500' value="wich section do you want to show it">Select your product Catagory ....</option>
                   <option  value="Busness Card's">Busness Card's</option>
                   <option value="Bookets & Catalogs">Bookets & Catalogs</option>
@@ -167,13 +201,13 @@ const Accout = () => {
                   <option value="Trade Show & Events">Trade Show & Events</option>
                   <option value="Featured Collections">Featured Collections</option>
                  </select>
-                <input type="text" placeholder='Inter your product Titel' value={title} onChange={e=>setTitle(e.target.value)} className='w-[90%] bg-slate-100 my-2 outline-none text-xl px-5 font-semibold text-center h-10 mx-[5%]'/>
-                <input type="text" placeholder='Product Price' value={price} onChange={e=>setPrice(e.target.value)} className='w-[90%] bg-slate-100 my-2 outline-none text-xl px-5 font-semibold text-center h-10 mx-[5%]'/>
-                <textarea type="text" value={description} onChange={e=>setDescription(e.target.value)} placeholder='Product Description' className='w-[90%] bg-slate-100 my-2 pt-2 outline-none text-xl px-5 font-semibold text-center h-10 mx-[5%]'/>
+                <input type="text" placeholder='Inter your product Titel' value={''} onChange={e => e} className='w-[90%] bg-slate-100 my-2 outline-none text-xl px-5 font-semibold text-center h-10 mx-[5%]'/>
+                <input type="text" placeholder='Product Price' value={''} onChange={e => e} className='w-[90%] bg-slate-100 my-2 outline-none text-xl px-5 font-semibold text-center h-10 mx-[5%]'/>
+                <textarea type="text" value={''} onChange={e => e} placeholder='Product Description' className='w-[90%] bg-slate-100 my-2 pt-2 outline-none text-xl px-5 font-semibold text-center h-10 mx-[5%]'/>
 
                 <div className='flex justify-center'>
                   <button 
-                    onClick={''} 
+                    onClick={e=>e} 
                   className='px-4 h-[40px] rounded-md cursor-pointer font-bold text-white mb-5 bg-[#1aab1a]'>Upload product</button>
                 </div>
               </div>
@@ -201,13 +235,12 @@ const Accout = () => {
                         </div>
                       </div>
                     </div>
-                  {
-                    product.map((item,index)=>{
+                  {/* {product.map((item,index)=>{
                       return(
                         <Link to='' >
                     <div className='w-[95%] h-[80px] border border-[#0e0e0e76] my-5 flex justify-between'>
                       <div className='h-full w-[105px]'>
-                        <img src={item.imgurl} className='w-full h-full' />
+                        <img src={item.imageUrl} className='w-full h-full' />
                       </div>
                       <div className='w-[80px] px-1 font-bold border-[#0e0e0e76] text-center justify-center flex items-center h-full border-l border-r'>
                         <p className='text-xs'>
@@ -238,19 +271,20 @@ const Accout = () => {
                   </Link>
                       )
                     })
-                  }
+                  } */}
+                            {
+                              editeProduct && <EditeProducts />
+                            }
                 </div>
               </div>
             </div>
-
-
+      }
+    
       <button onClick={()=>logOut()} className='w-[80px] mt-6 h-[40px] rounded-lg active:scale-105 absolute right-8 bg-yellow-300'>Sign out</button>
       {
-        loading && <Loader className='mt-[25%]'/>
+        loader && <Loader className='mt-[25%]'/>
       }
-      {
-       <EditeProducts />
-      }
+      
 
     </div>
   )

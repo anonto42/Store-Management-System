@@ -12,16 +12,20 @@ import BannerSSSS from './NavBerComponents/BannerSSSS';
 import PromoSSSS from './NavBerComponents/PromoSSSS';
 import CollectionSSSS from './NavBerComponents/CollectionSSSS';
 import logo from '../../images/sbrand-logo-02.png'
+import { useCookies } from 'react-cookie';
+import axios from 'axios';
 
 const Naveber = () => {
-  
-  const usr = JSON.parse(localStorage.getItem("user"));
+
+  const [ userInfo , setUser] = useState();
+
+  const [ cookies ] = useCookies(["accestokens","refreshtoken"])
 
   const {bar,barOnOff,Materials, setMaterials,Products, setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections} = useContext(myContext);  
   
   const [maneuBar,setManeuBar] = useState(false)
 
-  useEffect(()=>{
+  useEffect( ()=>{
     window.addEventListener("scroll",()=>{
       window.scrollY > 0 ? setManeuBar(true) : setManeuBar(false);
 
@@ -31,7 +35,14 @@ const Naveber = () => {
         })
       }
     })
+
+    axios.get("/user/getUser")
+    .then(res=> setUser(res.data.user))
+    .catch(err => console.log(err))
+    
   },[])
+
+  // console.log(userInfo)
 
 
   return (
@@ -84,7 +95,7 @@ const Naveber = () => {
             <CiSearch className=' absolute right-[0px] cursor-pointer w-[40px] h-[40px] bg-[#126CB5] text-[#fff] outline-none ' />
           </div>
           <div className=' hidden lg:block absolute xl:right-[12%] right-[6%] text-sm border-r pr-[1%] -mt-2 '>
-            <a href={usr ? "/account" : "/ragister"}>{usr ? '' :"Hi, Log In !"} <br /> <span className='text-[#126CB5] font-semibold '>Your Account</span></a>
+            <a href={userInfo ? "/account" : "/ragister"}>{userInfo ? userInfo.firstName :"Hi, Log In !"} <br /> <span className='text-[#126CB5] font-semibold '>Your Account</span></a>
             <div></div>
           </div>
         </div>

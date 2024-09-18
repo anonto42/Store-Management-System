@@ -11,6 +11,7 @@ const EditeProduct = () => {
 
   useEffect(()=>{
 
+    const toolsBtn = Array.from(document.querySelectorAll(".tool"));
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
 
@@ -35,6 +36,13 @@ const EditeProduct = () => {
       ctx.stroke();
     }
 
+    toolsBtn.forEach( btn => {
+      btn.addEventListener("click", () => {
+        document.querySelector(".tool").classList.add("text-[blue]")
+        console.log(btn.id)
+      })
+    })
+
     canvas.addEventListener("mousedown" , startDraw);
     canvas.addEventListener("mousemove" , drawing);
     canvas.addEventListener("mouseup" , ()=> isDrawing = false);
@@ -46,22 +54,22 @@ const EditeProduct = () => {
         <div className='w-[470px] sm:w-[600px] md:w-[700px] lg:w-[800px] h-auto border-2 border-[#000000] m-auto flex'>
           <div className='h-full w-[100px] border-r-2 border-[#000000]'>
             <div className='w-full border-b-2 border-[#000000] h-[11.667vh] flex justify-center items-center'>
-              <FaRegSquare className='text-[35px] cursor-pointer text-black active:scale-105' title='square' />
+              <FaRegSquare className='text-[35px] cursor-pointer text-black active:scale-105 tool' id='square' title='square' />
             </div>
             <div className='w-full border-b-2 border-[#000000] h-[11.667vh] flex justify-center items-center'>
-              <div className='w-[35px] h-[35px] border-[5px] rounded-full active:scale-105 border-black cursor-pointer' title='round'></div>
+              <div className='w-[35px] h-[35px] border-[5px] rounded-full active:scale-105 border-black cursor-pointer tool' id='round' title='round'></div>
             </div>
             <div className='w-full border-b-2 flex justify-center items-center border-[#000000] h-[11.667vh]'>
-              < IoTriangleOutline className='text-[35px] cursor-pointer active:scale-105' />
+              < IoTriangleOutline className='text-[35px] cursor-pointer active:scale-105 tool' id='line' />
             </div>
             <div className='w-full border-b-2 border-[#000000] h-[11.667vh] flex justify-center items-center'>
-              < GiPencilBrush className='text-[35px] cursor-pointer active:scale-105' />
+              < GiPencilBrush className='text-[35px] cursor-pointer active:scale-105 tool' id='Brush' />
             </div>
             <div className='w-full border-b-2 border-[#000000] h-[11.667vh] flex justify-center items-center'>
-            < TbReplace  className='text-[35px] cursor-pointer active:scale-105'/>
+            < TbReplace  className='text-[35px] cursor-pointer active:scale-105 tool' id='Replace'/>
             </div>
             <div className='w-full border--2 border-[#000000] h-[11.667vh] flex justify-center items-center'>
-            < AiTwotoneDelete className='text-[35px] cursor-pointer active:scale-105' />
+            < AiTwotoneDelete className='text-[35px] cursor-pointer active:scale-105 tool' id='delete' />
             </div>
           </div>
           <canvas ref={canvasRef} className='h-[full] w-[370px] sm:w-[500px] md:w-[600px] lg:w-[700px] bg-[#cffff1] ative' />

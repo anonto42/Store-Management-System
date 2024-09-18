@@ -23,6 +23,7 @@ const MyState = (props) => {
   const [lastName, setLastName ] = useState();
   const [phone, setNumber] = useState();
   const [ userData , setUserRagisterData ] = useState();
+  const [editeProduct,setEditeProduct] = useState();
 
   const register = async (params) => {
 //email , password , phone , firstName , lastName
@@ -75,7 +76,7 @@ const MyState = (props) => {
 
 
   return (
-    <myContext.Provider value={{setEmail , setFirstName , setPassword , setLastName , setNumber , loading , email , password , firstName , lastName , phone , register , bar,barOnOff,Materials, setMaterials,Products, setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections}}>
+    <myContext.Provider value={{editeProduct,setEditeProduct,setEmail , setFirstName , setPassword , setLastName , setNumber , loading , email , password , firstName , lastName , phone , register , bar,barOnOff,Materials, setMaterials,Products, setProducts,Packaging , setPackaging , Labels,setLabels,Banners,setBanners,Promo,setPromo,Collections,setCollections}}>
         {props.children}
     </myContext.Provider>
   )

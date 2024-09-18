@@ -16,6 +16,8 @@ import Catagory from './Pages/Product/Catagory';
 import MessageWithSeller from './Pages/message/MessageWithSeller';
 import EditeProduct from './Pages/Product/EditeProduct';
 import Cart_page from './Pages/Cart_Page/Cart_page';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 function App() {
 
@@ -38,9 +40,9 @@ function App() {
                 </ProtectedRoutes>
               } />
               <Route path='/account' element={
-                <ProtectedRoutes>
+                // <ProtectedRoutes>
                   <Accout/>
-                </ProtectedRoutes>
+                // </ProtectedRoutes>
               } />
               <Route path='/dashbord' element={
                 <ProtectedRoutesForAdmin>
@@ -58,8 +60,15 @@ function App() {
 export default App
 // for users
 export const ProtectedRoutes = ({children}) => {
-  const user = localStorage.getItem('user');
-  if(user){
+  const [user, setUser] = useState();
+
+  useEffect(()=>{
+    axios.get("/user/getUser")
+    .then(res=> setUser(res.data))
+    .catch(err => console.log(err))
+
+  },[])
+  if(!user){
     return children
   }else{
     return window.location.href='/login'; 
