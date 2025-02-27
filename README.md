@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Quiet Chat
+*live link*: https://quiet-chat.com
 
-## Getting Started
+## Overview
+Quiet Chat is a privacy-focused real-time chat application that ensures complete user privacy by not storing any message data. Instead, messages are hashed every time, making them unreadable and non-retrievable after transmission.
 
-First, run the development server:
+## Features
+- 🔒 **Privacy-first approach** – No message data is stored.
+- 🔄 **Hashed messaging** – Messages are hashed before transmission.
+- ⚡ **Real-time communication** – Seamless chat experience.
+- 🛡️ **Secure & lightweight** – Designed for security and efficiency.
 
+## Usage
+1. Open the app and create a chat room.
+2. Start messaging—your messages will be hashed in real-time.
+3. No message data is stored on the server, ensuring complete privacy.
+
+## Security Implementation
+- Messages are hashed before transmission using a secure hashing algorithm.
+- WebSockets provide real-time encrypted communication.
+- No logs or stored chat history to ensure complete anonymity.
+
+## Technologies Used
+- **Frontend:** React / Next.js (if applicable)
+- **Backend:** Node.js with Express
+- **Database:** None (stateless architecture)
+- **Security:** Hashing algorithms (e.g., SHA-256, bcrypt, or others)
+- **WebSocket:** For real-time chat
+
+## Installation for developers
+### Prerequisites
+- Node.js & npm installed
+- Git installed
+
+### Steps
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone the repository
+git clone https://github.com/anonto42/quiet-chat.git
+
+# Navigate to the project folder
+cd quiet-chat
+
+# Install dependencies
+npm install
+
+# Start the application
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Contributing
+Contributions are welcome! Feel free to fork the repo, create a new branch, and submit a pull request.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## License
+This project is licensed under the MIT License. See `LICENSE` for details.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Author
+Developed by [Md Sohidul Islam Ananto](https://github.com/anonto42).
