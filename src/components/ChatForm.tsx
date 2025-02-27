@@ -28,7 +28,7 @@ const ChatForm = (
   return (
     <form 
         onSubmit={ e => handleSubmit(e) }
-        className='border flex justify-between overflow-y-hidden rounded-xl border-[#d8eef1] max-w-2xl'
+        className='border flex justify-between overflow-y-hidden rounded-xl border-[#d8eef1] w-full'
     >
 
         <input 
