@@ -1,9 +1,9 @@
-import Init from "@/components/Init";
+import CreateRoom from "@/components/CreateRoom";
 
 export default function Home() {
   return (
     <div>
-      <Init />
+      <CreateRoom />
     </div>
   );
 }
