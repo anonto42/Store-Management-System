@@ -2,7 +2,6 @@ import React from 'react';
 
 
 interface ChatMessageProps {
-    isSystemMessage: boolean;
     isOwnerMessge: boolean;
     message: string;
     sender: string;
