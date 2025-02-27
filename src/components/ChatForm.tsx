@@ -1,5 +1,6 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { GrSend } from "react-icons/gr";
 
 
 interface onSendMessage {
@@ -40,9 +41,10 @@ const ChatForm = (
 
         <button
             type='submit'
-            className='px-6 py-3 active:bg-blue-400 duration-150 cursor-pointer ease-in-out bg-blue-600 font-semibold'
+            className='px-6 py-3 active:bg-blue-400 duration-150 cursor-pointer ease-in-out bg-blue-600 font-medium flex justify-center items-center gap-1'
         >
             Send
+            <GrSend className='text-lg' />
         </button>
 
     </form>
