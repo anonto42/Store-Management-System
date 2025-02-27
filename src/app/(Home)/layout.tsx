@@ -8,12 +8,7 @@ export const metadata: Metadata = {
   title: "Quiet chat",
   description: "Quiet-Chat is a secure chat application that never store your messages for your privacy and your all messages was hashed when it was sending to receivers.",
   openGraph:{
-    images:{
-      url:"/opengraph-image.jpg",
-      width:400,
-      height:400,
-      alt:"Quiet chat app logo"
-    }
+    images:"/opengraph-image.jpg"
   }
 };
 
