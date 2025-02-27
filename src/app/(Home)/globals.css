@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@layer components {
+  .body_container {
+    @apply container mx-auto w-full min-h-svh px-6 xl:px-0
+  }
+}
