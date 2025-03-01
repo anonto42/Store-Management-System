@@ -14,6 +14,7 @@ const CreateRoom = () => {
 
   const handelSendMessage = ( message : string ) : void => {
     console.log(message)
+    setMessages([{message:"send",sender:"0000"}])
   }
   const handelJoinRoom = () => {
     try {
