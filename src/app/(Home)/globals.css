@@ -1,7 +1,0 @@
-@import "tailwindcss";
-
-@layer components {
-  .body_container {
-    @apply max-w-2xl mx-auto w-full min-h-svh px-6 xl:px-0 text-[#d8eef1]
-  }
-}
