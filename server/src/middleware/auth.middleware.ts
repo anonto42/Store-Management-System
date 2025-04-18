@@ -35,7 +35,7 @@ export async function IsUser( req: AutRequest, res: Response, next: NextFunction
     }
 }
 
-export async function IsAdmin(req: AutRequest, res: Response, next: NextFunction) {
+export async function IsAdmin(req: AutRequest, res: Response, next: NextFunction): Promise<any> {
     try {
 
         const admin = req.user?.isAdmin;
