@@ -2,7 +2,7 @@ import jwt, { JwtPayload } from "jsonwebtoken";
 
 export interface SignType { 
     id: string;
-    userType: string;
+    isAdmin: boolean;
 }
 
 export function JWT_SIGN (value: SignType){ 
