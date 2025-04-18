@@ -11,7 +11,7 @@ export interface IUser extends Document {
   dueHistory: mongoose.Types.ObjectId[];
   paymentHistory: mongoose.Types.ObjectId[];
   password: string;
-  isAdmin: string;
+  isAdmin: boolean;
 }
 
 const UserSchema: Schema = new Schema<IUser>({
@@ -25,7 +25,7 @@ const UserSchema: Schema = new Schema<IUser>({
   dueHistory: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Due' }],
   paymentHistory: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Payment' }],
   password: { type: String },
-  isAdmin: { type: String },
+  isAdmin: { type: Boolean },
 });
 
 export default mongoose.model<IUser>('User', UserSchema);
