@@ -8,17 +8,22 @@ export interface AutRequest extends Request {
     user?: IUser;
 }
 
-export async function IsUser( req: AutRequest, res: Response, next: NextFunction ): Promise<void> {
+export async function IsUser( req: AutRequest, res: Response, next: NextFunction ): Promise<any> {
     try {
         const cookie = req.cookies.MyStore;
-        customRes.IF(res, "You can't have authorization haders!", [ cookie ]);
+        if (!cookie) {
+            return customRes.Error(res, "You can't have authorization haders!", StatusCode.unAuthenticated);
+        }
 
         const decoded = JWT_DECODE(cookie);
-        customRes.IF(res, "You can't have authorization haders!", [ decoded.id, decoded.isAdmin ]);
-
+        if (!decoded) {
+            return customRes.Error(res, "Authorization haders are not properly okay!", StatusCode.unAuthenticated);
+        }
         const user = await userModel.findById( decoded.id );
         let isUser = user? true : false;
-        customRes.IF(res, "Your accout was not founded!", [ isUser ]);
+        if (!isUser) {
+            return customRes.Error(res, "User not founded on the server!", StatusCode.unavailable);
+        }
 
         req.user = user!
         next()
@@ -33,16 +38,15 @@ export async function IsUser( req: AutRequest, res: Response, next: NextFunction
 export async function IsAdmin(req: AutRequest, res: Response, next: NextFunction) {
     try {
 
-        const admin = req.user;
-        customRes.IF(res, "You are not authenticated!",[ admin ]);
-
-        customRes.IF(res, "You are not authorized!",[ admin?.isAdmin ]);
+        const admin = req.user?.isAdmin;
+        if (!admin) {
+            return customRes.Error(res, "You are not authorized!", StatusCode.unAuthorize);
+        }
 
         next();
         
     } catch (error) {
         console.log(error)
-        customRes.Error(res, "Middleware error! admin can't authenticated", StatusCode.unexpected)
-        next(error)
+        return customRes.Error(res, "Middleware error! admin can't authorized!", StatusCode.unexpected)
     }
 }
