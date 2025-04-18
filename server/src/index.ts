@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cookie from "cookie-parser";
 import connectDB from "./db/connectDB";
 import corse from "cors";
+import userRouter from "./routes/user.route";
 
 
 // Initializing
@@ -30,7 +31,7 @@ dotenv.config(
 
 
 // Api endpoints
-app.use("/api/v1",);
+app.use("/api/v1/user", userRouter );
 
 //Database connection and app start
 ;(
