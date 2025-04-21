@@ -1,6 +1,14 @@
 import { Router } from "express";
-import { Login, Logout, Profile, Register } from "../controllers/user.controller";
-import { IsUser } from "../middleware/auth.middleware";
+import {
+    AdminInfo, Create,
+    DeleteDoc,
+    Login,
+    Logout,
+    Profile,
+    Register,
+    Update
+} from "../controllers/user.controller";
+import { IsAdmin, IsUser } from "../middleware/auth.middleware";
 
 const userRouter = Router();
 
@@ -19,5 +27,15 @@ userRouter
     .route( "/" )
     .get( Profile )
     .delete( Logout )
+// This Routes are for the admin
+userRouter.use( IsAdmin )
+// For get all info using the queary params
+userRouter
+    .route("/admin/:modelName")
+    .get( AdminInfo )
+    .post( Create )
+    .patch( Update )
+    .delete( DeleteDoc )
+
 
 export default userRouter;
