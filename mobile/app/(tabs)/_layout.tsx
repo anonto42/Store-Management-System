@@ -1,27 +1,12 @@
-import React from 'react'
-import { Tabs } from 'expo-router'
-import { Image, ImageBackground, Text } from 'react-native'
-import { icon } from '@/constants/icons'
-
-const _layout = () => {
-  return (
-    <Tabs>
-        <Tabs.Screen 
-            name="index"
-            options={{
-                title:"Home",
-                headerShown: false,
-            }}
-        />
-        <Tabs.Screen 
-            name="profile"
-            options={{
-                title:"Profile",
-                headerShown: false,
-            }}
-        />
-    </Tabs>
-  )
+import TabBar from "@/components/TabBar";
+import { Tabs } from "expo-router";
+ 
+export default () => {
+    return(
+        <Tabs tabBar={ props => <TabBar {...props} />}>
+            <Tabs.Screen name="index" options={{ title:"Home", headerShown: false }} />
+            <Tabs.Screen name="info" options={{ title:"Info", headerShown: false }} />
+            <Tabs.Screen name="profile" options={{ title:"Settings",headerShown: false }} />
+        </Tabs>
+    )
 }
-
-export default _layout
