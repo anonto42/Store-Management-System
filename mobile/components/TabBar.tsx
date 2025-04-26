@@ -80,8 +80,7 @@ const TabBar = ({state, descriptors, navigation}: BottomTabBarProps) => {
             testID={options.tabBarButtonTestID}
             onPress={onPress}
             onLongPress={onLongPress}
-            className='flex-1 justify-center items-center py-20'
-            style={{paddingVertical: 10 }}
+            style={{paddingVertical: 10, flex: 1, justifyContent: "center", alignItems: "center" }}
           >
             {
               icons[route.name]({
