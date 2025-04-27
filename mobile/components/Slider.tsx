@@ -1,9 +1,9 @@
 import { View, Text, ScrollView } from 'react-native';
 import React from 'react';
-import Card from './Card';
+import Card, { cardData } from './Card';
 import { styleSheet } from '@/constants/styling';
 
-const Slider = ({title, data}:{ title: string, data: any[] }) => {
+const Slider = ({title, data}:{ title: string, data: cardData[] }) => {
 
   return (
     <View style={styleSheet.slider_bg}>
