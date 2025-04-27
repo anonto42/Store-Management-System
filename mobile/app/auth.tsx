@@ -1,3 +1,4 @@
+import Loader from '@/components/Loader';
 import { styleSheet } from '@/constants/styling';
 import { myContext } from '@/lib/AuthContext';
 import React, { useState } from 'react';
@@ -6,10 +7,11 @@ import { View, TextInput, Text, Pressable } from 'react-native';
 export default function LoginScreen() {
   const [username, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { signin } = myContext();
+  const { signin, loading } = myContext();
 
   return (
     <View style={styleSheet.main_bg}>
+      { loading && <Loader />}
       <View style={styleSheet.auth_container}>
         <Text style={styleSheet.auth_header}>Username:</Text>
         <TextInput style={styleSheet.auth_inp} onChangeText={setEmail} value={username} placeholder="Write hear" />
