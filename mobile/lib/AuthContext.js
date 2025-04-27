@@ -1,14 +1,15 @@
 import axios from "axios";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { ToastAndroid } from "react-native";
 import { EXPO_API_URL } from "@env";
-
+import { useRouter } from "expo-router";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [session, setSession] = useState(false);
+  const router = useRouter();
 
   const signin = async ({username,password}) => {
     try {
@@ -24,38 +25,83 @@ export const AuthProvider = ({ children }) => {
         )
       }
 
-      const { data } = await axios.post(`${EXPO_API_URL}/user/login`,{userName:"sohidul",password: "xxx"},{ withCredentials: true });
-      console.log(data)
+      const res = await axios.post(`${EXPO_API_URL}/user/login`,{userName:username,password},{ withCredentials: true });
+      const cookie = res.headers["set-cookie"]
 
-      AsyncStorage.setItem("sms",{ss:"userTOkenWillbe this "})
-      
-      return ToastAndroid.showWithGravity(
+      try {
+        await AsyncStorage.setItem("sms",cookie[0]);
+      } catch (error) {
+        console.log(error)
+      }
+      setUser(cookie);
+      setLoading(false)
+
+      ToastAndroid.showWithGravity(
         'Login done successfully!',
         ToastAndroid.SHORT,
         ToastAndroid.CENTER,
       )
+      router.replace("/(tabs)")
+      
+      return;
 
     } catch (error) {
       console.log(error.response.data);
       setLoading(false);
       ToastAndroid.showWithGravity(
-        'Login Failed!',
+        `${error.response.data.message}`,
         ToastAndroid.SHORT,
         ToastAndroid.CENTER,
       )
     }
   }
-  const signout = () => {
+
+  const signout = async () => {
     try {
-      AsyncStorage.removeItem("sms")
+      await AsyncStorage.removeItem("sms")
       ToastAndroid.show("Logout successfull!")  
     } catch (error) {
       console.log(error);
       ToastAndroid.show("Problem on logout")
     }
   }
+  
+  const isLogin = async () => {
+    try {
+      setLoading(true);
 
-  const contextData = { session, user, signin, signout, loading, setLoading };
+      const token = await AsyncStorage.getItem("sms");
+      if ( !token ) throw new Error();
+      if (token) {
+        setUser(token);
+        ToastAndroid.showWithGravity(
+          "Goted the user token!",
+          ToastAndroid.SHORT,
+          ToastAndroid.CENTER,
+        )
+      }
+      setUser(token);
+      router.replace("/(tabs)")
+      setLoading(false);
+      return;
+    } catch (error) {
+      console.log(error);
+      ToastAndroid.showWithGravity(
+        'Some problem on login!',
+        ToastAndroid.SHORT,
+        ToastAndroid.CENTER,
+      ),
+      setUser(false);
+      setLoading(false);
+      return
+    }
+  }
+
+  useEffect(()=>{
+    isLogin();
+  },[user])
+
+  const contextData = { user, signin, signout, loading, setLoading };
 
   return (
     <AuthContext.Provider value={contextData}>
