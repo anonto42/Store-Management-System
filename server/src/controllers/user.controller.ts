@@ -81,7 +81,7 @@ export async function Login (req: Request, res: Response): Promise<any> {
             res,
             "User login successfully",
             StatusCode.accepted,
-            {},
+            {token: sign},
             sign
         )
 
