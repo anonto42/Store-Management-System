@@ -7,7 +7,7 @@
 
 # Expo
 .expo/
-dist/
+# dist/
 web-build/
 expo-env.d.ts
 
