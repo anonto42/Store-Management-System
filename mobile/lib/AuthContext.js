@@ -25,11 +25,10 @@ export const AuthProvider = ({ children }) => {
         )
       }
 
-      const res = await axios.post(`${EXPO_API_URL}/user/login`,{userName:username,password},{ withCredentials: true });
-      const cookie = res.headers["set-cookie"]
+      const { data } = await axios.post(`${EXPO_API_URL}/user/login`,{userName:username,password},{ withCredentials: true });
 
       try {
-        await AsyncStorage.setItem("sms",cookie[0]);
+        await AsyncStorage.setItem("sms",data.data.token);
       } catch (error) {
         console.log(error)
       }
@@ -37,7 +36,7 @@ export const AuthProvider = ({ children }) => {
       setLoading(false)
 
       ToastAndroid.showWithGravity(
-        'Login done successfully!',
+        data.data.message,
         ToastAndroid.SHORT,
         ToastAndroid.CENTER,
       )
