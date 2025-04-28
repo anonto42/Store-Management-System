@@ -1,7 +1,7 @@
 import { EXPO_API_URL } from "@env";
 import axios from "axios"
 
-type input = "sales" | "due" | "payment" | "product" | "user"
+export type input = "sales" | "due" | "payment" | "product" | "user"
 
 export const salesData = async (props: input) => {
     try {
