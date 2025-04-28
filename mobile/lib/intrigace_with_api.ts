@@ -8,33 +8,32 @@ import { ToastAndroid } from "react-native";
 
 
 interface sales {
-    quantity: number;
-    amount: number;
-    buyer: string;
-    paid: boolean;
-    product: string;
+    quantity: number;//
+    amount: number;//
+    buyer: string;//
+    paid: boolean;//
+    product: string;//
 }
 
 interface payment {
-    amount: number;
-    paymentType: string;
-    payBy: string;
-    user: string;
+    amount: number;//
+    paymentType: string;//
+    payBy: string;//
+    user: string;//
 }
 
 interface product {
     title: string;
     quantity: number;
-    totalSales: number;
     image: string;
 }
 
 interface due {
-    user: string;
-    productID: string;
-    productQuantity: number;
-    productPieces: string;
-    isPayed: boolean;
+    user: string;//
+    productID: string;//
+    productQuantity: number;//
+    productPieces: string;//
+    isPayed: boolean;//
 }
 
 interface user {
@@ -44,11 +43,6 @@ interface user {
     nid: string;
     phone: string;
     profileImage: string;
-    shopHistory: [];
-    dueHistory: [];
-    paymentHistory: [];
-    password: string;
-    isAdmin: boolean;
 }
 
 interface requirdThinks {
