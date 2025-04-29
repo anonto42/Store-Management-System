@@ -158,10 +158,9 @@ const Actions_Dudet = () => {
 
                 { 
                   action === "add" ? (
-                    modelName === "sales" ? fields.sales.map( e => {
-                      return (
-                        <>
-                          <TextInput 
+                    modelName === "sales" ? fields.sales.map( (e, i)=> {
+                      return <TextInput
+                            key={i} 
                             style={styleSheet.add_update_box_text_inp} 
                             placeholder={`Inter ${e}...`}
                             onChangeText={
@@ -172,13 +171,10 @@ const Actions_Dudet = () => {
                               e === "Product Title"? setTitle : setUniq
                             }
                           />
-                        </>
-                      )
                     }) : 
-                    modelName === "payment" ? fields.payment.map( e => {
-                      return (
-                        <>
-                          <TextInput 
+                    modelName === "payment" ? fields.payment.map( (e, i)=> {
+                      return  <TextInput 
+                            key={i}
                             style={styleSheet.add_update_box_text_inp} 
                             placeholder={`Inter ${e}...`}
                             onChangeText={
@@ -189,13 +185,10 @@ const Actions_Dudet = () => {
                               e === "pay by"? setPayBy : setPaid
                             }
                           />
-                        </>
-                      )
                     }) : 
-                    modelName === "due" ? fields.due.map( e => {
-                      return (
-                        <>
-                          <TextInput 
+                    modelName === "due" ? fields.due.map( (e, i)=> {
+                      return  <TextInput 
+                            key={i}
                             style={styleSheet.add_update_box_text_inp} 
                             placeholder={`Inter ${e}...`}
                             onChangeText={
@@ -205,13 +198,10 @@ const Actions_Dudet = () => {
                               e === "user name"? setBuyer : setUniq
                             }
                           />
-                        </>
-                      )
                     }) : 
-                    modelName === "product" ? fields.product.map( e => {
-                      return (
-                        <>
-                          <TextInput 
+                    modelName === "product" ? fields.product.map( (e, i) => {
+                      return  <TextInput 
+                            key={i}
                             style={styleSheet.add_update_box_text_inp} 
                             placeholder={`Inter ${e}...`}
                             onChangeText={
@@ -220,13 +210,10 @@ const Actions_Dudet = () => {
                               e === "user name"? setBuyer : setUniq
                             }
                           />
-                        </>
-                      )
                     }) : 
-                    modelName === "user" ? fields.user.map( e => {
-                      return (
-                        <>
-                          <TextInput 
+                    modelName === "user" ? fields.user.map( (e, i) => {
+                      return <TextInput 
+                            key={i}
                             style={styleSheet.add_update_box_text_inp} 
                             placeholder={`Inter ${e}...`}
                             onChangeText={
@@ -238,8 +225,6 @@ const Actions_Dudet = () => {
                               e === "profile image"? setImage : setPaid
                             }
                           />
-                        </>
-                      )
                     }) : ""
                   ) : 
                   action === "update"? <UpdatedComponent /> : ""
