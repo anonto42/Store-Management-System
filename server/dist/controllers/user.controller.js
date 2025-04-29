@@ -69,7 +69,7 @@ async function Login(req, res) {
         if (!sign) {
             return Response_1.Response.Error(res, "Somthing Was hapent unwanted!", StatusCode_1.StatusCode.unexpected);
         }
-        return Response_1.Response.Success(res, "User login successfully", StatusCode_1.StatusCode.accepted, {}, sign);
+        return Response_1.Response.Success(res, "User login successfully", StatusCode_1.StatusCode.accepted, { token: sign }, sign);
     }
     catch (error) {
         console.log(error);
@@ -217,7 +217,7 @@ async function Create(req, res) {
         if (!CreateDocument) {
             return Response_1.Response.Error(res, `Somthing was porblem on the create data!.`, StatusCode_1.StatusCode.unexpected);
         }
-        return Response_1.Response.Success(res, `Successfully delete data of ${modelName} model`, StatusCode_1.StatusCode.accepted, {
+        return Response_1.Response.Success(res, `Successfully create the data of ${modelName} model`, StatusCode_1.StatusCode.accepted, {
             CreateDocument
         });
     }

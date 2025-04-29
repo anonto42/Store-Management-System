@@ -36,7 +36,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
 const DueSchema = new mongoose_1.Schema({
     user: { type: String },
-    productID: { type: mongoose_1.default.Schema.Types.ObjectId, ref: 'Product' },
+    productID: { type: String },
     productQuantity: { type: Number },
     productPieces: { type: String },
     isPayed: { type: Boolean },

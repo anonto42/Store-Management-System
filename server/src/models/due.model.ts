@@ -2,7 +2,7 @@ import mongoose, { Schema, Document } from 'mongoose';
 
 export interface IDue extends Document {
   user: string;
-  productID: mongoose.Types.ObjectId;
+  productID: string;
   productQuantity: number;
   productPieces: string;
   isPayed: boolean;
@@ -10,7 +10,7 @@ export interface IDue extends Document {
 
 const DueSchema: Schema = new Schema<IDue>({
   user: { type: String },
-  productID: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
+  productID: { type: String },
   productQuantity: { type: Number },
   productPieces: { type: String },
   isPayed: { type: Boolean },

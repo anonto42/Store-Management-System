@@ -287,7 +287,7 @@ export async  function  Create (req: AutRequest, res: Response): Promise<any> {
 
         return SR.Success(
             res,
-            `Successfully delete data of ${modelName} model`,
+            `Successfully create the data of ${modelName} model`,
             StatusCode.accepted,
             {
                 CreateDocument

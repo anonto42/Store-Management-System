@@ -4,14 +4,14 @@ export interface IPayment extends Document {
   amount: number;
   paymentType: string;
   payBy: string;
-  user: mongoose.Types.ObjectId;
+  user: string;
 }
 
 const PaymentSchema: Schema = new Schema<IPayment>({
   amount: { type: Number },
   paymentType: { type: String },
   payBy: { type: String },
-  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  user: { type: String },
 },{timestamps: true});
 
 export default mongoose.model<IPayment>('Payment', PaymentSchema);

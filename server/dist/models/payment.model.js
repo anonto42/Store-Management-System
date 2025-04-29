@@ -38,6 +38,6 @@ const PaymentSchema = new mongoose_1.Schema({
     amount: { type: Number },
     paymentType: { type: String },
     payBy: { type: String },
-    user: { type: mongoose_1.default.Schema.Types.ObjectId, ref: 'User' },
+    user: { type: String },
 }, { timestamps: true });
 exports.default = mongoose_1.default.model('Payment', PaymentSchema);
