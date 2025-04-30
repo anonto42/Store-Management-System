@@ -2,9 +2,8 @@ import { cardData } from "@/components/Card";
 import Slider from "@/components/Slider";
 import { styleSheet } from "@/constants/styling";
 import { salesData } from "@/lib/dataFetch";
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { ScrollView, View } from "react-native";
-import { Document } from 'mongoose';
 import { DueInterface, PaymentInterface, SalesInterface } from "@/lib/CustomTypes";
 
 export default function Index() {
@@ -13,7 +12,7 @@ export default function Index() {
   const [payment, setPayment] = useState<PaymentInterface[]>([]);
   const [refresh, setRefresh] = useState(0);
   
-  useEffect(()=>{
+  useLayoutEffect(()=>{
     ( async function(){
       try {
         const sales = await salesData("sales");
