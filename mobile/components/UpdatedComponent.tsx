@@ -1,7 +1,8 @@
 import { View, Text } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 
 const UpdatedComponent = () => {
+  const [] = useState<string>();
   return (
     <View>
       <Text>UpdatedComponent</Text>
